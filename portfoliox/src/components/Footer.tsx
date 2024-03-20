@@ -6,7 +6,7 @@ import { MdComputer } from "react-icons/md";
 export function Footer() {
   const { darkMode } = useDarkMode();
   return (
-    <div className={`w-full ${darkMode ? "bg-dark" : "bg-light"} py-4`}>
+    <div className={`w-full py-12 ${darkMode ? "bg-dark" : "bg-light"} py-4`}>
       <div
         className={`${
           darkMode ? "text-light" : "text-gray-500"

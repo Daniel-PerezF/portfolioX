@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    image: "./ssme.png",
+    image: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
     date: "February 2024 - Present",
@@ -19,7 +19,7 @@ export const experiences = [
     stats: "2.1M",
   },
   {
-    image: "./ssme.png",
+    image: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
     date: "March 2024 - Present",

@@ -87,7 +87,7 @@ export function About() {
   };
   return (
     <div className="h-full">
-      <div className="border border-1 p-4">
+      <div className="border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0">
         <div>
           <div className="flex justify start gap-1">
             <div className="">
