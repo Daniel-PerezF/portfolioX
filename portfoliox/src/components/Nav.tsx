@@ -8,7 +8,7 @@ export function Nav() {
     <div
       className={`flex w-full justify-between items-center ${
         darkMode ? "bg-dark" : "bg-light"
-      } px-4 pt-2`}
+      } px-4 py-2`}
     >
       <Link to="/">
         <img src="/orange-icon.png" alt="" className="w-1/4" />
