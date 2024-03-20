@@ -1,16 +1,20 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { About, Experience, Projects, Tech } from ".";
 
 export function ContentTabs() {
-  const [activeTab, setActiveTab] = useState("About");
+  const [activeTab, setActiveTab] = useState(() => {
+    return localStorage.getItem("activeTab") || "About";
+  });
   const { darkMode } = useDarkMode();
+
+  useEffect(() => {
+    localStorage.setItem("activeTab", activeTab);
+  }, [activeTab]);
 
   return (
     <div>
       <div className="flex flex-row justify-evenly mt-2 gap-4">
-        {" "}
         <div
           className={`${
             darkMode ? "hover:bg-gray-700" : "hover:bg-lighter"
@@ -51,15 +55,7 @@ export function ContentTabs() {
           }`}
           onClick={() => setActiveTab("Projects")}
         >
-          <h3
-            className={`${
-              activeTab === "Projects"
-                ? "underline underline-4 underline-offset-4 decoration-red-700"
-                : ""
-            }`}
-          >
-            Projects
-          </h3>
+          <h3 className={`${activeTab === "Projects" ? "" : ""}`}>Projects</h3>
         </div>
         <div
           className={`${
@@ -73,11 +69,10 @@ export function ContentTabs() {
           }`}
           onClick={() => setActiveTab("Tech")}
         >
-          <h3>Tech</h3>
+          <h3 className={`${activeTab === "Tech" ? "" : ""}`}>Tech</h3>
         </div>
       </div>
       <div>
-        {" "}
         <hr className="text-white my-2 mx-1 md:mx-0" />
       </div>
       <div>

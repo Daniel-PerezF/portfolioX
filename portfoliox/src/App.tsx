@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { Nav } from "./components";
 import LinksPage from "./pages/LinksPage";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/LinksPage" element={<LinksPage />} />
         </Routes>
+        <Footer />
       </DarkModeProvider>
     </>
   );
