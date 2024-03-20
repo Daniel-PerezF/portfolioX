@@ -54,7 +54,8 @@ export function About() {
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
-  const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
+  // const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
+  const images = ["/ssme.png", "/c-0823.jpg"];
 
   const openModal = (image: string) => {
     const index = images.indexOf(image);
@@ -118,7 +119,7 @@ export function About() {
         <div className="w-full flex justify-center">
           <div className="flex justify-center  w-11/12 flex-col">
             <div
-              className={`${
+              className={` ${
                 darkMode ? "outline-black" : "outline-gray-200"
               } outline-1 rounded-md outline mb-4`}
             >
@@ -203,17 +204,21 @@ export function About() {
               <BiMessageRounded />
               <p className="text-sm ">1.2K</p>
             </div>
-            <div className="flex gap-1">
-              <FaRetweet
-                className={`${retweets ? "" : "text-green-400"}`}
-                onClick={() => {
-                  toggleRetweets();
-                }}
-              />
+            <div
+              className={`flex gap-1 cursor-pointer ${
+                retweets ? "" : "text-green-500"
+              } cursor-pointer`}
+              onClick={() => {
+                toggleRetweets();
+              }}
+            >
+              <FaRetweet />
               <p className="text-sm ">3.2K</p>
             </div>
             <div
-              className={`flex gap-1 ${favorites ? "" : "text-red-500"}`}
+              className={`flex gap-1 ${
+                favorites ? "" : "text-red-500"
+              } cursor-pointer`}
               onClick={() => {
                 toggleFavorites();
               }}

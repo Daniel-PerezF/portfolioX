@@ -103,8 +103,8 @@ export function Experience() {
               </div>
 
               <div
-                className={`flex gap-1 ${
-                  retweets[index] ? "text-green-400" : "text-gray-400"
+                className={`cursor-pointer flex gap-1 ${
+                  retweets[index] ? "text-green-500" : "text-gray-400"
                 }`}
                 onClick={() => toggleRetweets(index)}
               >
@@ -113,7 +113,7 @@ export function Experience() {
               </div>
 
               <div
-                className={`flex gap-1 ${
+                className={` cursor-pointer flex gap-1 ${
                   favorites[index] ? "text-red-500" : "text-gray-400"
                 }`}
                 onClick={() => toggleFavorite(index)}
