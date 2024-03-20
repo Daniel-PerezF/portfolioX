@@ -10,19 +10,28 @@ import { useState } from "react";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
-  const [isFollowed, setIsFollowed] = useState(false);
+  // const [isFollowed, setIsFollowed] = useState(false);
+  const [following, setFollowing] = useState(() => {
+    const savedFollowing = localStorage.getItem("following");
+    return savedFollowing ? JSON.parse(savedFollowing) : {};
+  });
+  const toggleFolow = () => {
+    setFollowing((prevState: boolean) => !prevState);
+    localStorage.setItem("following", JSON.stringify(!following));
+  };
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-end py-4">
         <button
           onClick={() => {
-            setIsFollowed(!isFollowed);
+            toggleFolow();
+            console.log("follow", following);
           }}
           className={` ${
-            isFollowed ? "bg-pop" : "bg-purple-400"
+            following ? "bg-pop" : "bg-purple-400"
           } px-4 py-2 rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
         >
-          {isFollowed ? "Follow" : "Followed"}
+          {following ? "Follow" : "Followed"}
         </button>
       </div>
       <div className="px-4">

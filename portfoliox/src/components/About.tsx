@@ -54,7 +54,7 @@ export function About() {
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
-  const images = ["/c-jr-0823.jpg", "/c-0823.jpg"];
+  const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
 
   const openModal = (image: string) => {
     const index = images.indexOf(image);
