@@ -65,7 +65,7 @@ export function ProfileAbout() {
             following ? "bg-pop" : "bg-purple-400"
           } px-4 py-2 rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
         >
-          {following ? "Follow" : "Followed"}
+          {following ? "Follow" : "Following"}
         </button>
       </div>
       {confettiActive && (
