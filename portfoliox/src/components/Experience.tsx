@@ -1,16 +1,13 @@
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { useDarkMode } from "../context/useDarkMode";
-import { FaRetweet } from "react-icons/fa";
+import { FaRetweet, FaLink } from "react-icons/fa";
 import { BiMessageRounded } from "react-icons/bi";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoStatsChart } from "react-icons/io5";
-import { experiences } from "../data/data";
+import { IconProps, experiences } from "../data/data";
 import { useState } from "react";
 import { MdOutlineFavorite } from "react-icons/md";
 
-interface IconProps {
-  [key: number]: boolean;
-}
 export function Experience() {
   const { darkMode } = useDarkMode();
   const [favorites, setFavorites] = useState<IconProps>(() => {
@@ -31,9 +28,9 @@ export function Experience() {
   };
   const toggleRetweets = (index: number) => {
     setRetweets((prevRetweets) => {
-      const newFavorites = { ...prevRetweets, [index]: !prevRetweets[index] };
-      localStorage.setItem("retweets", JSON.stringify(newFavorites));
-      return newFavorites;
+      const newRetweets = { ...prevRetweets, [index]: !prevRetweets[index] };
+      localStorage.setItem("retweets", JSON.stringify(newRetweets));
+      return newRetweets;
     });
   };
   return (
@@ -74,12 +71,25 @@ export function Experience() {
               </div>
             </div>
           </div>
-
           {/* Role */}
           <div className="w-full flex justify-center pt-4">
             <div className="flex w-11/12">
               <div className="mr-2">{exp.role}</div>
               <div className="">| {exp.location}</div>
+              <div className="flex justify-end flex-row ">
+                {exp.url ? (
+                  <a
+                    href={exp.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex self-center"
+                  >
+                    <FaLink className=" text-md hover:text-blue-300 duration-150 ease-in-out ml-3" />
+                  </a>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </div>
           <div className="w-full flex justify-center">
@@ -94,7 +104,6 @@ export function Experience() {
               ))}
             </div>
           </div>
-
           <div className="w-full flex justify-center pt-4">
             <div className="flex justify-between text-xl w-11/12 text-gray-400">
               <div className="flex gap-1">
