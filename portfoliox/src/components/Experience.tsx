@@ -1,12 +1,15 @@
-import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { useDarkMode } from "../context/useDarkMode";
-import { FaRetweet, FaLink } from "react-icons/fa";
-import { BiMessageRounded } from "react-icons/bi";
-import { MdFavoriteBorder } from "react-icons/md";
-import { IoStatsChart } from "react-icons/io5";
-import { IconProps, experiences } from "../data/data";
 import { useState } from "react";
-import { MdOutlineFavorite } from "react-icons/md";
+import { IconProps, experiences } from "../data";
+import { useDarkMode } from "../context/useDarkMode";
+import {
+  BiMessageRounded,
+  FaLink,
+  FaRetweet,
+  IoStatsChart,
+  MdFavoriteBorder,
+  MdOutlineFavorite,
+  RiVerifiedBadgeFill,
+} from "../icons/icons";
 
 export function Experience() {
   const { darkMode } = useDarkMode();
@@ -36,12 +39,20 @@ export function Experience() {
   return (
     <div className="h-full ">
       {experiences.map((exp, index) => (
+        // <div
+        //   key={index}
+        //   className={`border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0 ${
+        //     darkMode
+        //       ? "hover:bg-[#37363c] duration-150"
+        //       : "hover:bg-[#EBEBEB] duration-150"
+        //   }`}
+        // >
         <div
           key={index}
-          className={`border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0 ${
+          className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0  rounded-lg ${
             darkMode
-              ? "hover:bg-[#37363c] duration-150"
-              : "hover:bg-[#EBEBEB] duration-150"
+              ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
+              : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
           <div>
@@ -73,21 +84,19 @@ export function Experience() {
           </div>
           {/* Role */}
           <div className="w-full flex justify-center pt-4">
-            <div className="flex w-11/12">
+            {/* Role and location */}
+            <div className="flex w-11/12 justify-between">
               <div className="mr-2">{exp.role}</div>
-              <div className="">| {exp.location}</div>
-              <div className="flex justify-end flex-row ">
-                {exp.url ? (
+              <div className="flex gap mr-12">
+                {exp.url && (
                   <a
                     href={exp.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex self-center"
                   >
-                    <FaLink className=" text-md hover:text-blue-300 duration-150 ease-in-out ml-3" />
+                    <FaLink className="text-md hover:text-blue-300 duration-150 ease-in-out" />
                   </a>
-                ) : (
-                  ""
                 )}
               </div>
             </div>

@@ -7,14 +7,14 @@ export function Nav() {
   return (
     <div
       className={`flex w-full justify-between items-center ${
-        darkMode ? "bg-dark" : "bg-light"
+        darkMode ? "bg-dark/75" : "bg-light/45"
       } px-4 py-2`}
     >
       <Link to="/">
         <img
           src="/orange-icon.png"
           alt=""
-          className="w-1/4 hover:scale-105 duration-150 ease-in-out cursor-pointer"
+          className=" w-1/5  hover:scale-105 duration-150 ease-in-out cursor-pointer"
         />
       </Link>
 

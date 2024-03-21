@@ -1,46 +1,16 @@
-// import { useDarkMode } from "../context/useDarkMode";
-// export function About() {
-//   const { darkMode } = useDarkMode();
-
-//   return (
-//     <div className={`h-full pb-10 ${darkMode ? "bg-dark" : "bg-light"}`}>
-//       <div className={`h-full w-full px-4  `}>
-//         <h3 className="mb-2 "> Hey there, I&apos;m Daniel!</h3>
-//         <img src="/ssme.png" alt="" className="mb-2 rounded-2xl" />
-//         <p>
-//           ...I'm Daniel, a software developer driven by a lifelong fascination
-//           with technology. From childhood days tinkering with our household
-//           computer to my recent curiosity in AI and coding, technology has
-//           always captivated me.
-//           <br />
-//           <br />
-//           After completing an intensive full-stack software development course
-//           at LearningFuze coding bootcamp, I uncovered my true passion for
-//           coding and web design. I've always had a love for creativity and
-//           expression, and I found a new outlet for it through code.
-//           <br />
-//           <br />
-//           Now, as a software developer, I'm eager to continue learning and
-//           growing in this dynamic field. I'm actively seeking new avenues for
-//           collaboration and growth within the software development sphere. If
-//           you have any exciting projects or opportunities on the horizon, I'd
-//           love to chat and see how we can potentially work together!
-//         </p>
-//       </div>
-//       <img src="/sign.png" alt="" />
-//     </div>
-//   );
-// }
-
-import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { useDarkMode } from "../context/useDarkMode";
-import { FaRetweet } from "react-icons/fa";
-import { BiMessageRounded } from "react-icons/bi";
-import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
-import { IoStatsChart } from "react-icons/io5";
 import { useState } from "react";
-import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { useDarkMode } from "../context/useDarkMode";
+import {
+  BiMessageRounded,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+  FaRetweet,
+  IoClose,
+  IoStatsChart,
+  MdFavoriteBorder,
+  MdOutlineFavorite,
+  RiVerifiedBadgeFill,
+} from "../icons/icons";
 
 export function About() {
   const { darkMode } = useDarkMode();
@@ -89,7 +59,13 @@ export function About() {
   };
   return (
     <div className="h-full">
-      <div className="border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0">
+      <div
+        className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
+          darkMode
+            ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
+            : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+        }`}
+      >
         <div>
           <div className="flex justify start gap-1">
             <div className="">
@@ -103,7 +79,7 @@ export function About() {
             </div>
 
             <div className="text-lg font-bold flex pt-4 gap-2 ">
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-[108px]">
                 {" "}
                 <h3>Daniel Perez</h3>
                 <div className="text-gray-400 text-sm font-light">
@@ -113,7 +89,7 @@ export function About() {
 
               <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
               <p className="font-normal text-gray-400 text-sm pt-1">
-                February 2024 - Present
+                August 22, 2023
               </p>
             </div>
           </div>
@@ -122,19 +98,51 @@ export function About() {
           <div className="flex justify-center  w-11/12 flex-col">
             <div
               className={` ${
-                darkMode ? "outline-black" : "outline-gray-200"
-              } outline-1 rounded-md outline mb-4`}
+                darkMode ? "" : "outline-gray-200"
+              }  rounded-2xl  mb-4`}
             >
-              <div className="flex overflow-hidden rounded-md gap-1 bg-white">
-                {images.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    className="w-1/2 aspect-[7/8] object-cover cursor-pointer"
-                    alt=""
-                    onClick={() => openModal(image)}
-                  />
-                ))}
+              {" "}
+              <p className="pt-4 pb-6">
+                Hey there! I'm Daniel, a software developer driven by a lifelong
+                fascination with technology. From childhood days tinkering with
+                our household computer to my recent curiosity in AI and coding,
+                technology has always captivated me.
+                <br />
+                <br />
+                After completing an intensive full-stack software development
+                course at LearningFuze coding bootcamp, I uncovered my true
+                passion for coding and web design. I've always had a love for
+                creativity and expression, and I found a new outlet for it
+                through code.
+                <br />
+                <br />
+                Now, as a software developer, I'm eager to continue learning and
+                growing in this dynamic field. I'm actively seeking new avenues
+                for collaboration and growth within the software development
+                sphere. If you have any exciting projects or opportunities on
+                the horizon, I'd love to chat and see how we can potentially
+                work together!
+              </p>
+              <div
+                className={`flex overflow-hidden rounded-2xl outline outline-1  ${
+                  darkMode
+                    ? "bg-dark outline-gray-300"
+                    : "bg-light outline-gray-400"
+                }`}
+              >
+                <div className="flex gap-[3px] ">
+                  {images.map((image, index) => (
+                    <div key={index} className="w-full">
+                      {" "}
+                      <img
+                        src={image}
+                        className="w-full aspect-[7/8] object-cover cursor-pointer rounded-lg"
+                        alt=""
+                        onClick={() => openModal(image)}
+                      />
+                    </div>
+                  ))}
+                </div>
 
                 {modalOpen && (
                   <div
@@ -157,20 +165,22 @@ export function About() {
                           }}
                         />
                         <button
-                          className="absolute top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
+                          className="fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
                           onClick={(e) => {
-                            e.stopPropagation(); // Prevent closing when clicking on the button
+                            e.stopPropagation();
                             prevImage();
                           }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
                         >
                           <FaLongArrowAltLeft />
                         </button>
                         <button
-                          className="absolute top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
+                          className="fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
                           onClick={(e) => {
-                            e.stopPropagation(); // Prevent closing when clicking on the button
+                            e.stopPropagation();
                             nextImage();
                           }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
                         >
                           <FaLongArrowAltRight />
                         </button>
@@ -181,7 +191,7 @@ export function About() {
               </div>
             </div>
 
-            <p>
+            {/* <p>
               Hey there! I'm Daniel, a software developer driven by a lifelong
               fascination with technology. From childhood days tinkering with
               our household computer to my recent curiosity in AI and coding,
@@ -201,7 +211,7 @@ export function About() {
               sphere. If you have any exciting projects or opportunities on the
               horizon, I'd love to chat and see how we can potentially work
               together!
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="w-full flex justify-center pt-4">
@@ -219,7 +229,7 @@ export function About() {
               }}
             >
               <FaRetweet />
-              <p className="text-sm ">3.2K</p>
+              <p className="text-sm ">2.8K</p>
             </div>
             <div
               className={`flex gap-1 ${
@@ -230,11 +240,11 @@ export function About() {
               }}
             >
               {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
-              <p className="text-sm ">1.1k</p>
+              <p className="text-sm ">3.1k</p>
             </div>
             <div className="flex gap-1">
               <IoStatsChart />
-              <p className="text-sm ">2.1M</p>
+              <p className="text-sm ">60K</p>
             </div>
           </div>
         </div>
