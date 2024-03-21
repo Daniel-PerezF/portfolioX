@@ -47,7 +47,7 @@ export const projects: Project[] = [
     images: ["/jre.jpeg", "/jre.jpeg", "/jre.jpeg", "/jre.jpeg"],
     title: "Spin Trade Marketplace - Full Stack",
     link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
-    code: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
+    code: "https://github.com/Daniel-PerezF/RecordMarketplace",
     description: [
       "Utilized React, TypeScript, Tailwind, Node.js, Express, PostgreSQL and AWS to build a full stack web application.",
       "Engineered and implemented the application from concept to deployment on AWS Elastic Beanstalk.",

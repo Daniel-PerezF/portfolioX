@@ -21,17 +21,15 @@ export function ProfileAbout() {
   });
   const [followers, setFollowers] = useState(() => {
     const savedFollowers = localStorage.getItem("followers");
-    return savedFollowers ? JSON.parse(savedFollowers) : 443; // Initial follower count
+    return savedFollowers ? JSON.parse(savedFollowers) : "443"; // Initial follower count as string
   });
 
   const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
-    const newFollowers = following ? followers + 1 : followers - 1;
+    const newFollowers = following ? "444" : "443";
     setFollowers(newFollowers);
     localStorage.setItem("following", JSON.stringify(!following));
     localStorage.setItem("followers", JSON.stringify(newFollowers));
-    console.log("followers", followers);
-    console.log("following", following);
     if (following) {
       setTimeout(() => setConfettiActive(true), 400);
     }
