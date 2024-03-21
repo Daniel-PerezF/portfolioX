@@ -6,26 +6,61 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { IoLocation } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/useDarkMode";
-import { useState } from "react";
-import { ProfilePic } from "./ProfilePic";
+import { useRef, useState } from "react";
+import { MdOutlineMailOutline } from "react-icons/md";
+import ConfettiExplosion from "react-confetti-explosion";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
-  // const [isFollowed, setIsFollowed] = useState(false);
+  const [confettiActive, setConfettiActive] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   const [following, setFollowing] = useState(() => {
     const savedFollowing = localStorage.getItem("following");
     return savedFollowing ? JSON.parse(savedFollowing) : {};
   });
-  const toggleFolow = () => {
+  const [followers, setFollowers] = useState(() => {
+    const savedFollowers = localStorage.getItem("followers");
+    return savedFollowers ? JSON.parse(savedFollowers) : 443; // Initial follower count
+  });
+
+  const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
+    const newFollowers = following ? followers + 1 : followers - 1;
+    setFollowers(newFollowers);
     localStorage.setItem("following", JSON.stringify(!following));
+    localStorage.setItem("followers", JSON.stringify(newFollowers));
+    console.log("followers", followers);
+    console.log("following", following);
+    if (following) {
+      setTimeout(() => setConfettiActive(true), 400);
+    }
   };
+  const getButtonPosition = () => {
+    if (buttonRef.current) {
+      const buttonRect = buttonRef.current.getBoundingClientRect();
+      const offset = 40;
+      return { top: buttonRect.top, left: buttonRect.left + offset };
+    }
+    return { top: 0, left: 0 };
+  };
+
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-end py-4">
+      {/* Follow button */}
+      <div className="flex justify-end py-4 gap-4 relative">
+        <div
+          className={`text-2xl self-center ring-1 rounded-full p-1 cursor-pointer duration-150 ease-in-out hover:bg-white hover:bg-opacity-15 ${
+            darkMode ? "ring-white" : "ring-black"
+          } `}
+        >
+          <MdOutlineMailOutline />
+        </div>
+
         <button
+          ref={buttonRef}
           onClick={() => {
-            toggleFolow();
+            toggleFollow();
             console.log("follow", following);
           }}
           className={` ${
@@ -35,6 +70,21 @@ export function ProfileAbout() {
           {following ? "Follow" : "Followed"}
         </button>
       </div>
+      {confettiActive && (
+        <ConfettiExplosion
+          force={0.05}
+          duration={2200}
+          particleCount={30}
+          width={200}
+          colors={["#FB904D", "#c084fc", "#ffff", "#60a5fa"]}
+          onComplete={() => setConfettiActive(false)}
+          style={{
+            position: "absolute",
+            top: getButtonPosition().top,
+            left: getButtonPosition().left,
+          }}
+        />
+      )}
       <div className="px-4">
         <div className="text-2xl font-bold flex items-center gap-2">
           <h3>Daniel Perez</h3>
@@ -51,19 +101,7 @@ export function ProfileAbout() {
         <div className="">
           Full Stack Software Engineer. Creative. Problem-Solver. Code Writer.
         </div>
-        {/* <div className="flex">
-          <div className="rounded-full h-8 w-8 object-cover bg-white ring-2 mt-3 mr-2  overflow-hidden">
-            <img src="/x-logo.jpeg" alt="" className="" />
-          </div>
 
-          <h3
-            className={`font-light text-[0.77rem] self-start pt-4 ${
-              darkMode ? "text-gray-400" : "text-gray-500"
-            }`}
-          >
-            Followed by Elon Musk and Joe Rogan
-          </h3>
-        </div> */}
         {/* Icons */}
         <div
           className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light ${
@@ -93,9 +131,10 @@ export function ProfileAbout() {
             Joined March 2024
           </div>
         </div>
-        {/* <div className="flex w-[45%] justify-between pt-2">
-          <div className="flex justify-between w-[32%] cursor-pointer hover:underline hover:underline-offset-4">
-            <h3 className="">69K </h3>
+
+        <div className="flex w-[200px] justify-between pt-2">
+          <div className="flex justify-between w-[35%]">
+            <h3 className="mr-1">111</h3>
             <h3
               className={`text-md font-light ${
                 darkMode ? "text-gray-400" : "text-gray-500"
@@ -104,8 +143,8 @@ export function ProfileAbout() {
               Following
             </h3>
           </div>
-          <div className="flex justify-between w-[35%] cursor-pointer hover:underline hover:underline-offset-4">
-            <h3 className="">420K </h3>
+          <div className="flex justify-between w-[35%]">
+            <h3 className="mr-1 ">{followers}</h3>
             <h3
               className={`text-md font-light ${
                 darkMode ? "text-gray-400" : "text-gray-500"
@@ -114,7 +153,7 @@ export function ProfileAbout() {
               Followers
             </h3>
           </div>
-        </div> */}
+        </div>
         <div className="flex relative ml-3 mb-4">
           <div className="left-[-14px] absolute rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2 overflow-hidden">
             <img src="/x-logo.jpeg" alt="" className="" />

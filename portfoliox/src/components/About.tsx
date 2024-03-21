@@ -40,11 +40,13 @@ import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { IoStatsChart } from "react-icons/io5";
 import { useState } from "react";
 import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 export function About() {
   const { darkMode } = useDarkMode();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
   const [favorites, setFavorites] = useState(() => {
     const savedFavorites = localStorage.getItem("aboutFavorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
@@ -111,7 +113,7 @@ export function About() {
 
               <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
               <p className="font-normal text-gray-400 text-sm pt-1">
-                Feburary 2024 - Present
+                February 2024 - Present
               </p>
             </div>
           </div>
@@ -140,6 +142,10 @@ export function About() {
                     className=" fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-65"
                   >
                     <div className="relative">
+                      <IoClose
+                        className="text-white z-50 top-2 left-2 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+                        onClick={closeModal}
+                      />
                       <div className="w-full flex justify-center">
                         {" "}
                         <img
