@@ -1,4 +1,27 @@
+import { Project } from ".";
+import { About } from "../components/About"; // Assuming these are your component files
+import { Experience } from "../components/Experience";
+import { Projects } from "../components/Projects";
+import { Tech } from "../components/Tech";
+
 export const experiences = [
+  {
+    image: "./memoji.PNG",
+    name: "Daniel Perez",
+    username: "danielperez",
+    date: "March 2024 - Present",
+    role: "Teaching Assistant, Learning Fuze",
+    location: "Irvine, CA",
+    description: [
+      "Assisted students with debugging and troubleshooting coding problems.",
+      "Maintained a record of student interactions and how I assisted them.",
+      "Regularly communicated with student instructors to ensure they were aware of the substance of discussions, enabling them to address any misunderstandings or areas needing clarification in the materials.",
+    ],
+    comments: "2.1K",
+    retweets: "2.8K",
+    likes: "7.4K",
+    stats: "77K",
+  },
   {
     image: "./memoji.PNG",
     name: "Daniel Perez",
@@ -15,30 +38,34 @@ export const experiences = [
       "Participated in regular meetings and discussions to keep the project on track and address any challenges that arose.",
     ],
     comments: "1.2K",
-    retweets: "3.2K",
-    likes: "22K",
-    stats: "2.1M",
-  },
-  {
-    image: "./memoji.PNG",
-    name: "Daniel Perez",
-    username: "danielperez",
-    date: "March 2024 - Present",
-    role: "Teaching Assistant, Learning Fuze",
-    location: "Irvine, CA",
-    description: [
-      "Assisted students with debugging and troubleshooting coding problems.",
-      "Maintained a record of student interactions and how I assisted them.",
-      "Regularly communicated with student instructors to ensure they were aware of the substance of discussions, enabling them to address any misunderstandings or areas needing clarification in the materials.",
-    ],
-    comments: "2.8K",
-    retweets: "4.4K",
-    likes: "12K",
-    stats: "1.1M",
+    retweets: "3.7K",
+    likes: "8.3K",
+    stats: "63K",
   },
 ];
 
 export const projects: Project[] = [
+  {
+    name: "Daniel Perez",
+    username: "danielperez",
+    date: "February 2024 - Present",
+    pfp: "/memoji.PNG",
+    images: ["/jre.jpeg", "/jre.jpeg", "/jre.jpeg", "/jre.jpeg"],
+    title: "Personal Portfolio - Front End",
+    link: "https://www.danielperez.io/",
+    code: "https://github.com/Daniel-PerezF/portfolio",
+    description: [
+      "Developed and deployed a personal website using React, TypeScript, and Tailwind.",
+      "Implemented dynamic and interactive elements on the website using TS Particles enhancing the user experience.",
+      "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
+      "•Deployed on GitHub Pages with a custom domain, ensuring global accessibility for a professional online presence.",
+      "•Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
+    ],
+    comments: "2.2K",
+    retweets: "3.9K",
+    likes: "5.2K",
+    stats: "72K",
+  },
   {
     name: "Daniel Perez",
     username: "danielperez",
@@ -54,9 +81,9 @@ export const projects: Project[] = [
       "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
     ],
     comments: "1.2K",
-    retweets: "3.2K",
-    likes: "1.1k",
-    stats: "2.1M",
+    retweets: "2.8K",
+    likes: "3.4K",
+    stats: "53K",
   },
   {
     name: "Daniel Perez",
@@ -77,50 +104,16 @@ export const projects: Project[] = [
       "Engineered a display of Studio Ghibli films from a public API and implemented Fetch to display results.",
       "Designed sitemap using Figma's wireframing tools and utilized LocalStorage to store and retrieve data from previous sessions.",
     ],
-    comments: "1.2K",
-    retweets: "3.2K",
-    likes: "1.1k",
-    stats: "2.1M",
-  },
-  {
-    name: "Daniel Perez",
-    username: "danielperez",
-    date: "February 2024 - Present",
-    pfp: "/memoji.PNG",
-    images: ["/jre.jpeg", "/jre.jpeg", "/jre.jpeg", "/jre.jpeg"],
-    title: "Personal Portfolio - Front End",
-    link: "https://www.danielperez.io/",
-    code: "https://github.com/Daniel-PerezF/portfolio",
-    description: [
-      "Developed and deployed a personal website using React, TypeScript, and Tailwind.",
-      "Implemented dynamic and interactive elements on the website using TS Particles enhancing the user experience.",
-      "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
-      "•Deployed on GitHub Pages with a custom domain, ensuring global accessibility for a professional online presence.",
-      "•Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
-    ],
-    comments: "1.2K",
-    retweets: "3.2K",
-    likes: "1.1k",
-    stats: "2.1M",
+    comments: "1K",
+    retweets: "2.1K",
+    likes: "3.4K",
+    stats: "58K",
   },
 ];
 
-export interface IconProps {
-  [key: number]: boolean;
-}
-
-type Project = {
-  name: string;
-  username: string;
-  date: string;
-  pfp: string;
-  images: string[];
-  title: string;
-  link: string;
-  code: string;
-  description: string[];
-  comments: string;
-  retweets: string;
-  likes: string;
-  stats: string;
-};
+export const tabs = [
+  { id: "About", label: "About", component: About },
+  { id: "Experience", label: "Experience", component: Experience },
+  { id: "Projects", label: "Projects", component: Projects },
+  { id: "Tech", label: "Tech", component: Tech },
+];

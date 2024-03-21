@@ -1,3 +1,161 @@
+import { useState } from "react";
+import { useDarkMode } from "../context/useDarkMode";
+import {
+  BiMessageRounded,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+  FaRetweet,
+  IoClose,
+  IoStatsChart,
+  MdFavoriteBorder,
+  MdOutlineFavorite,
+  RiVerifiedBadgeFill,
+} from "../icons/icons";
+
 export function Tech() {
-  return <div className="h-screen">Tech</div>;
+  const { darkMode } = useDarkMode();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("aboutFavorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : {};
+  });
+  const [retweets, setRetweets] = useState(() => {
+    const savedRetweets = localStorage.getItem("aboutRetweets");
+    return savedRetweets ? JSON.parse(savedRetweets) : {};
+  });
+
+  // const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
+  const images = ["/ssme.png", "/c-0823.jpg"];
+
+  const openModal = (image: string) => {
+    const index = images.indexOf(image);
+    setSelectedImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setSelectedImageIndex((selectedImageIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setSelectedImageIndex(
+      selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
+    );
+  };
+
+  const toggleRetweets = () => {
+    setRetweets((prevState: boolean) => !prevState);
+    localStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
+  };
+  const toggleFavorites = () => {
+    setFavorites((prevState: boolean) => !prevState);
+    localStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
+  };
+  return (
+    <div className="h-full">
+      <div
+        className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
+          darkMode
+            ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
+            : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+        }`}
+      >
+        <div>
+          <div className="flex justify start gap-1">
+            <div className="">
+              <img
+                src="/memoji.PNG"
+                alt=""
+                className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
+                  darkMode ? "ring-black" : "ring-white"
+                }`}
+              />
+            </div>
+
+            <div className="text-lg font-bold flex pt-4 gap-2 ">
+              <div className="flex flex-col min-w-[108px]">
+                {" "}
+                <h3>Daniel Perez</h3>
+                <div className="text-gray-400 text-sm font-light">
+                  @danielperez
+                </div>
+              </div>
+
+              <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
+              <p className="font-normal text-gray-400 text-sm pt-1">
+                February 2024 - Present
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex justify-center">
+          <div className="flex justify-center  w-11/12 flex-col">
+            <div
+              className={` ${
+                darkMode ? "" : "outline-gray-200"
+              }  rounded-2xl  mb-4`}
+            >
+              {" "}
+              <p className="pt-4 pb-6">
+                Frontend - HTML, CSS, Tailwind, JavaScript, TypeScript, React,
+                Nextjs
+                <br />
+                <br />
+                Backend - Nodejs, Express, PostgreSQL
+                <br />
+                <br />
+                Deployment - Vercel, Aws, Github
+                <br />
+                <br />
+                Design - Figma, Canva
+                <br />
+                <br />
+                Tools - VSCode, Git, GitHub, Npm, Docker, Slack, Discord, Zoom
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex justify-center pt-4">
+          <div className="flex justify-between text-xl w-11/12 text-gray-400">
+            <div className="flex gap-1">
+              <BiMessageRounded />
+              <p className="text-sm ">1K</p>
+            </div>
+            <div
+              className={`flex gap-1 cursor-pointer ${
+                retweets ? "" : "text-green-500"
+              } cursor-pointer`}
+              onClick={() => {
+                toggleRetweets();
+              }}
+            >
+              <FaRetweet />
+              <p className="text-sm ">2.2K</p>
+            </div>
+            <div
+              className={`flex gap-1 ${
+                favorites ? "" : "text-red-500"
+              } cursor-pointer`}
+              onClick={() => {
+                toggleFavorites();
+              }}
+            >
+              {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
+              <p className="text-sm ">3.8k</p>
+            </div>
+            <div className="flex gap-1">
+              <IoStatsChart />
+              <p className="text-sm ">53K</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

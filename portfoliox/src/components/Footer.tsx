@@ -1,12 +1,14 @@
 import { useDarkMode } from "../context/useDarkMode";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { MdComputer } from "react-icons/md";
+import { FaGithub, FaLinkedin, MdComputer } from "../icons/icons";
 
 export function Footer() {
   const { darkMode } = useDarkMode();
   return (
-    <div className={`w-full py-12 ${darkMode ? "bg-dark" : "bg-light"} py-4`}>
+    <div
+      className={`w-full py-12 ${
+        darkMode ? "bg-dark" : "bg-light"
+      } flex justify-center items-end h-[200px]`}
+    >
       <div
         className={`${
           darkMode ? "text-light" : "text-gray-500"

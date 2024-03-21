@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import { About, Experience, Projects, Tech } from ".";
+import { tabs, Tab } from "../data";
 
 export function ContentTabs() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -15,71 +15,33 @@ export function ContentTabs() {
   return (
     <div>
       <div className="flex flex-row justify-evenly mt-2 gap-4">
-        <div
-          className={`${
-            darkMode ? "hover:bg-gray-700" : "hover:bg-lighter"
-          } w-full flex justify-center cursor-pointer p-2 ${
-            activeTab === "About"
-              ? darkMode
-                ? "bg-gray-700 "
-                : "bg-lighter "
-              : ""
-          }`}
-          onClick={() => setActiveTab("About")}
-        >
-          <h3>About</h3>
-        </div>
-        <div
-          className={`${
-            darkMode ? "hover:bg-gray-700" : "hover:bg-lighter"
-          } w-full flex justify-center cursor-pointer p-2 ${
-            activeTab === "Experience"
-              ? darkMode
-                ? "bg-gray-700 "
-                : "bg-lighter "
-              : ""
-          }`}
-          onClick={() => setActiveTab("Experience")}
-        >
-          <h3>Experience</h3>
-        </div>
-        <div
-          className={`${
-            darkMode ? "hover:bg-gray-700" : "hover:bg-lighter"
-          } w-full flex justify-center cursor-pointer p-2 ${
-            activeTab === "Projects"
-              ? darkMode
-                ? "bg-gray-700 "
-                : "bg-lighter "
-              : ""
-          }`}
-          onClick={() => setActiveTab("Projects")}
-        >
-          <h3 className={`${activeTab === "Projects" ? "" : ""}`}>Projects</h3>
-        </div>
-        <div
-          className={`${
-            darkMode ? "hover:bg-gray-700" : "hover:bg-lighter"
-          } w-full flex justify-center cursor-pointer p-2 ${
-            activeTab === "Tech"
-              ? darkMode
-                ? "bg-gray-700 "
-                : "bg-lighter "
-              : ""
-          }`}
-          onClick={() => setActiveTab("Tech")}
-        >
-          <h3 className={`${activeTab === "Tech" ? "" : ""}`}>Tech</h3>
-        </div>
+        {tabs.map((tab: Tab) => (
+          <div
+            key={tab.id}
+            className={`rounded-lg ${
+              darkMode ? "hover:bg-[#37363c]" : "hover:bg-lighter"
+            } w-full flex justify-center cursor-pointer p-2 ${
+              activeTab === tab.id
+                ? darkMode
+                  ? "bg-[#37363c]"
+                  : "bg-[#e5e5e5] "
+                : ""
+            }`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            <h3 className={`${activeTab === tab.id ? "" : ""}`}>{tab.label}</h3>
+          </div>
+        ))}
       </div>
       <div>
         <hr className="text-white my-2 mx-1 md:mx-0" />
       </div>
       <div>
-        {activeTab === "About" && <About />}
-        {activeTab === "Experience" && <Experience />}
-        {activeTab === "Projects" && <Projects />}
-        {activeTab === "Tech" && <Tech />}
+        {tabs.map((tab: Tab) => (
+          <div key={tab.id} className={activeTab === tab.id ? "" : "hidden"}>
+            <tab.component />
+          </div>
+        ))}
       </div>
     </div>
   );

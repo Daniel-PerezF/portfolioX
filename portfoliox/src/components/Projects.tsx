@@ -1,17 +1,19 @@
-import { RiVerifiedBadgeFill } from "react-icons/ri";
+import { useState } from "react";
+import { IconProps, projects } from "../data";
 import { useDarkMode } from "../context/useDarkMode";
 import {
+  BiMessageRounded,
+  FaCode,
   FaLink,
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
   FaRetweet,
-} from "react-icons/fa";
-import { BiMessageRounded } from "react-icons/bi";
-import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
-import { IoClose, IoStatsChart } from "react-icons/io5";
-import { useState } from "react";
-import { FaCode } from "react-icons/fa";
-import { IconProps, projects } from "../data/data";
+  IoClose,
+  IoStatsChart,
+  MdFavoriteBorder,
+  MdOutlineFavorite,
+  RiVerifiedBadgeFill,
+} from "../icons/icons";
 
 export function Projects() {
   const { darkMode } = useDarkMode();
@@ -70,7 +72,11 @@ export function Projects() {
       {projects.map((project, projectIndex) => (
         <div
           key={projectIndex}
-          className="border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0"
+          className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
+            darkMode
+              ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
+              : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+          }`}
         >
           <div>
             <div className="flex justify start gap-1">
@@ -85,7 +91,7 @@ export function Projects() {
               </div>
 
               <div className="text-lg font-bold flex pt-4 gap-2 ">
-                <div className="flex flex-col">
+                <div className="flex flex-col min-w-[108px]">
                   {" "}
                   <h3>{project.name}</h3>
                   <div className="text-gray-400 text-sm font-light">
@@ -100,7 +106,7 @@ export function Projects() {
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center pt-4">
             <div className="flex justify-center  w-11/12 flex-col">
               <div className="pb-2">
                 <div className="flex gap-2 justify-between pr-4">
@@ -111,7 +117,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaLink className="self-center  mt-1" />
+                      <FaLink className="self-center  mt-1 hover:text-blue-300 duration-150 ease-in-out" />
                     </a>
                     <a
                       href={project.code}
@@ -123,7 +129,7 @@ export function Projects() {
                   </div>
                 </div>
 
-                <div>
+                <div className="pb-4">
                   {project.description.map((item, index) => (
                     <div key={index} className="mr-2">
                       <div className="ml-3 flex">
@@ -136,24 +142,26 @@ export function Projects() {
               </div>
               <div
                 className={` ${
-                  darkMode ? "outline-black outline-1" : "outline-gray-200"
-                } outline-1 rounded-md outline mb-4 grid grid-cols-2 gap-2`}
+                  darkMode ? "outline-gray-300" : "outline-gray-400"
+                }  rounded-lg mb-4  gap-[3px] overflow-hidden outline outline-1`}
               >
-                {project.images.map((image, imageIndex) => (
-                  <img
-                    key={imageIndex}
-                    src={image}
-                    className="object-cover cursor-pointer aspect-[2/1] rounded-md"
-                    alt=""
-                    onClick={() => {
-                      openModal(projectIndex, imageIndex);
-                    }}
-                  />
-                ))}
+                <div className="grid grid-cols-2 w-full gap-[3px] ">
+                  {project.images.map((image, imageIndex) => (
+                    <img
+                      key={imageIndex}
+                      src={image}
+                      className="object-cover cursor-pointer aspect-[2/1] overflow-hidden "
+                      alt=""
+                      onClick={() => {
+                        openModal(projectIndex, imageIndex);
+                      }}
+                    />
+                  ))}
+                </div>
                 {modalOpen && (
                   <div
                     onClick={closeModal}
-                    className=" fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-65"
+                    className=" fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-35"
                   >
                     <div className="relative">
                       <IoClose
@@ -175,20 +183,22 @@ export function Projects() {
                           }}
                         />
                         <button
-                          className="absolute top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
+                          className="fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-10 hover:bg-opacity-35 rounded-full duration-150"
                           onClick={(e) => {
-                            e.stopPropagation(); // Prevent closing when clicking on the button
+                            e.stopPropagation();
                             prevImage();
                           }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
                         >
                           <FaLongArrowAltLeft />
                         </button>
                         <button
-                          className="absolute top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-25 hover:bg-opacity-35 rounded-full duration-150"
+                          className="fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-10 hover:bg-opacity-35 rounded-full duration-150"
                           onClick={(e) => {
-                            e.stopPropagation(); // Prevent closing when clicking on the button
+                            e.stopPropagation();
                             nextImage();
                           }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
                         >
                           <FaLongArrowAltRight />
                         </button>
