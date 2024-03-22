@@ -159,7 +159,7 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className="bg-gray-900  rounded-lg shadow-lg mx-auto w-full relative">
+    <div className="bg-gray-900  rounded-lg shadow-lg mx-auto w-full relative ">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -177,7 +177,10 @@ function ContactForm({ onMessageSubmit }: any) {
           rows={4}
           onChange={handleChange}
         ></textarea>
-        <button className="absolute bottom-7 right-4" onClick={handleSubmit}>
+        <button
+          className="absolute bottom-7 right-4 text-xl"
+          onClick={handleSubmit}
+        >
           <FaPaperPlane />
         </button>
       </form>
