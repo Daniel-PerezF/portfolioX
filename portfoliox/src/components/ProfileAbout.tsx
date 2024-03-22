@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/useDarkMode";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
@@ -48,6 +48,17 @@ export function ProfileAbout() {
     }
     return { top: 0, left: 0 };
   };
+
+  useEffect(() => {
+    if (showDirectMessage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showDirectMessage]);
 
   return (
     <>
@@ -190,11 +201,11 @@ export function ProfileAbout() {
       <div
         className={`${
           showDirectMessage
-            ? "opacity-100 translate-y-0 "
+            ? "opacity-100 translate-y-[3.61rem]  "
             : "opacity-0 -translate-y-full"
         } fixed top-0 left-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-50`}
       >
-        <div className="w-full">
+        <div className="w-full ">
           <DirectMessage
             onClose={() => setShowDirectMessage(!showDirectMessage)}
           />
