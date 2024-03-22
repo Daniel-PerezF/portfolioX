@@ -124,13 +124,11 @@ export function About() {
                 work together!
               </p>
               <div
-                className={`flex overflow-hidden rounded-2xl outline outline-1  ${
-                  darkMode
-                    ? "bg-dark outline-gray-300"
-                    : "bg-light outline-gray-400"
+                className={`flex overflow-hidden rounded-2xl  ${
+                  darkMode ? " " : " "
                 }`}
               >
-                <div className="flex gap-[3px] ">
+                <div className="flex gap-1 ">
                   {images.map((image, index) => (
                     <div key={index} className="w-full">
                       {" "}
