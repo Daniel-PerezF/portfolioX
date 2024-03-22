@@ -56,7 +56,7 @@ export function DirectMessage({ onClose }: any) {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between   ${
+      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll  ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
     >
@@ -71,7 +71,7 @@ export function DirectMessage({ onClose }: any) {
       </div>
       <div className="max-w-[750px] flex-grow w-full">
         <div
-          className={`flex flex-col justify-between w-full md:h-[740px] h-[750px] md:rounded-lg ${
+          className={`flex flex-col justify-between w-full min-h-[740px] max-h-[740px] md:rounded-lg ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#eeeeee] duration-150 ease-in-out"
@@ -163,7 +163,7 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full ">
+    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full  overflow-scroll ">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
