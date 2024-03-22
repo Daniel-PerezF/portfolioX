@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import { FaArrowLeft } from "react-icons/fa";
-import { Nav } from ".";
+import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 
 // export function DirectMesssage({ onClose }: any) {
 //   const darkMode = useDarkMode();
@@ -20,7 +19,6 @@ import { Nav } from ".";
 //   );
 // }
 
-// DirectMessage component
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
@@ -40,13 +38,13 @@ export function DirectMessage({ onClose }: any) {
       setMessages((prevMessages) => {
         const fakeMessage = {
           id: Math.random().toString(36).substr(2, 9),
-          name: "Daniel Perez", // Your name
+          name: "Daniel Perez",
           message: `Hey ${name} thanks for reaching out, I will get back to you as soon as possible!`,
           isUserMessage: false,
         };
         return [...prevMessages, fakeMessage];
       });
-    }, 1000); // Delay in milliseconds
+    }, 1000);
   };
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -60,7 +58,6 @@ export function DirectMessage({ onClose }: any) {
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
     >
-      {/* <Nav /> */}
       <div className="flex justify-start w-full p-4">
         <FaArrowLeft
           onClick={onClose}
@@ -129,7 +126,6 @@ export function DirectMessage({ onClose }: any) {
   );
 }
 
-// Contact Form
 interface Message {
   id: string;
   name: string;
@@ -163,7 +159,7 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className="bg-gray-900  rounded-lg shadow-lg mx-auto w-full overflow-scroll ">
+    <div className="bg-gray-900  rounded-lg shadow-lg mx-auto w-full relative">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -176,15 +172,13 @@ function ContactForm({ onMessageSubmit }: any) {
         <textarea
           name="message"
           placeholder="Your Message"
-          className="w-full bg-gray-800 rounded-lg py-2 px-3 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2"
+          className="w-full bg-gray-800 rounded-lg py-2 px-3 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2 resize-none"
           value={formData.message}
+          rows={4}
           onChange={handleChange}
         ></textarea>
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-        >
-          Send
+        <button className="absolute bottom-7 right-4" onClick={handleSubmit}>
+          <FaPaperPlane />
         </button>
       </form>
     </div>

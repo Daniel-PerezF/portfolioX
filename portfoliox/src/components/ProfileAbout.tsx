@@ -5,10 +5,8 @@ import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
   FaLink,
-  FaLongArrowAltLeft,
   HiMiniCake,
   IoCalendarOutline,
-  IoClose,
   IoLocation,
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
