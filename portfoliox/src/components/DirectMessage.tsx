@@ -71,7 +71,7 @@ export function DirectMessage({ onClose }: any) {
       </div>
       <div className="max-w-[750px] flex-grow w-full">
         <div
-          className={`flex flex-col justify-between w-full md:h-[675px] h-[675px] sm:h-[680px] md:rounded-lg  ${
+          className={`flex flex-col justify-between w-full md:h-[740px] h-[750px] md:rounded-lg ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#eeeeee] duration-150 ease-in-out"
@@ -92,9 +92,7 @@ export function DirectMessage({ onClose }: any) {
             <p>@danielperez</p>
             <p className="p">Joined March 2024</p>
           </div>
-          {/* <div className="text-white xs:text-pink-400 sm:text-red-600 md:text-blue-500 lg:text-orange xl:text-yellow-400 ">
-            what size screen
-          </div> */}
+
           <div
             className={`m-4 overflow-x-hidden overflow-y-auto ${
               darkMode ? "text-white" : "text-white"
