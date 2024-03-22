@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import {
   BiMessageRounded,
-  FaLongArrowAltLeft,
-  FaLongArrowAltRight,
   FaRetweet,
-  IoClose,
   IoStatsChart,
   MdFavoriteBorder,
   MdOutlineFavorite,
@@ -14,48 +11,23 @@ import {
 
 export function Tech() {
   const { darkMode } = useDarkMode();
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem("aboutFavorites");
+    const savedFavorites = localStorage.getItem("techFavorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
   });
   const [retweets, setRetweets] = useState(() => {
-    const savedRetweets = localStorage.getItem("aboutRetweets");
+    const savedRetweets = localStorage.getItem("techRetweets");
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
-  // const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
-  const images = ["/ssme.png", "/c-0823.jpg"];
-
-  const openModal = (image: string) => {
-    const index = images.indexOf(image);
-    setSelectedImageIndex(index);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const nextImage = () => {
-    setSelectedImageIndex((selectedImageIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setSelectedImageIndex(
-      selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
-    );
-  };
-
   const toggleRetweets = () => {
     setRetweets((prevState: boolean) => !prevState);
-    localStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
+    localStorage.setItem("techRetweets", JSON.stringify(!retweets));
   };
   const toggleFavorites = () => {
     setFavorites((prevState: boolean) => !prevState);
-    localStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
+    localStorage.setItem("techFavorites", JSON.stringify(!favorites));
   };
   return (
     <div className="h-full">

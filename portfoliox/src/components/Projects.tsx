@@ -142,10 +142,10 @@ export function Projects() {
               </div>
               <div
                 className={` ${
-                  darkMode ? "outline-gray-300" : "outline-gray-400"
-                }  rounded-lg mb-4  gap-[3px] overflow-hidden outline outline-1`}
+                  darkMode ? "" : ""
+                }  rounded-lg mb-4  gap-[3px] overflow-hidden `}
               >
-                <div className="grid grid-cols-2 w-full gap-[3px] ">
+                <div className="grid grid-cols-2 w-full gap-1 ">
                   {project.images.map((image, imageIndex) => (
                     <img
                       key={imageIndex}

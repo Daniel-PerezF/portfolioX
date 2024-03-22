@@ -54,11 +54,11 @@ export function DirectMessage({ onClose }: any) {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll  ${
+      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
     >
-      <div className="flex justify-start w-full p-4">
+      <div className="flex justify-start w-full p-4 ">
         <FaArrowLeft
           onClick={onClose}
           className={`text-xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center ${
@@ -68,7 +68,7 @@ export function DirectMessage({ onClose }: any) {
       </div>
       <div className="max-w-[750px] flex-grow w-full">
         <div
-          className={`flex flex-col justify-between w-full h-[700px] md:h-[730px] max-h-[740px] md:rounded-lg ${
+          className={`flex flex-col justify-between w-full h-[700px] md:h-[730px] max-h-[740px] md:rounded-lg mb-10 ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#eeeeee] duration-150 ease-in-out"
@@ -117,7 +117,11 @@ export function DirectMessage({ onClose }: any) {
             ))}
             <div ref={messagesEndRef}></div>
           </div>
-          <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full">
+          <div
+            className={`${
+              darkMode ? "bg-gray-900" : "bg-gray-600"
+            } p-4 rounded-lg  mx-auto w-full`}
+          >
             <ContactForm onMessageSubmit={handleMessageSubmit} />
           </div>
         </div>
@@ -137,6 +141,7 @@ function ContactForm({ onMessageSubmit }: any) {
     email: "",
     message: "",
   });
+  const { darkMode } = useDarkMode();
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
@@ -159,29 +164,39 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className="bg-gray-900  rounded-lg shadow-lg mx-auto w-full relative ">
+    <div
+      className={`${
+        darkMode ? "bg-gray-900" : "bg-gray-600"
+      }  rounded-lg  mx-auto w-full relative mb-8`}
+    >
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
+          required
           placeholder="Your Name"
-          className="w-full bg-gray-800 rounded-lg py-2 px-3 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2"
+          className={`w-full ${
+            darkMode ? "bg-gray-800" : "bg-gray-500"
+          } rounded-lg py-2 pl-3 pr-8 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2`}
           value={formData.name}
           onChange={handleChange}
         />
         <textarea
           name="message"
+          required
           placeholder="Your Message"
-          className="w-full bg-gray-800 rounded-lg py-2 px-3 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2 resize-none"
+          className={`w-full ${
+            darkMode ? "bg-gray-800" : "bg-gray-500"
+          } rounded-lg py-2 pl-3 pr-8 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2 resize-none`}
           value={formData.message}
           rows={4}
           onChange={handleChange}
         ></textarea>
         <button
-          className="absolute bottom-7 right-4 text-xl"
+          className="absolute bottom-7 right-2 text-xl"
           onClick={handleSubmit}
         >
-          <FaPaperPlane />
+          <FaPaperPlane className={`text-white`} />
         </button>
       </form>
     </div>
