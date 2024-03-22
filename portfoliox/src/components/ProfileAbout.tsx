@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/useDarkMode";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
@@ -48,7 +48,16 @@ export function ProfileAbout() {
     }
     return { top: 0, left: 0 };
   };
-
+  useEffect(() => {
+    if (showDirectMessage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showDirectMessage]);
   return (
     <>
       <div className="flex flex-col gap-4">
