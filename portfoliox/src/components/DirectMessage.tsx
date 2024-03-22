@@ -1,18 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import {
-  BiMessageRounded,
-  FaLongArrowAltLeft,
-  FaLongArrowAltRight,
-  FaRetweet,
-  IoClose,
-  IoStatsChart,
-  MdFavoriteBorder,
-  MdOutlineFavorite,
-  RiVerifiedBadgeFill,
-} from "../icons/icons";
-
 import { FaArrowLeft } from "react-icons/fa";
+import { Nav } from ".";
 
 // export function DirectMesssage({ onClose }: any) {
 //   const darkMode = useDarkMode();
@@ -31,75 +20,108 @@ import { FaArrowLeft } from "react-icons/fa";
 //   );
 // }
 
+// DirectMessage component
 export function DirectMessage({ onClose }: any) {
-  const darkMode = useDarkMode();
+  const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const handleMessageSubmit = (message: string) => {
-    const newMessage = {
+  const handleMessageSubmit = (name: string, message: string) => {
+    const newUserMessage = {
       id: Math.random().toString(36).substr(2, 9),
-      name: "User",
+      name: name,
       message: message,
+      isUserMessage: true,
     };
-    setMessages([...messages, newMessage]);
+
+    setMessages([...messages, newUserMessage]);
+
+    setTimeout(() => {
+      setMessages((prevMessages) => {
+        const fakeMessage = {
+          id: Math.random().toString(36).substr(2, 9),
+          name: "Daniel Perez", // Your name
+          message: `Hey ${name} thanks for reaching out, I will get back to you as soon as possible!`,
+          isUserMessage: false,
+        };
+        return [...prevMessages, fakeMessage];
+      });
+    }, 1000); // Delay in milliseconds
   };
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center md:justify-between justify-start overflow-y-scroll ${
+      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll  ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
     >
+      {/* <Nav /> */}
       <div className="flex justify-start w-full p-4">
         <FaArrowLeft
           onClick={onClose}
-          className="text-white text-xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center"
-        />
-        <img
-          src="/memoji.PNG"
-          alt=""
-          className={`rounded-full h-14 w-14 object-cover bg-white ring-1 ml-4 ${
-            darkMode ? "ring-black" : "ring-white"
+          className={`text-xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center ${
+            darkMode ? "text-white" : "text-dark"
           }`}
         />
       </div>
       <div className="max-w-[750px] flex-grow w-full">
         <div
-          className={`flex flex-col justify-between w-full md:h-[700px] h-[100%] md:rounded-lg ${
+          className={`flex flex-col justify-between w-full min-h-[740px] max-h-[740px] md:rounded-lg ${
             darkMode
-              ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
-              : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+              ? " bg-[#303034] duration-150 ease-in-out"
+              : " bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          <div className="m-4">
+          <div
+            className={`flex items-center flex-col font-light text-sm ${
+              darkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            <img
+              src="/memoji.PNG"
+              alt=""
+              className={`rounded-full h-14 w-14 object-cover bg-white ring-1 my-4 ${
+                darkMode ? "ring-black" : "ring-white"
+              }`}
+            />
+            <p>@danielperez</p>
+            <p className="p">Joined March 2024</p>
+          </div>
+
+          <div
+            className={`m-4 overflow-x-hidden overflow-y-auto ${
+              darkMode ? "text-white" : "text-white"
+            }`}
+          >
             {messages.map((msg: any) => (
               <div
                 key={msg.id}
-                className="bg-gray-800 p-2 rounded-lg mb-2 max-w-fit pr-10"
+                className={`p-2 rounded-lg mb-2 max-w-fit pr-10 ${
+                  msg.isUserMessage
+                    ? "ml-auto slide-right w-[75%] "
+                    : "mr-auto slide-left w-[75%] "
+                } ${
+                  darkMode
+                    ? msg.isUserMessage
+                      ? "bg-blue-400"
+                      : "bg-gray-700"
+                    : msg.isUserMessage
+                    ? "bg-blue-400"
+                    : "bg-gray-500"
+                }`}
               >
-                <span className="text-gray-200 font-semibold ">
-                  {msg.name}:{" "}
-                </span>
-                <span className="text-gray-300">{msg.message}</span>
+                <span className="">{msg.message}</span>
               </div>
             ))}
+            <div ref={messagesEndRef}></div>
           </div>
-          {/* <div className="mt-4">
-            {messages.map((msg: any) => (
-              <div key={msg.id} className="bg-gray-800 p-2 rounded-lg mb-2">
-                <span className="text-gray-200 font-semibold">
-                  {msg.name}:{" "}
-                </span>
-                <span className="text-gray-300">{msg.message}</span>
-              </div>
-            ))}
-          </div> */}
-          <div className="">
-            <ContactForm
-              onMessageSubmit={handleMessageSubmit}
-              messages={messages}
-              setMessages={setMessages}
-            />
+          <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full">
+            <ContactForm onMessageSubmit={handleMessageSubmit} />
           </div>
         </div>
       </div>
@@ -113,7 +135,7 @@ interface Message {
   name: string;
   message: string;
 }
-function ContactForm({ messages, setMessages }: any) {
+function ContactForm({ onMessageSubmit }: any) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -130,14 +152,7 @@ function ContactForm({ messages, setMessages }: any) {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-
-    // Handle form submission
-    const newMessage = {
-      id: Math.random().toString(36).substr(2, 9),
-      name: formData.name,
-      message: formData.message,
-    };
-    setMessages([...messages, newMessage]);
+    onMessageSubmit(formData.name, formData.message);
 
     // Reset form fields
     setFormData({
@@ -148,7 +163,7 @@ function ContactForm({ messages, setMessages }: any) {
   };
 
   return (
-    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full ">
+    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full  overflow-scroll ">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
