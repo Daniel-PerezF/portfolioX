@@ -163,7 +163,7 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full  overflow-scroll ">
+    <div className="bg-gray-900 p-4 rounded-lg shadow-lg mx-auto w-full  overflow-scroll mb-5 ">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
