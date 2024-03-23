@@ -12,12 +12,15 @@ import {
   RiVerifiedBadgeFill,
 } from "../icons/icons";
 import { DirectMessage } from "./DirectMessage";
+import { useOnScreen } from "./useOnScreen";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
   const [confettiActive, setConfettiActive] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDirectMessage, setShowDirectMessage] = useState(false);
+  const directMessageRef = useRef<HTMLDivElement>(null);
+  const isDirectMessageVisible = useOnScreen(directMessageRef);
 
   const [following, setFollowing] = useState(() => {
     const savedFollowing = localStorage.getItem("following");
@@ -56,6 +59,13 @@ export function ProfileAbout() {
       document.body.style.overflow = "";
     };
   }, [showDirectMessage]);
+
+  useEffect(() => {
+    if (isDirectMessageVisible) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [isDirectMessageVisible]);
+
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -201,7 +211,7 @@ export function ProfileAbout() {
             : "opacity-0 -translate-y-full"
         } fixed top-0 left-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-50`}
       >
-        <div className="w-full">
+        <div ref={directMessageRef} className="w-full">
           <DirectMessage
             onClose={() => setShowDirectMessage(!showDirectMessage)}
           />

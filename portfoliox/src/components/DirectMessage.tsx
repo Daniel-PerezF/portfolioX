@@ -5,14 +5,14 @@ import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  // const messagesEndRef = useRef<HTMLDivElement>(null);
+  // const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollTo(0, 0);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (containerRef.current) {
+  //     containerRef.current.scrollTo(0, 0);
+  //   }
+  // }, []);
 
   const handleMessageSubmit = (name: string, message: string) => {
     const newUserMessage = {
@@ -36,15 +36,15 @@ export function DirectMessage({ onClose }: any) {
       });
     }, 1000);
   };
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
+  // useEffect(() => {
+  //   if (messagesEndRef.current) {
+  //     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [messages]);
 
   return (
     <div
-      ref={containerRef}
+      // ref={containerRef}
       className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
@@ -106,7 +106,7 @@ export function DirectMessage({ onClose }: any) {
                 <span className="">{msg.message}</span>
               </div>
             ))}
-            <div ref={messagesEndRef}></div>
+            {/* <div ref={messagesEndRef}></div> */}
           </div>
           <div
             className={`${
