@@ -2,27 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 
-// export function DirectMesssage({ onClose }: any) {
-//   const darkMode = useDarkMode();
-//   return (
-//     <div
-//       className={`h-[100vh] w-full justify-center flex ${
-//         darkMode ? "bg-dark" : "bg-light"
-//       }`}
-//     >
-//       <ProfilePic />
-//       <FaLongArrowAltLeft
-//         onClick={onClose}
-//         className="text-white z-50 top-2 left-2 fixed text-3xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
-//       />
-//     </div>
-//   );
-// }
-
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo(0, 0);
+    }
+  }, []);
 
   const handleMessageSubmit = (name: string, message: string) => {
     const newUserMessage = {
@@ -54,6 +44,7 @@ export function DirectMessage({ onClose }: any) {
 
   return (
     <div
+      ref={containerRef}
       className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
