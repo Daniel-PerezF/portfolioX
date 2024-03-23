@@ -6,13 +6,13 @@ export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  // const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   if (containerRef.current) {
-  //     containerRef.current.scrollTo(0, 0);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo(0, 0);
+    }
+  }, []);
 
   const handleMessageSubmit = (name: string, message: string) => {
     const newUserMessage = {
@@ -44,7 +44,7 @@ export function DirectMessage({ onClose }: any) {
 
   return (
     <div
-      // ref={containerRef}
+      ref={containerRef}
       className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
         darkMode ? "bg-dark text-light" : "bg-light text-dark"
       }`}
