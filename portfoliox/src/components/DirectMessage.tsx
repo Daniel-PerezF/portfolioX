@@ -5,7 +5,7 @@ import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
-  // const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   // const containerRef = useRef<HTMLDivElement>(null);
 
   // useEffect(() => {
@@ -36,11 +36,11 @@ export function DirectMessage({ onClose }: any) {
       });
     }, 1000);
   };
-  // useEffect(() => {
-  //   if (messagesEndRef.current) {
-  //     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }, [messages]);
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   return (
     <div
@@ -106,7 +106,7 @@ export function DirectMessage({ onClose }: any) {
                 <span className="">{msg.message}</span>
               </div>
             ))}
-            {/* <div ref={messagesEndRef}></div> */}
+            <div ref={messagesEndRef}></div>
           </div>
           <div
             className={`${
