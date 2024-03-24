@@ -124,7 +124,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaCode className="self-center mt-[0.15rem] text-lg" />
+                      <FaCode className="self-center mt-[0.15rem] text-lg hover:text-blue-300 duration-150 ease-in-out" />
                     </a>
                   </div>
                 </div>
@@ -147,15 +147,19 @@ export function Projects() {
               >
                 <div className="grid grid-cols-2 w-full gap-1 ">
                   {project.images.map((image, imageIndex) => (
-                    <img
-                      key={imageIndex}
-                      src={image}
-                      className="object-cover cursor-pointer aspect-[2/1] overflow-hidden "
-                      alt=""
-                      onClick={() => {
-                        openModal(projectIndex, imageIndex);
-                      }}
-                    />
+                    <div key={imageIndex} className="relative">
+                      <img
+                        src={image}
+                        className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
+                        alt=""
+                      />
+                      <div
+                        className="absolute inset-0 bg-black opacity-0 hover:opacity-35 transition-opacity duration-300 cursor-pointer ease-in-out"
+                        onClick={() => {
+                          openModal(projectIndex, imageIndex);
+                        }}
+                      ></div>
+                    </div>
                   ))}
                 </div>
                 {modalOpen && (

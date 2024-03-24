@@ -9,9 +9,10 @@ import {
 
 export default function LandingPage() {
   const { darkMode } = useDarkMode();
+
   return (
     <div className={`${darkMode ? "bg-dark" : "bg-light"}`}>
-      <div className="sticky top-0 z-50">
+      <div className="sticky top-0 z-30">
         <Nav />
       </div>
       <div
@@ -25,10 +26,10 @@ export default function LandingPage() {
           }`}
         >
           <div className="relative">
-            <div className="absolute top-2/3 lg:top-[13rem] left-0 lg:left-[2.18rem] z-30 ">
+            <div className="absolute top-2/3 lg:top-[13rem] left-0 lg:left-[2.18rem] z-10 ">
               <ProfilePic />
             </div>
-            <div className="max-w-[820px] w-full z-60">
+            <div className="max-w-[820px] w-full ">
               <Banner />
             </div>
           </div>

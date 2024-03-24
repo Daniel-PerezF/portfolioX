@@ -128,16 +128,18 @@ export function About() {
                   darkMode ? " " : " "
                 }`}
               >
-                <div className="flex gap-1 ">
+                <div className="flex gap-1">
                   {images.map((image, index) => (
-                    <div key={index} className="w-full">
-                      {" "}
+                    <div key={index} className="w-full relative">
                       <img
                         src={image}
                         className="w-full aspect-[7/8] object-cover cursor-pointer rounded-lg"
                         alt=""
-                        onClick={() => openModal(image)}
                       />
+                      <div
+                        className="absolute inset-0 bg-black opacity-0 hover:opacity-35 transition-opacity duration-300 cursor-pointer ease-in-out"
+                        onClick={() => openModal(image)}
+                      ></div>
                     </div>
                   ))}
                 </div>

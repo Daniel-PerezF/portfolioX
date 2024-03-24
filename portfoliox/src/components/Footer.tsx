@@ -5,9 +5,9 @@ export function Footer() {
   const { darkMode } = useDarkMode();
   return (
     <div
-      className={`w-full py-12 ${
+      className={`w-full py-12 flex-col gap-4 ${
         darkMode ? "bg-dark" : "bg-light"
-      } flex justify-center items-end h-[200px]`}
+      } flex items-center  h-[200px]`}
     >
       <div
         className={`${
@@ -40,6 +40,13 @@ export function Footer() {
           <MdComputer />
         </a>
       </div>
+      <span
+        className={` ${
+          darkMode ? "text-gray-400" : "text-gray-500"
+        } font-light text-xs `}
+      >
+        daniel © 2024
+      </span>
     </div>
   );
 }

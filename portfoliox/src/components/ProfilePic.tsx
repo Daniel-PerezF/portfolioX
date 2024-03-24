@@ -27,9 +27,9 @@ export function ProfilePic() {
       {modalOpen && (
         <div
           onClick={closeModal}
-          className="fixed top-0 left-0  w-full h-full flex items-center justify-center bg-black bg-opacity-65"
+          className="fixed top-0 left-0  w-full h-full flex items-center justify-center bg-black bg-opacity-65 z-50"
         >
-          <div className="z-80 ">
+          <div className=" ">
             <IoClose
               className="text-white  top-14 left-2 fixed text-4xl hover:scale-10 duration-150 ease-in-out cursor-pointer"
               onClick={closeModal}
