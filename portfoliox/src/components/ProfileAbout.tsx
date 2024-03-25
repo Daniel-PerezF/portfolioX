@@ -69,7 +69,7 @@ export function ProfileAbout() {
   return (
     <>
       <div className="flex flex-col gap-4">
-        <div className="flex justify-end py-4 gap-4 relative">
+        <div className="flex justify-end pt-4 pb-3 gap-4 relative">
           <div
             className={`text-2xl self-center ring-1 rounded-full p-1 cursor-pointer duration-150 ease-in-out ${
               darkMode
@@ -90,7 +90,7 @@ export function ProfileAbout() {
             }}
             className={` ${
               following ? "bg-pop" : "bg-purple-400"
-            } px-4 py-2 rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
+            } px-4  rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
           >
             {following ? "Follow" : "Following"}
           </button>
@@ -129,15 +129,21 @@ export function ProfileAbout() {
             } font-light `}
           >
             @danielperez
+          </div>{" "}
+          <div>
+            {" "}
+            For any questions or inquires reach out by dm, always up for a chat!
+            <br />
+            Full Stack Web Developer with a passion for creativity, design and
+            front-end development.
           </div>
-          <div>Having fun and expressing creativity through code!</div>
-          <div className="">
-            Full Stack Software Engineer. Creative. Problem-Solver. Code Writer.
-          </div>
-
+          {/* <div className="">
+            Full Stack Software/Web Developer with a passion for creativity,
+            design and front-end development.
+          </div> */}
           {/* Icons */}
           <div
-            className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light ${
+            className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
               darkMode ? "text-gray-400" : "text-gray-500"
             }`}
           >
@@ -151,7 +157,10 @@ export function ProfileAbout() {
             </div>
             <div className="flex gap-1">
               <FaLink className="self-center" />
-              <Link className="text-purple-400" to="/links">
+              <Link
+                className="text-purple-400 hover:underline duration-150 ease-in-out"
+                to="/links"
+              >
                 /links
               </Link>
             </div>
@@ -164,7 +173,6 @@ export function ProfileAbout() {
               Joined March 2024
             </div>
           </div>
-
           <div className="flex w-[200px] justify-between pt-2">
             <div className="flex justify-between w-[35%]">
               <h3 className="mr-1">111</h3>

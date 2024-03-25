@@ -91,8 +91,8 @@ export function DirectMessage({ onClose }: any) {
                 key={msg.id}
                 className={`p-2 rounded-lg mb-2 max-w-fit pr-10 ${
                   msg.isUserMessage
-                    ? "ml-auto slide-right w-[75%] "
-                    : "mr-auto slide-left w-[75%] "
+                    ? "ml-auto animate-slide-right w-[75%] "
+                    : "mr-auto animate-slide-left w-[75%] "
                 } ${
                   darkMode
                     ? msg.isUserMessage

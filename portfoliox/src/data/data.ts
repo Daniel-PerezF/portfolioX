@@ -127,3 +127,24 @@ export const tabs = [
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Tech", label: "Tech", component: Tech },
 ];
+
+export const links = [
+  { id: 1, title: "Website", url: "https://danielperez.io" },
+  { id: 2, title: "Email", url: "mailto:danielperezf98@gmail.com" },
+  {
+    id: 3,
+    title: "Resume",
+    url: "/daniel-perez-resume.pdf",
+  },
+  {
+    id: 4,
+    title: "Linkedin",
+    url: "https://www.linkedin.com/in/daniel-f-perez/",
+  },
+  { id: 5, title: "GitHub", url: "https://github.com/Daniel-PerezF" },
+  {
+    id: 6,
+    title: "Upwork",
+    url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
+  },
+];

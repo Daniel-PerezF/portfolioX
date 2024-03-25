@@ -15,6 +15,7 @@ import { HiMiniCake } from "react-icons/hi2";
 import { IoCalendarOutline } from "react-icons/io5";
 import { IoLocation } from "react-icons/io5";
 import { FaCode } from "react-icons/fa";
+import { IoReturnUpBackSharp } from "react-icons/io5";
 
 export {
   RiVerifiedBadgeFill,
@@ -36,4 +37,5 @@ export {
   IoCalendarOutline,
   IoLocation,
   FaCode,
+  IoReturnUpBackSharp,
 };

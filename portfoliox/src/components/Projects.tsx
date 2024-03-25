@@ -153,15 +153,18 @@ export function Projects() {
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
                         alt=""
                       />
-                      <div
-                        className="absolute inset-0 bg-black opacity-0 hover:opacity-35 transition-opacity duration-300 cursor-pointer ease-in-out"
-                        onClick={() => {
-                          openModal(projectIndex, imageIndex);
-                        }}
-                      ></div>
+                      {window.innerWidth > 640 && (
+                        <div
+                          className="absolute inset-0 bg-black opacity-0 hover:opacity-35 transition-opacity duration-300 cursor-pointer ease-in-out"
+                          onClick={() => {
+                            openModal(projectIndex, imageIndex);
+                          }}
+                        ></div>
+                      )}
                     </div>
                   ))}
                 </div>
+
                 {modalOpen && (
                   <div
                     onClick={closeModal}
