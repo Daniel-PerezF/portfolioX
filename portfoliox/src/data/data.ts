@@ -13,9 +13,9 @@ export const experiences: Experiences[] = [
     role: "Teaching Assistant, Learning Fuze",
     location: "Irvine, CA",
     description: [
-      "Assisted students with debugging and troubleshooting coding problems.",
-      "Maintained a record of student interactions and how I assisted them.",
-      "Regularly communicated with student instructors to ensure they were aware of the substance of discussions, enabling them to address any misunderstandings or areas needing clarification in the materials.",
+      "Cultivated collaborative learning, ensuring students grasp coding concepts through personalized support.",
+      "Effectively communicated coding principles to enhance student comprehension and learning.",
+      "Maintained records of student interactions and progress, enabling tailored support and tracking of learning outcomes.",
     ],
     comments: "2.1K",
     retweets: "2.8K",
