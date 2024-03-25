@@ -4,12 +4,12 @@ import { tabs, Tab } from "../data";
 
 export function ContentTabs() {
   const [activeTab, setActiveTab] = useState(() => {
-    return localStorage.getItem("activeTab") || "About";
+    return sessionStorage.getItem("activeTab") || "About";
   });
   const { darkMode } = useDarkMode();
 
   useEffect(() => {
-    localStorage.setItem("activeTab", activeTab);
+    sessionStorage.setItem("activeTab", activeTab);
   }, [activeTab]);
 
   return (

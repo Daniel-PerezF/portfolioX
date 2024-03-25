@@ -13,21 +13,21 @@ export function Tech() {
   const { darkMode } = useDarkMode();
 
   const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem("techFavorites");
+    const savedFavorites = sessionStorage.getItem("techFavorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
   });
   const [retweets, setRetweets] = useState(() => {
-    const savedRetweets = localStorage.getItem("techRetweets");
+    const savedRetweets = sessionStorage.getItem("techRetweets");
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
   const toggleRetweets = () => {
     setRetweets((prevState: boolean) => !prevState);
-    localStorage.setItem("techRetweets", JSON.stringify(!retweets));
+    sessionStorage.setItem("techRetweets", JSON.stringify(!retweets));
   };
   const toggleFavorites = () => {
     setFavorites((prevState: boolean) => !prevState);
-    localStorage.setItem("techFavorites", JSON.stringify(!favorites));
+    sessionStorage.setItem("techFavorites", JSON.stringify(!favorites));
   };
   return (
     <div className="h-full">
@@ -43,7 +43,7 @@ export function Tech() {
             <div className="">
               <img
                 src="/memoji.PNG"
-                alt=""
+                alt="my memoji"
                 className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
                   darkMode ? "ring-black" : "ring-white"
                 }`}

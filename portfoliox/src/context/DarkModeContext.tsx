@@ -13,7 +13,6 @@ export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    // Use a callback to get the stored value or default to true
     const storedDarkMode = localStorage.getItem("darkMode");
     return storedDarkMode ? JSON.parse(storedDarkMode) : true;
   });

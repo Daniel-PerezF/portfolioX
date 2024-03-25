@@ -4,7 +4,7 @@ export function Banner() {
       <div className="relative z-">
         <img
           src="/cyber-banner.jpeg"
-          alt=""
+          alt="cyberpunk style banner"
           className="relative aspect-[3/1] object-cover"
         />
       </div>

@@ -16,17 +16,23 @@ export function About() {
   const { darkMode } = useDarkMode();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
   const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem("aboutFavorites");
+    const savedFavorites = sessionStorage.getItem("aboutFavorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
   });
   const [retweets, setRetweets] = useState(() => {
-    const savedRetweets = localStorage.getItem("aboutRetweets");
+    const savedRetweets = sessionStorage.getItem("aboutRetweets");
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
-  // const images = ["/c-jr-0823.JPG", "/c-0823.jpg"];
+  const toggleRetweets = () => {
+    setRetweets((prevState: boolean) => !prevState);
+    sessionStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
+  };
+  const toggleFavorites = () => {
+    setFavorites((prevState: boolean) => !prevState);
+    sessionStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
+  };
   const images = ["/ssme.png", "/c-0823.jpg"];
 
   const openModal = (image: string) => {
@@ -49,14 +55,6 @@ export function About() {
     );
   };
 
-  const toggleRetweets = () => {
-    setRetweets((prevState: boolean) => !prevState);
-    localStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
-  };
-  const toggleFavorites = () => {
-    setFavorites((prevState: boolean) => !prevState);
-    localStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
-  };
   return (
     <div className="h-full">
       <div
@@ -71,7 +69,7 @@ export function About() {
             <div className="">
               <img
                 src="/memoji.PNG"
-                alt=""
+                alt="my memoji"
                 className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
                   darkMode ? "ring-black" : "ring-white"
                 }`}
@@ -134,7 +132,7 @@ export function About() {
                       <img
                         src={image}
                         className="w-full aspect-[7/8] object-cover cursor-pointer rounded-lg"
-                        alt=""
+                        alt="images of me and my cohort from learningfuze"
                         onClick={() => openModal(image)}
                       />
                       {window.innerWidth > 640 && (
@@ -162,7 +160,7 @@ export function About() {
                         <img
                           src={images[selectedImageIndex]}
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
-                          alt=""
+                          alt="images of me and my cohort from learningfuze"
                           onClick={() => {
                             closeModal();
                           }}
@@ -173,7 +171,7 @@ export function About() {
                             e.stopPropagation();
                             prevImage();
                           }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
                           <FaLongArrowAltLeft />
                         </button>
@@ -183,7 +181,7 @@ export function About() {
                             e.stopPropagation();
                             nextImage();
                           }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
                           <FaLongArrowAltRight />
                         </button>
@@ -193,28 +191,6 @@ export function About() {
                 )}
               </div>
             </div>
-
-            {/* <p>
-              Hey there! I'm Daniel, a software developer driven by a lifelong
-              fascination with technology. From childhood days tinkering with
-              our household computer to my recent curiosity in AI and coding,
-              technology has always captivated me.
-              <br />
-              <br />
-              After completing an intensive full-stack software development
-              course at LearningFuze coding bootcamp, I uncovered my true
-              passion for coding and web design. I've always had a love for
-              creativity and expression, and I found a new outlet for it through
-              code.
-              <br />
-              <br />
-              Now, as a software developer, I'm eager to continue learning and
-              growing in this dynamic field. I'm actively seeking new avenues
-              for collaboration and growth within the software development
-              sphere. If you have any exciting projects or opportunities on the
-              horizon, I'd love to chat and see how we can potentially work
-              together!
-            </p> */}
           </div>
         </div>
         <div className="w-full flex justify-center pt-4">
@@ -225,7 +201,7 @@ export function About() {
             </div>
             <div
               className={`flex gap-1 cursor-pointer ${
-                retweets ? "" : "text-green-500"
+                retweets ? "text-green-500" : "text-gray-400"
               } cursor-pointer`}
               onClick={() => {
                 toggleRetweets();
@@ -236,13 +212,13 @@ export function About() {
             </div>
             <div
               className={`flex gap-1 ${
-                favorites ? "" : "text-red-500"
+                favorites ? "text-red-500" : "text-gray-400"
               } cursor-pointer`}
               onClick={() => {
                 toggleFavorites();
               }}
             >
-              {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
+              {favorites ? <MdOutlineFavorite /> : <MdFavoriteBorder />}
               <p className="text-sm ">3.1k</p>
             </div>
             <div className="flex gap-1">

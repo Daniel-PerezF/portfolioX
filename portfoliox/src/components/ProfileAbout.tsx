@@ -23,20 +23,20 @@ export function ProfileAbout() {
   const isDirectMessageVisible = useOnScreen(directMessageRef);
 
   const [following, setFollowing] = useState(() => {
-    const savedFollowing = localStorage.getItem("following");
+    const savedFollowing = sessionStorage.getItem("following");
     return savedFollowing ? JSON.parse(savedFollowing) : {};
   });
   const [followers, setFollowers] = useState(() => {
-    const savedFollowers = localStorage.getItem("followers");
-    return savedFollowers ? JSON.parse(savedFollowers) : "443"; // Initial follower count as string
+    const savedFollowers = sessionStorage.getItem("followers");
+    return savedFollowers ? JSON.parse(savedFollowers) : "443";
   });
 
   const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
     const newFollowers = following ? "444" : "443";
     setFollowers(newFollowers);
-    localStorage.setItem("following", JSON.stringify(!following));
-    localStorage.setItem("followers", JSON.stringify(newFollowers));
+    sessionStorage.setItem("following", JSON.stringify(!following));
+    sessionStorage.setItem("followers", JSON.stringify(newFollowers));
     if (following) {
       setTimeout(() => setConfettiActive(true), 400);
     }
@@ -86,7 +86,6 @@ export function ProfileAbout() {
             ref={buttonRef}
             onClick={() => {
               toggleFollow();
-              console.log("follow", following);
             }}
             className={` ${
               following ? "bg-pop" : "bg-purple-400"
@@ -132,16 +131,10 @@ export function ProfileAbout() {
           </div>{" "}
           <div>
             {" "}
-            For any questions or inquires reach out by dm, always up for a chat!
-            <br />
             Full Stack Web Developer with a passion for creativity, design and
-            front-end development.
+            front-end development. <br /> For any questions or inquires reach
+            out by dm, always up for a chat!
           </div>
-          {/* <div className="">
-            Full Stack Software/Web Developer with a passion for creativity,
-            design and front-end development.
-          </div> */}
-          {/* Icons */}
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
               darkMode ? "text-gray-400" : "text-gray-500"
@@ -197,10 +190,14 @@ export function ProfileAbout() {
           </div>
           <div className="flex relative ml-3 mb-4">
             <div className="left-[-14px] absolute rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2 overflow-hidden">
-              <img src="/x-logo.jpeg" alt="" className="" />
+              <img
+                src="/x-logo.jpeg"
+                alt="elon musk twitter pfp"
+                className=""
+              />
             </div>
             <div className="rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2  overflow-hidden ">
-              <img src="/jre.jpeg" alt="" className="" />
+              <img src="/jre.jpeg" alt="joe rogan twitter pfp" className="" />
             </div>
             <h3
               className={`font-light text-[0.77rem] self-start pt-4 pb-5 ${

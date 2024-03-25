@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
+import { Message } from "../data";
 
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
@@ -72,7 +73,7 @@ export function DirectMessage({ onClose }: any) {
           >
             <img
               src="/memoji.PNG"
-              alt=""
+              alt="my memoji"
               className={`rounded-full h-14 w-14 object-cover bg-white ring-1 my-4 ${
                 darkMode ? "ring-black" : "ring-white"
               }`}
@@ -119,11 +120,6 @@ export function DirectMessage({ onClose }: any) {
   );
 }
 
-interface Message {
-  id: string;
-  name: string;
-  message: string;
-}
 function ContactForm({ onMessageSubmit }: any) {
   const [formData, setFormData] = useState({
     name: "",
@@ -177,7 +173,6 @@ function ContactForm({ onMessageSubmit }: any) {
 
     onMessageSubmit(formData.name, formData.message);
 
-    // Reset form fields
     setFormData({
       name: "",
       email: "",

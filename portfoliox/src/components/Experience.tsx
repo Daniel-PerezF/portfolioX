@@ -14,39 +14,31 @@ import {
 export function Experience() {
   const { darkMode } = useDarkMode();
   const [favorites, setFavorites] = useState<IconProps>(() => {
-    const savedFavorites = localStorage.getItem("favorites");
+    const savedFavorites = sessionStorage.getItem("favorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
   });
 
   const [retweets, setRetweets] = useState<IconProps>(() => {
-    const savedRetweets = localStorage.getItem("retweets");
+    const savedRetweets = sessionStorage.getItem("retweets");
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
   const toggleFavorite = (index: number) => {
     setFavorites((prevFavorites) => {
       const newFavorites = { ...prevFavorites, [index]: !prevFavorites[index] };
-      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      sessionStorage.setItem("favorites", JSON.stringify(newFavorites));
       return newFavorites;
     });
   };
   const toggleRetweets = (index: number) => {
     setRetweets((prevRetweets) => {
       const newRetweets = { ...prevRetweets, [index]: !prevRetweets[index] };
-      localStorage.setItem("retweets", JSON.stringify(newRetweets));
+      sessionStorage.setItem("retweets", JSON.stringify(newRetweets));
       return newRetweets;
     });
   };
   return (
     <div className="h-full ">
       {experiences.map((exp, index) => (
-        // <div
-        //   key={index}
-        //   className={`border border-1 pb-2 md:p-4 mb-4 mx-2 md:mx-0 ${
-        //     darkMode
-        //       ? "hover:bg-[#37363c] duration-150"
-        //       : "hover:bg-[#EBEBEB] duration-150"
-        //   }`}
-        // >
         <div
           key={index}
           className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0  rounded-lg ${
@@ -59,7 +51,7 @@ export function Experience() {
             <div className="flex justify-start gap-1">
               <div className="">
                 <img
-                  src={exp.image}
+                  src={exp.pfp}
                   alt=""
                   className={`rounded-full h-14 w-14 object-cover bg-white ring-1 m-4 ${
                     darkMode ? "ring-black" : "ring-white"
@@ -82,9 +74,7 @@ export function Experience() {
               </div>
             </div>
           </div>
-          {/* Role */}
           <div className="w-full flex justify-center pt-4">
-            {/* Role and location */}
             <div className="flex w-11/12 justify-between">
               <div className="mr-2">{exp.role}</div>
               <div className="flex gap mr-12">
