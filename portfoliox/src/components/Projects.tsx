@@ -22,25 +22,25 @@ export function Projects() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const [favorites, setFavorites] = useState<IconProps>(() => {
-    const savedFavorites = localStorage.getItem("projectsFavorites");
+    const savedFavorites = sessionStorage.getItem("projectsFavorites");
     return savedFavorites ? JSON.parse(savedFavorites) : {};
   });
   const [retweets, setRetweets] = useState<IconProps>(() => {
-    const savedRetweets = localStorage.getItem("projectsRetweets");
+    const savedRetweets = sessionStorage.getItem("projectsRetweets");
     return savedRetweets ? JSON.parse(savedRetweets) : {};
   });
 
   const toggleFavorites = (index: number) => {
     setFavorites((prevFavorites) => {
       const newFavorites = { ...prevFavorites, [index]: !prevFavorites[index] };
-      localStorage.setItem("projectsFavorites", JSON.stringify(newFavorites));
+      sessionStorage.setItem("projectsFavorites", JSON.stringify(newFavorites));
       return newFavorites;
     });
   };
   const toggleRetweets = (index: number) => {
     setRetweets((prevRetweets) => {
       const newRetweets = { ...prevRetweets, [index]: !prevRetweets[index] };
-      localStorage.setItem("projectsRetweets", JSON.stringify(newRetweets));
+      sessionStorage.setItem("projectsRetweets", JSON.stringify(newRetweets));
       return newRetweets;
     });
   };
@@ -83,7 +83,7 @@ export function Projects() {
               <div className="">
                 <img
                   src={project.pfp}
-                  alt=""
+                  alt={`${project.name} profile pic`}
                   className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
                     darkMode ? "ring-black" : "ring-white"
                   }`}
@@ -151,7 +151,7 @@ export function Projects() {
                       <img
                         src={image}
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
-                        alt=""
+                        alt={`${project.title} project images`}
                       />
                       {window.innerWidth > 640 && (
                         <div
@@ -184,7 +184,7 @@ export function Projects() {
                             ]
                           }
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
-                          alt=""
+                          alt={`${project.title} images in modal`}
                           onClick={() => {
                             closeModal();
                           }}
@@ -195,7 +195,7 @@ export function Projects() {
                             e.stopPropagation();
                             prevImage();
                           }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
                           <FaLongArrowAltLeft />
                         </button>
@@ -205,7 +205,7 @@ export function Projects() {
                             e.stopPropagation();
                             nextImage();
                           }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }} // Position at the center vertically and set a higher z-index
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
                           <FaLongArrowAltRight />
                         </button>

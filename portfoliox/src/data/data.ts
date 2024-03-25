@@ -1,12 +1,12 @@
-import { Project } from ".";
-import { About } from "../components/About"; // Assuming these are your component files
+import { Experiences, Links, Project, Tab } from ".";
+import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
 import { Tech } from "../components/Tech";
 
-export const experiences = [
+export const experiences: Experiences[] = [
   {
-    image: "./memoji.PNG",
+    pfp: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
     date: "March 2024 - Present",
@@ -23,7 +23,7 @@ export const experiences = [
     stats: "77K",
   },
   {
-    image: "./memoji.PNG",
+    pfp: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
     date: "February 2024 - Present",
@@ -121,14 +121,14 @@ export const projects: Project[] = [
   },
 ];
 
-export const tabs = [
+export const tabs: Tab[] = [
   { id: "About", label: "About", component: About },
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Tech", label: "Tech", component: Tech },
 ];
 
-export const links = [
+export const links: Links[] = [
   { id: 1, title: "Website", url: "https://danielperez.io" },
   { id: 2, title: "Email", url: "mailto:danielperezf98@gmail.com" },
   {
