@@ -201,7 +201,7 @@ export function About() {
             </div>
             <div
               className={`flex gap-1 cursor-pointer ${
-                retweets ? "text-green-500" : "text-gray-400"
+                retweets ? "text-gray-400" : "text-green-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleRetweets();
@@ -212,13 +212,13 @@ export function About() {
             </div>
             <div
               className={`flex gap-1 ${
-                favorites ? "text-red-500" : "text-gray-400"
+                favorites ? "text-gray-400" : "text-red-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleFavorites();
               }}
             >
-              {favorites ? <MdOutlineFavorite /> : <MdFavoriteBorder />}
+              {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
               <p className="text-sm ">3.1k</p>
             </div>
             <div className="flex gap-1">

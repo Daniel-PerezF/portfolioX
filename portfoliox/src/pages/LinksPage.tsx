@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Banner, Links, Nav } from "../components";
 import { useDarkMode } from "../context/useDarkMode";
-import { IoReturnUpBackSharp } from "../icons/icons";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function LinksPage() {
   const { darkMode } = useDarkMode();
@@ -26,12 +26,15 @@ export default function LinksPage() {
           >
             <div className="relative flex items-center flex-col w-full">
               <div className="max-w-[820px] w-full">
-                <Banner />
+                <Banner
+                  darkModeImage="https://i.pinimg.com/originals/49/29/57/4929571ca9465e280f1fa7e9bd7772aa.gif"
+                  lightModeImage="https://i.pinimg.com/originals/49/29/57/4929571ca9465e280f1fa7e9bd7772aa.gif"
+                />
               </div>
               <div className="">
                 <a href="/" className="py-2 absolute left-[1%]">
-                  <IoReturnUpBackSharp
-                    className={`text-4xl hover:scale-110 duration-150 ease-in-out ${
+                  <FaArrowLeft
+                    className={`text-xl hover:scale-110 duration-150 ease-in-out ${
                       darkMode ? "text-light" : "text-dark"
                     }`}
                   />

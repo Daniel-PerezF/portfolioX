@@ -89,7 +89,7 @@ export function ProfileAbout() {
             }}
             className={` ${
               following ? "bg-pop" : "bg-purple-400"
-            } px-4  rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
+            } px-4 py-[6px]  rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
           >
             {following ? "Follow" : "Following"}
           </button>
