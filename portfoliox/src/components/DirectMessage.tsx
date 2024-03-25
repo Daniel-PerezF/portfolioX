@@ -24,7 +24,10 @@ export function DirectMessage({ onClose }: any) {
     };
 
     setMessages([...messages, newUserMessage]);
-
+    sessionStorage.setItem(
+      "messages",
+      JSON.stringify([...messages, newUserMessage])
+    );
     setTimeout(() => {
       setMessages((prevMessages) => {
         const fakeMessage = {
@@ -42,6 +45,19 @@ export function DirectMessage({ onClose }: any) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  useEffect(() => {
+    const storedMessages = sessionStorage.getItem("messages");
+    if (storedMessages) {
+      setMessages(JSON.parse(storedMessages));
+    }
+  }, []);
+  useEffect(() => {
+    const storedMessages = sessionStorage.getItem("messages");
+    if (storedMessages) {
+      setMessages(JSON.parse(storedMessages));
+    }
+  }, []);
 
   return (
     <div
@@ -233,7 +249,7 @@ function ContactForm({ onMessageSubmit }: any) {
           rows={4}
           onChange={handleChange}
         ></textarea>
-        <div className="absolute">
+        <div className="absolute top-[-2.1rem] left-[25%]">
           {error && <p className="text-red-500">{error}</p>}
         </div>
 
