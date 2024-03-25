@@ -21,10 +21,10 @@ export function ProfilePic() {
         alt=""
         className={`rounded-full h-28 w-28 object-cover bg-white ring-4 m-4  ${
           darkMode ? "ring-black" : "ring-white"
-        } cursor-pointer`}
+        } `}
         onClick={openModal}
       />
-      {modalOpen && (
+      {/* {modalOpen && (
         <div
           onClick={closeModal}
           className="fixed top-0 left-0  w-full h-full flex items-center justify-center bg-black bg-opacity-65 z-50"
@@ -47,7 +47,7 @@ export function ProfilePic() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

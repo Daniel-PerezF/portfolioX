@@ -1,19 +1,48 @@
-import { Nav } from "../components";
+import { useEffect } from "react";
+import { Banner, Links, Nav } from "../components";
 import { useDarkMode } from "../context/useDarkMode";
+import { IoReturnUpBackSharp } from "../icons/icons";
 
 export default function LinksPage() {
   const { darkMode } = useDarkMode();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-      <div className={`${darkMode ? "bg-dark" : "bg-light"} h-screen`}>
-        <div className="sticky top-0 z-50">
+      <div className={`h-screen ${darkMode ? "bg-dark" : "bg-light"}`}>
+        <div className="sticky top-0 z-30">
           <Nav />
         </div>
         <div
           className={`flex justify-center w-full ${
             darkMode ? "bg-dark" : "bg-light"
           }`}
-        ></div>
+        >
+          <div
+            className={`flex flex-col items-center ${
+              darkMode ? "bg-dark text-light" : "bg-light text-dark"
+            }`}
+          >
+            <div className="relative flex items-center flex-col w-full">
+              <div className="max-w-[820px] w-full">
+                <Banner />
+              </div>
+              <div className="">
+                <a href="/" className="py-2 absolute left-[1%]">
+                  <IoReturnUpBackSharp
+                    className={`text-4xl hover:scale-110 duration-150 ease-in-out ${
+                      darkMode ? "text-light" : "text-dark"
+                    }`}
+                  />
+                </a>
+                <div className="max-w-[750px]">
+                  <Links />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

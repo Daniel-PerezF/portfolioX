@@ -6,9 +6,13 @@ import {
   ProfileAbout,
   ProfilePic,
 } from "../components/index";
+import { useEffect } from "react";
 
 export default function LandingPage() {
   const { darkMode } = useDarkMode();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={`${darkMode ? "bg-dark" : "bg-light"}`}>
@@ -25,24 +29,17 @@ export default function LandingPage() {
             darkMode ? "bg-dark text-light" : "bg-light text-dark"
           }`}
         >
-          <div className="relative">
-            <div className="absolute top-2/3 lg:top-[13rem] left-0 lg:left-[2.18rem] z-10 ">
+          <div className="max-w-[820px] w-full relative">
+            <Banner />
+            <div className="absolute bottom-[-4rem] sm:left-0 left-0 md:left-[2rem] z-10">
               <ProfilePic />
-            </div>
-            <div className="max-w-[820px] w-full ">
-              <Banner />
             </div>
           </div>
           <div className="max-w-[750px] w-full">
             <ProfileAbout />
-            <div>
-              <ContentTabs />
-            </div>
+            <ContentTabs />
           </div>
         </div>
-      </div>
-      <div>
-        <img src="/orange-icon.png" className="fixed z-[-1]" />
       </div>
     </div>
   );
