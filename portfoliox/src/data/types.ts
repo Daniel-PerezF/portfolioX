@@ -13,10 +13,8 @@ export type Project = {
   link: string;
   code: string;
   description: string[];
-  comments: string;
   retweets: number;
   favorites: number;
-  stats: string;
 };
 
 export interface Tab {
@@ -42,10 +40,8 @@ export type Experiences = {
   role: string;
   location: string;
   description: string[];
-  comments: string;
   retweets: number;
   favorites: number;
-  stats: string;
 };
 
 export type Links = {

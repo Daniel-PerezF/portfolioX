@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import { Item, projects } from "../data";
 import { useDarkMode } from "../context/useDarkMode";
 import {
-  BiMessageRounded,
   FaCode,
   FaLink,
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
   FaRetweet,
   IoClose,
-  IoStatsChart,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
@@ -242,12 +240,7 @@ export function Projects() {
             </div>
           </div>
           <div className="w-full flex justify-center pt-4">
-            <div className="flex justify-between text-xl w-11/12 text-gray-400">
-              <div className="flex gap-1">
-                <BiMessageRounded />
-                <p className="text-sm ">{project.comments}</p>
-              </div>
-
+            <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 ${
                   items[projectIndex].retweetsToggle
@@ -278,11 +271,6 @@ export function Projects() {
                   <MdFavoriteBorder />
                 )}
                 <p className="text-sm ">{items[projectIndex].favorites}</p>
-              </div>
-
-              <div className="flex gap-1">
-                <IoStatsChart />
-                <p className="text-sm ">{project.stats}</p>
               </div>
             </div>
           </div>
