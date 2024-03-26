@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 import { Message } from "../data";
+import emailjs from "@emailjs/browser";
+import { FaArrowLeft, FaPaperPlane } from "../icons/icons";
 
 export function DirectMessage({ onClose }: any) {
   const { darkMode } = useDarkMode();
@@ -23,11 +24,11 @@ export function DirectMessage({ onClose }: any) {
       isUserMessage: true,
     };
 
-    setMessages([...messages, newUserMessage]);
-    sessionStorage.setItem(
-      "messages",
-      JSON.stringify([...messages, newUserMessage])
-    );
+    const updatedMessages = [...messages, newUserMessage];
+    setMessages(updatedMessages);
+
+    sessionStorage.setItem("messages", JSON.stringify(updatedMessages));
+
     setTimeout(() => {
       setMessages((prevMessages) => {
         const fakeMessage = {
@@ -36,7 +37,9 @@ export function DirectMessage({ onClose }: any) {
           message: `Hey ${name}, thanks for reaching out! I will get back to you by email as soon as possible!`,
           isUserMessage: false,
         };
-        return [...prevMessages, fakeMessage];
+        const updatedMessages = [...prevMessages, fakeMessage];
+        sessionStorage.setItem("messages", JSON.stringify(updatedMessages));
+        return updatedMessages;
       });
     }, 1000);
   };
@@ -99,30 +102,41 @@ export function DirectMessage({ onClose }: any) {
           </div>
 
           <div
-            className={`m-4 overflow-x-hidden overflow-y-auto whitespace-normal break-words ${
+            className={`m-4 overflow-x-hidden overflow-y-auto whitespace-normal break-words pb-3 ${
               darkMode ? "text-white" : "text-white"
             }`}
           >
-            {messages.map((msg: any) => (
-              <div
-                key={msg.id}
-                className={`p-2 rounded-lg mb-2 max-w-fit pr-10 ${
-                  msg.isUserMessage
-                    ? "ml-auto animate-slide-right w-[75%] "
-                    : "mr-auto animate-slide-left w-[75%] "
-                } ${
-                  darkMode
-                    ? msg.isUserMessage
+            {messages.length > 0 ? (
+              messages.map((msg: any) => (
+                <div
+                  key={msg.id}
+                  className={`p-2 rounded-lg mb-2 max-w-fit pr-10 ${
+                    msg.isUserMessage
+                      ? "ml-auto animate-slide-right w-[75%] "
+                      : "mr-auto animate-slide-left w-[75%] "
+                  } ${
+                    darkMode
+                      ? msg.isUserMessage
+                        ? "bg-blue-400"
+                        : "bg-gray-700"
+                      : msg.isUserMessage
                       ? "bg-blue-400"
-                      : "bg-gray-700"
-                    : msg.isUserMessage
-                    ? "bg-blue-400"
-                    : "bg-gray-400"
+                      : "bg-gray-400"
+                  }`}
+                >
+                  <span className="">{msg.message}</span>
+                </div>
+              ))
+            ) : (
+              <div
+                className={` font-extralight text-sm flex justify-center text-center ${
+                  darkMode ? "text-[#a0a0a5]" : "text-[#909095]"
                 }`}
               >
-                <span className="">{msg.message}</span>
+                "Please keep in mind all messages will be sent by email to
+                Daniel Perez, thank you."
               </div>
-            ))}
+            )}
             <div ref={messagesEndRef}></div>
           </div>
           <div
@@ -143,7 +157,7 @@ function ContactForm({ onMessageSubmit }: any) {
     message: "",
   });
   const { darkMode } = useDarkMode();
-  const [error, setError] = useState("");
+  const form = useRef<HTMLFormElement | null>(null);
   const handleChange = (event: any) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -152,56 +166,37 @@ function ContactForm({ onMessageSubmit }: any) {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    if (
-      !formData.name.trim() &&
-      !formData.message.trim() &&
-      !formData.email.trim()
-    ) {
-      setError("Please enter your name, email, and message.");
-      return;
-    }
-    if (!formData.name.trim() && !formData.message.trim()) {
-      setError("Please enter your name and message.");
-      return;
-    }
-    if (!formData.name.trim() && !formData.email.trim()) {
-      setError("Please enter your name and email.");
-      return;
-    }
-    if (!formData.email.trim() && !formData.message.trim()) {
-      setError("Please enter your email and message.");
-      return;
-    }
-    if (!formData.name.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-    if (!formData.email.trim()) {
-      setError("Please enter your email.");
-      return;
-    }
-    if (!formData.message.trim()) {
-      setError("Please enter your message.");
-      return;
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     onMessageSubmit(formData.name, formData.message);
-
+    emailjs
+      .sendForm(
+        "service_wnyy7aj",
+        "template_cozrk6s",
+        e.currentTarget,
+        "OQLmnYzOMu4Vtjbwd"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.currentTarget.reset();
     setFormData({
       name: "",
       email: "",
       message: "",
     });
-    setError("");
   };
 
   return (
     <div className={` rounded-lg  mx-auto w-full relative mb-8 `}>
-      <form onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-2">
-          {" "}
           <label htmlFor="name" className="sr-only">
             Your Name
           </label>
@@ -249,15 +244,7 @@ function ContactForm({ onMessageSubmit }: any) {
           rows={4}
           onChange={handleChange}
         ></textarea>
-        <div className="absolute top-[-2.1rem] left-[25%]">
-          {error && <p className="text-red-500">{error}</p>}
-        </div>
-
-        <button
-          className="absolute bottom-7 right-3 text-xl"
-          onClick={handleSubmit}
-          type="submit"
-        >
+        <button className="absolute bottom-7 right-3 text-xl" type="submit">
           <FaPaperPlane
             className={` ${darkMode ? "text-white" : "text-gray-600"} `}
           />

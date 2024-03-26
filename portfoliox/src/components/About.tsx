@@ -54,7 +54,8 @@ export function About() {
       selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
     );
   };
-
+  const retweetCount = retweets ? "3" : "4";
+  const likeCount = favorites ? "8" : "9";
   return (
     <div className="h-full">
       <div
@@ -201,25 +202,25 @@ export function About() {
             </div>
             <div
               className={`flex gap-1 cursor-pointer ${
-                retweets ? "text-green-500" : "text-gray-400"
+                retweets ? "text-gray-400" : "text-green-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleRetweets();
               }}
             >
               <FaRetweet />
-              <p className="text-sm ">2.8K</p>
+              <p className="text-sm ">{retweetCount}</p>
             </div>
             <div
               className={`flex gap-1 ${
-                favorites ? "text-red-500" : "text-gray-400"
+                favorites ? "text-gray-400" : "text-red-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleFavorites();
               }}
             >
-              {favorites ? <MdOutlineFavorite /> : <MdFavoriteBorder />}
-              <p className="text-sm ">3.1k</p>
+              {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
+              <p className="text-sm ">{likeCount}</p>
             </div>
             <div className="flex gap-1">
               <IoStatsChart />

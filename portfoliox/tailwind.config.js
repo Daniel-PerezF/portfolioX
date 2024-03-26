@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -12,28 +12,50 @@ module.exports = {
         pop: "#FB904D",
       },
       animation: {
-        'slide-right': 'slideInRight 0.5s forwards',
-        'slide-left': 'slideInLeft 0.5s forwards',
+        "slide-right": "slideInRight 0.5s forwards",
+        "slide-left": "slideInLeft 0.5s forwards",
+        "slide-up": "slideUp 0.5s forwards",
       },
       keyframes: {
         slideInRight: {
           from: {
-            transform: 'translateX(100%)',
+            transform: "translateX(100%)",
             opacity: 0,
           },
           to: {
-            transform: 'translateX(0)',
+            transform: "translateX(0)",
             opacity: 1,
           },
         },
         slideInLeft: {
           from: {
-            transform: 'translateX(-100%)',
+            transform: "translateX(-100%)",
             opacity: 0,
           },
           to: {
-            transform: 'translateX(0)',
+            transform: "translateX(0)",
             opacity: 1,
+          },
+        },
+        slideUp: {
+          from: {
+            transform: "translateY(100%)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+
+        slideDown: {
+          from: {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+          to: {
+            transform: "translateY(100%)",
+            opacity: 0,
           },
         },
       },
