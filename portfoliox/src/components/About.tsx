@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import {
-  BiMessageRounded,
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
   FaRetweet,
   IoClose,
-  IoStatsChart,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
@@ -195,36 +193,38 @@ export function About() {
           </div>
         </div>
         <div className="w-full flex justify-center pt-4">
-          <div className="flex justify-between text-xl w-11/12 text-gray-400">
-            <div className="flex gap-1">
-              <BiMessageRounded />
-              <p className="text-sm ">1.2K</p>
-            </div>
+          <div className="flex justify-around text-xl w-11/12 text-gray-400">
             <div
-              className={`flex gap-1 cursor-pointer ${
-                retweets ? "text-gray-400" : "text-green-500"
+              className={`flex gap-1 cursor-pointer group duration-150 ease-in-out ${
+                retweets
+                  ? "text-gray-400 group-hover:text-green-500 "
+                  : "text-green-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleRetweets();
               }}
             >
-              <FaRetweet />
-              <p className="text-sm ">{retweetCount}</p>
+              <FaRetweet className={`group-hover:text-green-500`} />
+              <p className="text-sm group-hover:text-green-500">
+                {retweetCount}
+              </p>
             </div>
             <div
-              className={`flex gap-1 ${
-                favorites ? "text-gray-400" : "text-red-500"
+              className={`flex gap-1 duration-150 ease-in-out group ${
+                favorites
+                  ? "text-gray-400 group-hover:text-red-500 "
+                  : "text-red-500"
               } cursor-pointer`}
               onClick={() => {
                 toggleFavorites();
               }}
             >
-              {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
-              <p className="text-sm ">{likeCount}</p>
-            </div>
-            <div className="flex gap-1">
-              <IoStatsChart />
-              <p className="text-sm ">60K</p>
+              {favorites ? (
+                <MdFavoriteBorder className=" group-hover:text-red-500" />
+              ) : (
+                <MdOutlineFavorite />
+              )}
+              <p className="text-sm group-hover:text-red-500 ">{likeCount}</p>
             </div>
           </div>
         </div>

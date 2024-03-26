@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
-  BiMessageRounded,
   FaLink,
   FaRetweet,
-  IoStatsChart,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
@@ -131,12 +129,7 @@ export function Experience() {
             </div>
           </div>
           <div className="w-full flex justify-center pt-4">
-            <div className="flex justify-between text-xl w-11/12 text-gray-400">
-              <div className="flex gap-1">
-                <BiMessageRounded />
-                <p className="text-sm ">{exp.comments}</p>
-              </div>
-
+            <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 ${
                   items[index].retweetsToggle
@@ -163,11 +156,6 @@ export function Experience() {
                   <MdFavoriteBorder />
                 )}
                 <p className="text-sm ">{items[index].favorites}</p>
-              </div>
-
-              <div className="flex gap-1">
-                <IoStatsChart />
-                <p className="text-sm ">{exp.stats}</p>
               </div>
             </div>
           </div>

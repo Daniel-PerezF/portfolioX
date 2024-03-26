@@ -18,10 +18,9 @@ export const experiences: Experiences[] = [
       "Effectively communicated coding principles to enhance student comprehension and learning.",
       "Maintained records of student interactions and progress, enabling tailored support and tracking of learning outcomes.",
     ],
-    comments: "2.1K",
+
     retweets: 2,
     favorites: 4,
-    stats: "77K",
   },
   {
     id: 2,
@@ -39,10 +38,9 @@ export const experiences: Experiences[] = [
       "Worked with the restaurant owners to gather feedback, incorporate changes, and ensure the website met their expectations.",
       "Participated in regular meetings and discussions to keep the project on track and address any challenges that arose.",
     ],
-    comments: "1.2K",
+
     retweets: 3,
     favorites: 7,
-    stats: "63K",
   },
 ];
 
@@ -69,10 +67,8 @@ export const projects: Project[] = [
       "Deployed on GitHub Pages with a custom domain, ensuring global accessibility for a professional online presence.",
       "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
     ],
-    comments: "2.2K",
     retweets: 4,
     favorites: 8,
-    stats: "72K",
   },
   {
     id: 2,
@@ -94,10 +90,9 @@ export const projects: Project[] = [
       "Engineered and implemented the application from concept to deployment on AWS Elastic Beanstalk.",
       "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
     ],
-    comments: "1.2K",
+
     retweets: 4,
     favorites: 6,
-    stats: "53K",
   },
   {
     id: 3,
@@ -119,10 +114,9 @@ export const projects: Project[] = [
       "Engineered a display of Studio Ghibli films from a public API and implemented Fetch to display results.",
       "Designed sitemap using Figma's wireframing tools and utilized LocalStorage to store and retrieve data from previous sessions.",
     ],
-    comments: "1K",
+
     retweets: 2,
     favorites: 8,
-    stats: "58K",
   },
 ];
 

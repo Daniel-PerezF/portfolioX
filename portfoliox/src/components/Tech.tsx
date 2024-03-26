@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import {
-  BiMessageRounded,
   FaRetweet,
-  IoStatsChart,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
@@ -96,11 +94,7 @@ export function Tech() {
           </div>
         </div>
         <div className="w-full flex justify-center pt-4">
-          <div className="flex justify-between text-xl w-11/12 text-gray-400">
-            <div className="flex gap-1">
-              <BiMessageRounded />
-              <p className="text-sm ">1K</p>
-            </div>
+          <div className="flex justify-around text-xl w-11/12 text-gray-400">
             <div
               className={`flex gap-1 cursor-pointer ${
                 retweets ? "" : "text-green-500"
@@ -122,10 +116,6 @@ export function Tech() {
             >
               {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
               <p className="text-sm ">{favoriteCount}</p>
-            </div>
-            <div className="flex gap-1">
-              <IoStatsChart />
-              <p className="text-sm ">53K</p>
             </div>
           </div>
         </div>
