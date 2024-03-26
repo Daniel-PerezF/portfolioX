@@ -6,10 +6,10 @@ export function Links() {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="pt-12 pb-10">
-        <h3 className="text-3xl">Heres all my Links!</h3>
+      <div className="pt-12 pb-10 ">
+        <h3 className="text-2xl font-bold">Heres all my Links!</h3>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 justify-center text-center">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 justify-center text-center px-2">
         {links.map((link) => (
           <a
             key={link.id}

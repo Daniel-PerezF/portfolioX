@@ -3,6 +3,7 @@ export interface IconProps {
 }
 
 export type Project = {
+  id: number;
   name: string;
   username: string;
   date: string;
@@ -13,8 +14,8 @@ export type Project = {
   code: string;
   description: string[];
   comments: string;
-  retweets: string;
-  likes: string;
+  retweets: number;
+  favorites: number;
   stats: string;
 };
 
@@ -31,6 +32,7 @@ export interface Message {
 }
 
 export type Experiences = {
+  id: number;
   name: string;
   username: string;
   date: string;
@@ -41,8 +43,8 @@ export type Experiences = {
   location: string;
   description: string[];
   comments: string;
-  retweets: string;
-  likes: string;
+  retweets: number;
+  favorites: number;
   stats: string;
 };
 
@@ -55,4 +57,12 @@ export type Links = {
 export type BannerProps = {
   darkModeImage: string;
   lightModeImage: string;
+};
+
+export type Item = {
+  id: number;
+  retweets: number;
+  favorites: number;
+  retweetsToggle: boolean;
+  favoritesToggle: boolean;
 };

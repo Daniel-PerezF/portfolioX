@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { IconProps, experiences } from "../data";
-import { useDarkMode } from "../context/useDarkMode";
+import React, { useState, useEffect } from "react";
 import {
   BiMessageRounded,
   FaLink,
@@ -10,38 +8,67 @@ import {
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
+import { useDarkMode } from "../context/useDarkMode";
+import { Item, experiences } from "../data";
 
 export function Experience() {
   const { darkMode } = useDarkMode();
-  const [favorites, setFavorites] = useState<IconProps>(() => {
-    const savedFavorites = sessionStorage.getItem("favorites");
-    return savedFavorites ? JSON.parse(savedFavorites) : {};
+
+  const [items, setItems] = useState<Item[]>(() => {
+    const itemsFromSession = sessionStorage.getItem("experiences");
+    return itemsFromSession
+      ? JSON.parse(itemsFromSession)
+      : experiences.map((exp) => ({
+          id: exp.id,
+          retweets: exp.retweets,
+          favorites: exp.favorites,
+          retweetsToggle: false,
+          favoritesToggle: false,
+        }));
   });
 
-  const [retweets, setRetweets] = useState<IconProps>(() => {
-    const savedRetweets = sessionStorage.getItem("retweets");
-    return savedRetweets ? JSON.parse(savedRetweets) : {};
-  });
-  const toggleFavorite = (index: number) => {
-    setFavorites((prevFavorites) => {
-      const newFavorites = { ...prevFavorites, [index]: !prevFavorites[index] };
-      sessionStorage.setItem("favorites", JSON.stringify(newFavorites));
-      return newFavorites;
-    });
-  };
-  const toggleRetweets = (index: number) => {
-    setRetweets((prevRetweets) => {
-      const newRetweets = { ...prevRetweets, [index]: !prevRetweets[index] };
-      sessionStorage.setItem("retweets", JSON.stringify(newRetweets));
-      return newRetweets;
-    });
-  };
+  useEffect(() => {
+    sessionStorage.setItem("experiences", JSON.stringify(items));
+  }, [items]);
+
+  function handleRetweet(index: number) {
+    setItems((prevItems) =>
+      prevItems.map((item, i) =>
+        i === index
+          ? {
+              ...item,
+              retweets: item.retweetsToggle
+                ? item.retweets - 1
+                : item.retweets + 1,
+              retweetsToggle: !item.retweetsToggle,
+            }
+          : item
+      )
+    );
+  }
+
+  function handleFavorite(index: number) {
+    setItems((prevItems) =>
+      prevItems.map((item, i) =>
+        i === index
+          ? {
+              ...item,
+              favorites: item.favoritesToggle
+                ? item.favorites - 1
+                : item.favorites + 1,
+              favoritesToggle: !item.favoritesToggle,
+            }
+          : item
+      )
+    );
+  }
+
   return (
-    <div className="h-full ">
+    <div className="h-full">
       {experiences.map((exp, index) => (
         <div
-          key={index}
-          className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0  rounded-lg ${
+          key={exp.id + index}
+          className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
             darkMode
               ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
@@ -94,7 +121,7 @@ export function Experience() {
           <div className="w-full flex justify-center">
             <div className="flex w-11/12 flex-wrap">
               {exp.description.map((item, index) => (
-                <div key={index} className="mr-2">
+                <div key={index + item} className="mr-2">
                   <div className="ml-3 flex">
                     <div className="pt-1">*</div>
                     <div className="ml-2 ">{item}</div>
@@ -112,26 +139,30 @@ export function Experience() {
 
               <div
                 className={`cursor-pointer flex gap-1 ${
-                  retweets[index] ? "text-green-500" : "text-gray-400"
+                  items[index].retweetsToggle
+                    ? "text-green-500"
+                    : "text-gray-400"
                 }`}
-                onClick={() => toggleRetweets(index)}
+                onClick={() => handleRetweet(index)}
               >
-                {retweets[index] ? <FaRetweet /> : <FaRetweet />}
-                <p className="text-sm ">{exp.retweets}</p>
+                {items[index]?.retweetsToggle ? <FaRetweet /> : <FaRetweet />}
+                <p className="text-sm ">{items[index].retweets}</p>
               </div>
 
               <div
                 className={` cursor-pointer flex gap-1 ${
-                  favorites[index] ? "text-red-500" : "text-gray-400"
+                  items[index]?.favoritesToggle
+                    ? "text-red-500"
+                    : "text-gray-400"
                 }`}
-                onClick={() => toggleFavorite(index)}
+                onClick={() => handleFavorite(index)}
               >
-                {favorites[index] ? (
+                {items[index]?.favoritesToggle ? (
                   <MdOutlineFavorite />
                 ) : (
                   <MdFavoriteBorder />
                 )}
-                <p className="text-sm ">{exp.likes}</p>
+                <p className="text-sm ">{items[index].favorites}</p>
               </div>
 
               <div className="flex gap-1">

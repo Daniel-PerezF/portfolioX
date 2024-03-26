@@ -19,6 +19,7 @@ export default function LandingPage() {
       <div className="sticky top-0 z-30">
         <Nav />
       </div>
+
       <div
         className={`flex justify-center w-full ${
           darkMode ? "bg-dark" : "bg-light"
