@@ -152,6 +152,7 @@ export function Projects() {
                         src={image}
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
                         alt={`${project.title} project images`}
+                        onClick={() => openModal(projectIndex, imageIndex)}
                       />
                       {window.innerWidth > 640 && (
                         <div
