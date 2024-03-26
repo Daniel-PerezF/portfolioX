@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { IconProps, projects } from "../data";
+import { useEffect, useState } from "react";
+import { Item, projects } from "../data";
 import { useDarkMode } from "../context/useDarkMode";
 import {
   BiMessageRounded,
@@ -21,29 +21,55 @@ export function Projects() {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(-1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const [favorites, setFavorites] = useState<IconProps>(() => {
-    const savedFavorites = sessionStorage.getItem("projectsFavorites");
-    return savedFavorites ? JSON.parse(savedFavorites) : {};
-  });
-  const [retweets, setRetweets] = useState<IconProps>(() => {
-    const savedRetweets = sessionStorage.getItem("projectsRetweets");
-    return savedRetweets ? JSON.parse(savedRetweets) : {};
+  const [items, setItems] = useState<Item[]>(() => {
+    const itemsFromSession = sessionStorage.getItem("projects");
+    return itemsFromSession
+      ? JSON.parse(itemsFromSession)
+      : projects.map((project) => ({
+          id: project.id,
+          retweets: project.retweets,
+          favorites: project.favorites,
+          retweetsToggle: false,
+          favoritesToggle: false,
+        }));
   });
 
-  const toggleFavorites = (index: number) => {
-    setFavorites((prevFavorites) => {
-      const newFavorites = { ...prevFavorites, [index]: !prevFavorites[index] };
-      sessionStorage.setItem("projectsFavorites", JSON.stringify(newFavorites));
-      return newFavorites;
-    });
-  };
-  const toggleRetweets = (index: number) => {
-    setRetweets((prevRetweets) => {
-      const newRetweets = { ...prevRetweets, [index]: !prevRetweets[index] };
-      sessionStorage.setItem("projectsRetweets", JSON.stringify(newRetweets));
-      return newRetweets;
-    });
-  };
+  useEffect(() => {
+    sessionStorage.setItem("projects", JSON.stringify(items));
+  }, [items]);
+
+  function handleRetweet(index: number) {
+    setItems((prevItems) =>
+      prevItems.map((item, i) =>
+        i === index
+          ? {
+              ...item,
+              retweets: item.retweetsToggle
+                ? item.retweets - 1
+                : item.retweets + 1,
+              retweetsToggle: !item.retweetsToggle,
+            }
+          : item
+      )
+    );
+  }
+
+  function handleFavorite(index: number) {
+    setItems((prevItems) =>
+      prevItems.map((item, i) =>
+        i === index
+          ? {
+              ...item,
+              favorites: item.favoritesToggle
+                ? item.favorites - 1
+                : item.favorites + 1,
+              favoritesToggle: !item.favoritesToggle,
+            }
+          : item
+      )
+    );
+  }
+
   const openModal = (projectIndex: number, imageIndex: number) => {
     setSelectedProjectIndex(projectIndex);
     setSelectedImageIndex(imageIndex);
@@ -224,26 +250,34 @@ export function Projects() {
 
               <div
                 className={`cursor-pointer flex gap-1 ${
-                  retweets[projectIndex] ? "text-green-500" : "text-gray-400"
+                  items[projectIndex].retweetsToggle
+                    ? "text-green-500"
+                    : "text-gray-400"
                 }`}
-                onClick={() => toggleRetweets(projectIndex)}
+                onClick={() => handleRetweet(projectIndex)}
               >
-                {retweets[projectIndex] ? <FaRetweet /> : <FaRetweet />}
-                <p className="text-sm ">{project.retweets}</p>
+                {items[projectIndex].retweetsToggle ? (
+                  <FaRetweet />
+                ) : (
+                  <FaRetweet />
+                )}
+                <p className="text-sm ">{items[projectIndex].retweets}</p>
               </div>
 
               <div
                 className={` cursor-pointer flex gap-1 ${
-                  favorites[projectIndex] ? "text-red-500" : "text-gray-400"
+                  items[projectIndex].favoritesToggle
+                    ? "text-red-500"
+                    : "text-gray-400"
                 }`}
-                onClick={() => toggleFavorites(projectIndex)}
+                onClick={() => handleFavorite(projectIndex)}
               >
-                {favorites[projectIndex] ? (
+                {items[projectIndex].favoritesToggle ? (
                   <MdOutlineFavorite />
                 ) : (
                   <MdFavoriteBorder />
                 )}
-                <p className="text-sm ">{project.likes}</p>
+                <p className="text-sm ">{items[projectIndex].favorites}</p>
               </div>
 
               <div className="flex gap-1">

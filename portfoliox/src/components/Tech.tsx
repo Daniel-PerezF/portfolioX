@@ -29,6 +29,8 @@ export function Tech() {
     setFavorites((prevState: boolean) => !prevState);
     sessionStorage.setItem("techFavorites", JSON.stringify(!favorites));
   };
+  const retweetCount = retweets ? "3" : "4";
+  const favoriteCount = favorites ? "6" : "7";
   return (
     <div className="h-full">
       <div
@@ -108,7 +110,7 @@ export function Tech() {
               }}
             >
               <FaRetweet />
-              <p className="text-sm ">2.2K</p>
+              <p className="text-sm ">{retweetCount}</p>
             </div>
             <div
               className={`flex gap-1 ${
@@ -119,7 +121,7 @@ export function Tech() {
               }}
             >
               {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
-              <p className="text-sm ">3.8k</p>
+              <p className="text-sm ">{favoriteCount}</p>
             </div>
             <div className="flex gap-1">
               <IoStatsChart />

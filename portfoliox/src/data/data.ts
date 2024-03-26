@@ -6,6 +6,7 @@ import { Tech } from "../components/Tech";
 
 export const experiences: Experiences[] = [
   {
+    id: 1,
     pfp: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
@@ -18,11 +19,12 @@ export const experiences: Experiences[] = [
       "Maintained records of student interactions and progress, enabling tailored support and tracking of learning outcomes.",
     ],
     comments: "2.1K",
-    retweets: "2.8K",
-    likes: "7.4K",
+    retweets: 2,
+    favorites: 4,
     stats: "77K",
   },
   {
+    id: 2,
     pfp: "./memoji.PNG",
     name: "Daniel Perez",
     username: "danielperez",
@@ -38,14 +40,15 @@ export const experiences: Experiences[] = [
       "Participated in regular meetings and discussions to keep the project on track and address any challenges that arose.",
     ],
     comments: "1.2K",
-    retweets: "3.7K",
-    likes: "8.3K",
+    retweets: 3,
+    favorites: 7,
     stats: "63K",
   },
 ];
 
 export const projects: Project[] = [
   {
+    id: 1,
     name: "Daniel Perez",
     username: "danielperez",
     date: "February 2024 - Present",
@@ -67,11 +70,12 @@ export const projects: Project[] = [
       "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
     ],
     comments: "2.2K",
-    retweets: "3.9K",
-    likes: "5.2K",
+    retweets: 4,
+    favorites: 8,
     stats: "72K",
   },
   {
+    id: 2,
     name: "Daniel Perez",
     username: "danielperez",
     date: "February 2024 - Present",
@@ -91,11 +95,12 @@ export const projects: Project[] = [
       "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
     ],
     comments: "1.2K",
-    retweets: "2.8K",
-    likes: "3.4K",
+    retweets: 4,
+    favorites: 6,
     stats: "53K",
   },
   {
+    id: 3,
     name: "Daniel Perez",
     username: "danielperez",
     date: "February 2024 - Present",
@@ -115,8 +120,8 @@ export const projects: Project[] = [
       "Designed sitemap using Figma's wireframing tools and utilized LocalStorage to store and retrieve data from previous sessions.",
     ],
     comments: "1K",
-    retweets: "2.1K",
-    likes: "3.4K",
+    retweets: 2,
+    favorites: 8,
     stats: "58K",
   },
 ];
