@@ -32,7 +32,7 @@ export default function LinksPage() {
                 />
               </div>
               <div className="">
-                <a href="/" className="py-2 absolute left-[1%]">
+                <a href="/" className="py-2 absolute left-[1%] pl-2 md:pl-0">
                   <FaArrowLeft
                     className={`text-xl hover:scale-110 duration-150 ease-in-out ${
                       darkMode ? "text-light" : "text-dark"

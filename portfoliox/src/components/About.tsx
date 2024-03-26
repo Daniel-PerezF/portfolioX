@@ -54,7 +54,8 @@ export function About() {
       selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
     );
   };
-
+  const retweetCount = retweets ? "3" : "4";
+  const likeCount = favorites ? "8" : "9";
   return (
     <div className="h-full">
       <div
@@ -208,7 +209,7 @@ export function About() {
               }}
             >
               <FaRetweet />
-              <p className="text-sm ">2.8K</p>
+              <p className="text-sm ">{retweetCount}</p>
             </div>
             <div
               className={`flex gap-1 ${
@@ -219,7 +220,7 @@ export function About() {
               }}
             >
               {favorites ? <MdFavoriteBorder /> : <MdOutlineFavorite />}
-              <p className="text-sm ">3.1k</p>
+              <p className="text-sm ">{likeCount}</p>
             </div>
             <div className="flex gap-1">
               <IoStatsChart />
