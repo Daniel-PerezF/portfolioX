@@ -44,7 +44,6 @@ export const experiences: Experiences[] = [
       "Incorporated existing online ordering system for delivery and pickup, increasing customer convenience and sales.",
       "Collaborated with a team of developers to brainstorm ideas and implement creative solutions.",
       "Worked with the restaurant owners to gather feedback, incorporate changes, and ensure the website met their expectations.",
-      "Participated in regular meetings and discussions to keep the project on track and address any challenges that arose.",
     ],
 
     retweets: 3,
