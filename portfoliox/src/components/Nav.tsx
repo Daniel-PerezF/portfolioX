@@ -11,13 +11,13 @@ export function Nav() {
        backdrop-blur-sm
      ${darkMode ? "bg-dark/75" : "bg-light/45"}`}
     >
-      <Link to="/">
+      <div onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <img
           src="/orange-icon.png"
           alt="my logo"
           className="w-1/5 hover:scale-105 duration-150 ease-in-out cursor-pointer"
         />
-      </Link>
+      </div>
 
       <DarkModeSwitch
         checked={darkMode}
