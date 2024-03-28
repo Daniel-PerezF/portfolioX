@@ -4,7 +4,7 @@ import { Message } from "../data";
 import emailjs from "@emailjs/browser";
 import { FaArrowLeft, FaPaperPlane } from "../icons/icons";
 
-export function DirectMessage({ onClose }: any) {
+export function DirectMessage({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);

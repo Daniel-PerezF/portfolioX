@@ -39,7 +39,7 @@ export default function LandingPage() {
             </div>
 
             <div className="absolute bottom-[-4rem] sm:left-0 left-0 md:left-[2rem] z-10">
-              <ProfilePic />
+              <ProfilePic src="/memoji.PNG" alt="my memoji" />
             </div>
           </div>
           <div className="max-w-[750px] w-full">

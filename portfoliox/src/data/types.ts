@@ -62,3 +62,10 @@ export type Item = {
   retweetsToggle: boolean;
   favoritesToggle: boolean;
 };
+export type LinksProps = {
+  id: number;
+  name: string;
+  url: string;
+  copy: string;
+  icon: React.ComponentType<any>;
+};
