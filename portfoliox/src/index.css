@@ -22,15 +22,15 @@
 }
 
 .Links {
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; */
-  /* background-color: rgb(228, 22, 22); */
-  /* display: flex;
+  bottom: 0;
+  background-color: rgb(228, 22, 22);
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   z-index: 9999;
   transition: opacity 0.2s, transform 0.3s;
 }
