@@ -39,7 +39,7 @@ export function Links2({ onClose }: { onClose: () => void }) {
           : "from-purple-400 via-purple-300 to-slate-300"
       } px-4 pb-8`}
     >
-      <div className="pt-14 pb-10 flex flex-col justify-center items-center">
+      <div className="pt-14 pb-8 flex flex-col justify-center items-center">
         <LinkPfp />
         <h3 className={`text-2xl font-bold`}>Daniel Perez</h3>
         <p className={``}>I write code and stuff</p>

@@ -51,16 +51,16 @@ export function ProfileAbout() {
     }
     return { top: 0, left: 0 };
   };
-  // useEffect(() => {
-  //   if (showDirectMessage) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "";
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = "";
-  //   };
-  // }, [showDirectMessage]);
+  useEffect(() => {
+    if (showLinks) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showLinks]);
 
   useEffect(() => {
     if (isDirectMessageVisible) {
