@@ -39,8 +39,9 @@ export default function LinksPage() {
                     }`}
                   />
                 </a>
-                <div className="max-w-[750px]">
-                  <Links />
+                <div className="min-w-[800px]">
+                  {/* <Links /> */}
+                  {/* <Links2 /> */}
                 </div>
               </div>
             </div>

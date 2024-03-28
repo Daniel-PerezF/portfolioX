@@ -204,7 +204,13 @@ export function About() {
                 toggleRetweets();
               }}
             >
-              <FaRetweet className={`group-hover:text-green-500`} />
+              <FaRetweet
+                className={`${
+                  retweets
+                    ? "group-hover:text-green-500 text-gray-400"
+                    : "text-green-500"
+                }`}
+              />
               <p className="text-sm group-hover:text-green-500">
                 {retweetCount}
               </p>
@@ -220,7 +226,11 @@ export function About() {
               }}
             >
               {favorites ? (
-                <MdFavoriteBorder className=" group-hover:text-red-500" />
+                <MdFavoriteBorder
+                  className={` ${
+                    favorites ? "group-hover:text-red-500" : "text-gray-400"
+                  }`}
+                />
               ) : (
                 <MdOutlineFavorite />
               )}

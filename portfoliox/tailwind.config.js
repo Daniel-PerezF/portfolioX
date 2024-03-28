@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      scale: {
+        101: "1.01",
+      },
       colors: {
         dark: "#27262b",
         orange: "#FB904D",
@@ -15,6 +18,7 @@ module.exports = {
         "slide-right": "slideInRight 0.5s forwards",
         "slide-left": "slideInLeft 0.5s forwards",
         "slide-up": "slideUp 0.5s forwards",
+        "slide-down": "slideUp 0.5s forwards",
       },
       keyframes: {
         slideInRight: {
@@ -51,11 +55,11 @@ module.exports = {
         slideDown: {
           from: {
             transform: "translateY(0)",
-            opacity: 1,
+            opacity: 0,
           },
           to: {
             transform: "translateY(100%)",
-            opacity: 0,
+            opacity: 1,
           },
         },
       },

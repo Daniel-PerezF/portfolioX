@@ -1,8 +1,16 @@
-import { Experiences, Links, Project, Tab } from ".";
+import { Experiences, Links, LinksProps, Project, Tab } from ".";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
 import { Tech } from "../components/Tech";
+import {
+  MdComputer,
+  FaLinkedin,
+  FaGithub,
+  SiUpwork,
+  MdOutlineMailOutline,
+  BsFillSuitcaseLgFill,
+} from "../icons/icons";
 
 export const experiences: Experiences[] = [
   {
@@ -145,5 +153,50 @@ export const links: Links[] = [
     id: 6,
     title: "Upwork",
     url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
+  },
+];
+
+export const linkData: LinksProps[] = [
+  {
+    id: 1,
+    name: "Website",
+    url: "https://www.danielperez.io",
+    icon: MdComputer,
+    copy: "https://www.danielperez.io",
+  },
+  {
+    id: 2,
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/daniel-f-perez/",
+    icon: FaLinkedin,
+    copy: "https://www.linkedin.com/in/daniel-f-perez/",
+  },
+  {
+    id: 3,
+    name: "Github",
+    url: "https://github.com/Daniel-PerezF",
+    icon: FaGithub,
+    copy: "https://github.com/Daniel-PerezF",
+  },
+  {
+    id: 4,
+    name: "Upwork",
+    url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
+    icon: SiUpwork,
+    copy: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
+  },
+  {
+    id: 5,
+    name: "Email",
+    url: "mailto:danielperezf98@gmail.com",
+    icon: MdOutlineMailOutline,
+    copy: "danielperezf98@gmail.com",
+  },
+  {
+    id: 6,
+    name: "Resume",
+    url: "/daniel-perez-resume.pdf",
+    icon: BsFillSuitcaseLgFill,
+    copy: "",
   },
 ];

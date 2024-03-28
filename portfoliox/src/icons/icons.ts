@@ -15,6 +15,11 @@ import { IoLocation } from "react-icons/io5";
 import { FaCode } from "react-icons/fa";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
+import { IoIosMore } from "react-icons/io";
+import { FaRegCopy } from "react-icons/fa";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { SiUpwork } from "react-icons/si";
+
 export {
   RiVerifiedBadgeFill,
   FaRetweet,
@@ -35,5 +40,9 @@ export {
   FaCode,
   IoReturnUpBackSharp,
   FaArrowLeft,
+  FaRegCopy,
   FaPaperPlane,
+  IoIosMore,
+  IoMdCheckmarkCircleOutline,
+  SiUpwork,
 };

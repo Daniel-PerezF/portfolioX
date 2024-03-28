@@ -11,7 +11,6 @@ function App() {
       <DarkModeProvider>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/links" element={<LinksPage />} />
         </Routes>
         <Footer />
       </DarkModeProvider>

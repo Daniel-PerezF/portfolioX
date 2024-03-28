@@ -13,12 +13,14 @@ import {
 } from "../icons/icons";
 import { DirectMessage } from "./DirectMessage";
 import { useOnScreen } from "./useOnScreen";
+import { Links2 } from "./Links2";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
   const [confettiActive, setConfettiActive] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDirectMessage, setShowDirectMessage] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
   const directMessageRef = useRef<HTMLDivElement>(null);
   const isDirectMessageVisible = useOnScreen(directMessageRef);
 
@@ -49,16 +51,16 @@ export function ProfileAbout() {
     }
     return { top: 0, left: 0 };
   };
-  useEffect(() => {
-    if (showDirectMessage) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showDirectMessage]);
+  // useEffect(() => {
+  //   if (showDirectMessage) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [showDirectMessage]);
 
   useEffect(() => {
     if (isDirectMessageVisible) {
@@ -148,14 +150,14 @@ export function ProfileAbout() {
               <IoLocation className="self-center " />
               Orange County, CA
             </div>
-            <div className="flex gap-1">
+            <div
+              className="flex gap-1 cursor-pointer"
+              onClick={() => setShowLinks(!showLinks)}
+            >
               <FaLink className="self-center" />
-              <Link
-                className="text-purple-400 hover:underline duration-150 ease-in-out"
-                to="/links"
-              >
+              <p className="text-purple-400 hover:underline duration-150 ease-in-out">
                 /links
-              </Link>
+              </p>
             </div>
             <div className="flex gap-1">
               <HiMiniCake className="self-center " />
@@ -209,17 +211,20 @@ export function ProfileAbout() {
           </div>
         </div>
       </div>
-      <div
-        className={`${
-          showDirectMessage
-            ? "opacity-100 translate-y-0 "
-            : "opacity-0 -translate-y-full"
-        } fixed top-0 left-0 w-full h-full flex items-center justify-center transition-transform duration-300 z-50`}
-      >
+      <div className={`DirectMessage ${showDirectMessage ? "" : "closed"}`}>
         <div ref={directMessageRef} className="w-full">
           <DirectMessage
             onClose={() => setShowDirectMessage(!showDirectMessage)}
           />
+        </div>
+      </div>
+      <div
+        className={`fixed top-0 left-0 right-0 bottom-0 Links ${
+          showLinks ? "" : "closed"
+        }`}
+      >
+        <div className="w-full h-full">
+          <Links2 onClose={() => setShowLinks(!showLinks)} />
         </div>
       </div>
     </>
