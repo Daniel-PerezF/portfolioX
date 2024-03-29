@@ -14,7 +14,7 @@ export function ContentTabs() {
 
   return (
     <div>
-      <div className="flex flex-row justify-evenly mt-2 gap-4">
+      <div className="flex flex-row justify-evenly mt-5 gap-4">
         {tabs.map((tab: Tab) => (
           <div
             key={tab.id}
