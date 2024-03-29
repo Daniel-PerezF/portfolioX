@@ -55,12 +55,6 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       setMessages(JSON.parse(storedMessages));
     }
   }, []);
-  useEffect(() => {
-    const storedMessages = sessionStorage.getItem("messages");
-    if (storedMessages) {
-      setMessages(JSON.parse(storedMessages));
-    }
-  }, []);
 
   return (
     <div

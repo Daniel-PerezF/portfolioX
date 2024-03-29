@@ -190,7 +190,7 @@ export function ProfileAbout() {
               </h3>
             </div>
           </div>
-          <div className="flex relative ml-3 mb-4">
+          {/* <div className="flex relative ml-3 mb-4">
             <div className="left-[-14px] absolute rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2 overflow-hidden">
               <img
                 src="/x-logo.jpeg"
@@ -208,7 +208,7 @@ export function ProfileAbout() {
             >
               Followed by Elon Musk and Joe Rogan
             </h3>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={`DirectMessage ${showDirectMessage ? "" : "closed"}`}>
