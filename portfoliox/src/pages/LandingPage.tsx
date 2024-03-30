@@ -18,11 +18,8 @@ export default function LandingPage() {
   }, []);
   useEffect(() => {
     if (showLinks) {
-      // Save the initial overflow value
       const initialOverflow = document.body.style.overflow;
-      // Disable scrolling
       document.body.style.overflow = "hidden";
-      // Restore the initial overflow value when showLinks is false
       return () => {
         document.body.style.overflow = initialOverflow;
       };
@@ -47,8 +44,8 @@ export default function LandingPage() {
           <div className="max-w-[820px] w-full relative aspect-[3/1] ">
             <div className="overflow-y-hidden aspect-[3/1] max-w-[820px]">
               <Banner
-                darkModeImage="https://i.pinimg.com/originals/44/c7/c1/44c7c1f3fbd68b2151c37af5f08198f1.gif"
-                lightModeImage="/banner-3.gif"
+                darkModeImage="/dark-mode-banner.gif"
+                lightModeImage="/light-mode-banner.gif"
               />
             </div>
 
