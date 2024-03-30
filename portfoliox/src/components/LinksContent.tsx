@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { LinksProps, linkData } from "../data";
 import { FaRegCopy, IoClose, IoMdCheckmarkCircleOutline } from "../icons/icons";
-export function Links2({ onClose }: { onClose: () => void }) {
+
+export function LinksContent({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
   const [copiedIds, setCopiedIds] = useState<number[]>([]);
 

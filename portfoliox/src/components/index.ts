@@ -7,4 +7,4 @@ export * from "./Tech";
 export * from "./About";
 export * from "./Projects";
 export * from "./Experience";
-export * from "./Links";
+export * from "./LinksContent";

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/useDarkMode";
 import { useEffect, useRef, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
@@ -13,8 +12,8 @@ import {
 } from "../icons/icons";
 import { DirectMessage } from "./DirectMessage";
 import { useOnScreen } from "./useOnScreen";
-import { Links2 } from "./Links2";
 import { useLinksContext } from "../context/LinksContext";
+import { LinksContent } from ".";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
@@ -52,16 +51,6 @@ export function ProfileAbout() {
     }
     return { top: 0, left: 0 };
   };
-  // useEffect(() => {
-  //   if (showDirectMessage) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "";
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = "";
-  //   };
-  // }, [showDirectMessage]);
 
   useEffect(() => {
     if (isDirectMessageVisible) {
@@ -71,11 +60,8 @@ export function ProfileAbout() {
 
   useEffect(() => {
     if (showDirectMessage) {
-      // Save the initial overflow value
       const initialOverflow = document.body.style.overflow;
-      // Disable scrolling
       document.body.style.overflow = "hidden";
-      // Restore the initial overflow value when showLinks is false
       return () => {
         document.body.style.overflow = initialOverflow;
       };
@@ -207,25 +193,6 @@ export function ProfileAbout() {
               </h3>
             </div>
           </div>
-          {/* <div className="flex relative ml-3 mb-4">
-            <div className="left-[-14px] absolute rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2 overflow-hidden">
-              <img
-                src="/x-logo.jpeg"
-                alt="elon musk twitter pfp"
-                className=""
-              />
-            </div>
-            <div className="rounded-full h-8 w-8 object-cover bg-white mt-3 mr-2  overflow-hidden ">
-              <img src="/jre.jpeg" alt="joe rogan twitter pfp" className="" />
-            </div>
-            <h3
-              className={`font-light text-[0.77rem] self-start pt-4 pb-5 ${
-                darkMode ? "text-gray-400" : "text-gray-500"
-              }`}
-            >
-              Followed by Elon Musk and Joe Rogan
-            </h3>
-          </div> */}
         </div>
       </div>
       <div className={`DirectMessage ${showDirectMessage ? "" : "closed"}`}>
@@ -241,7 +208,7 @@ export function ProfileAbout() {
         }`}
       >
         <div className="w-full h-full">
-          <Links2 onClose={() => toggleLinks()} />
+          <LinksContent onClose={() => toggleLinks()} />
         </div>
       </div>
     </>
