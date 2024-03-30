@@ -242,7 +242,7 @@ export function Projects() {
           <div className="w-full flex justify-center pt-4">
             <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
-                className={`cursor-pointer flex gap-1 ${
+                className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
                   items[projectIndex].retweetsToggle
                     ? "text-green-500"
                     : "text-gray-400"
@@ -258,7 +258,7 @@ export function Projects() {
               </div>
 
               <div
-                className={` cursor-pointer flex gap-1 ${
+                className={` cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-red-500 ${
                   items[projectIndex].favoritesToggle
                     ? "text-red-500"
                     : "text-gray-400"

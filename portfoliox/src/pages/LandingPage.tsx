@@ -7,13 +7,27 @@ import {
   ProfilePic,
 } from "../components/index";
 import { useEffect } from "react";
+import { useLinksContext } from "../context/LinksContext";
 
 export default function LandingPage() {
   const { darkMode } = useDarkMode();
+  const { showLinks } = useLinksContext();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  useEffect(() => {
+    if (showLinks) {
+      // Save the initial overflow value
+      const initialOverflow = document.body.style.overflow;
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+      // Restore the initial overflow value when showLinks is false
+      return () => {
+        document.body.style.overflow = initialOverflow;
+      };
+    }
+  }, [showLinks]);
   return (
     <div className={`${darkMode ? "bg-dark" : "bg-light"}`}>
       <div className="sticky top-0 z-30">
@@ -33,8 +47,8 @@ export default function LandingPage() {
           <div className="max-w-[820px] w-full relative aspect-[3/1] ">
             <div className="overflow-y-hidden aspect-[3/1] max-w-[820px]">
               <Banner
-                darkModeImage="/pixel-art-banner.gif"
-                lightModeImage="https://i.pinimg.com/originals/a3/8c/48/a38c48d1568838b344245390dec26625.gif"
+                darkModeImage="https://i.pinimg.com/originals/44/c7/c1/44c7c1f3fbd68b2151c37af5f08198f1.gif"
+                lightModeImage="/banner-3.gif"
               />
             </div>
 

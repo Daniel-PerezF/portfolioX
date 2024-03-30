@@ -96,7 +96,7 @@ export function Tech() {
         <div className="w-full flex justify-center pt-4">
           <div className="flex justify-around text-xl w-11/12 text-gray-400">
             <div
-              className={`flex gap-1 cursor-pointer ${
+              className={`flex gap-1 cursor-pointer duration-150 ease-in-out group hover:text-green-500 ${
                 retweets ? "" : "text-green-500"
               } cursor-pointer`}
               onClick={() => {
@@ -107,7 +107,7 @@ export function Tech() {
               <p className="text-sm ">{retweetCount}</p>
             </div>
             <div
-              className={`flex gap-1 ${
+              className={`flex gap-1 duration-150 ease-in-out group hover:text-red-500 ${
                 favorites ? "" : "text-red-500"
               } cursor-pointer`}
               onClick={() => {

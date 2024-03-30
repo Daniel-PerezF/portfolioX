@@ -14,13 +14,14 @@ import {
 import { DirectMessage } from "./DirectMessage";
 import { useOnScreen } from "./useOnScreen";
 import { Links2 } from "./Links2";
+import { useLinksContext } from "../context/LinksContext";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
   const [confettiActive, setConfettiActive] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [showDirectMessage, setShowDirectMessage] = useState(false);
-  const [showLinks, setShowLinks] = useState(false);
+  const { showLinks, toggleLinks } = useLinksContext();
   const directMessageRef = useRef<HTMLDivElement>(null);
   const isDirectMessageVisible = useOnScreen(directMessageRef);
 
@@ -68,6 +69,18 @@ export function ProfileAbout() {
     }
   }, [isDirectMessageVisible]);
 
+  useEffect(() => {
+    if (showDirectMessage) {
+      // Save the initial overflow value
+      const initialOverflow = document.body.style.overflow;
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+      // Restore the initial overflow value when showLinks is false
+      return () => {
+        document.body.style.overflow = initialOverflow;
+      };
+    }
+  }, [showDirectMessage]);
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -152,10 +165,14 @@ export function ProfileAbout() {
             </div>
             <div
               className="flex gap-1 cursor-pointer"
-              onClick={() => setShowLinks(!showLinks)}
+              onClick={() => toggleLinks()}
             >
               <FaLink className="self-center" />
-              <p className="text-purple-400 hover:underline duration-150 ease-in-out">
+              <p
+                className={`${
+                  darkMode ? "text-purple-400 " : "text-purple-500"
+                } hover:underline duration-150 ease-in-out`}
+              >
                 /links
               </p>
             </div>
@@ -224,7 +241,7 @@ export function ProfileAbout() {
         }`}
       >
         <div className="w-full h-full">
-          <Links2 onClose={() => setShowLinks(!showLinks)} />
+          <Links2 onClose={() => toggleLinks()} />
         </div>
       </div>
     </>
