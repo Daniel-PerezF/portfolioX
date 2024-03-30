@@ -56,7 +56,7 @@ export const projects: Project[] = [
     id: 1,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "February 2024 - Present",
+    date: "February 2024",
     pfp: "/memoji.PNG",
     images: [
       "/portfolio-1.png",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     id: 2,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "February 2024 - Present",
+    date: "November 2023",
     pfp: "/memoji.PNG",
     images: [
       "/spin-trade-1.png",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     id: 3,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "February 2024 - Present",
+    date: "January 2024",
     pfp: "/memoji.PNG",
     images: [
       "/ghibli-wiki-1.png",

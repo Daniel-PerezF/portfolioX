@@ -9,7 +9,7 @@ export function Banner({ darkModeImage, lightModeImage }: BannerProps) {
       <div className="relative ">
         <img
           src={imageUrl}
-          alt="cyberpunk style banner"
+          alt="twitter style banner"
           className="relative aspect-[3/1] object-cover "
         />
       </div>

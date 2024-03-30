@@ -35,11 +35,11 @@ export function Links2({ onClose }: { onClose: () => void }) {
     <div
       className={`flex flex-col items-center gap-3 h-full bg-gradient-to-b  ${
         darkMode
-          ? "from-[#E87461] via-orange to-[#E0C879]"
-          : "from-purple-400 via-purple-300 to-slate-300"
+          ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
+          : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
       } px-4 pb-8`}
     >
-      <div className="pt-14 pb-8 flex flex-col justify-center items-center">
+      <div className="pt-10 pb-4 flex flex-col justify-center items-center">
         <LinkPfp />
         <h3 className={`text-2xl font-bold`}>Daniel Perez</h3>
         <p className={``}>I write code and stuff</p>
@@ -58,7 +58,7 @@ export function Links2({ onClose }: { onClose: () => void }) {
             id="websiteLink"
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex gap-3 text-center w-full max-w-[750px] justify-between border px-4 py-4 rounded-full relative hover:scale-101 hover:duration-150 ease-in-out ${
+            className={`h-[55px] flex gap-3 text-center w-full max-w-[750px] justify-between border px-4 py-4 rounded-full relative hover:scale-101 hover:duration-150 ease-in-out ${
               darkMode ? "bg-white  text-dark" : "bg-white text-dark"
             }`}
           >
