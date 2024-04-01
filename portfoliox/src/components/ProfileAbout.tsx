@@ -10,10 +10,9 @@ import {
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
-import { DirectMessage } from "./DirectMessage";
-import { useOnScreen } from "./useOnScreen";
+
+import { DirectMessage, LinksContent, useOnScreen } from ".";
 import { useLinksContext } from "../context/LinksContext";
-import { LinksContent } from ".";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();

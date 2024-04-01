@@ -1,6 +1,5 @@
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useDarkMode } from "../context/useDarkMode";
-import { Link } from "react-router-dom";
 
 export function Nav() {
   const { darkMode, toggleDarkMode } = useDarkMode();

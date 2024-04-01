@@ -8,3 +8,5 @@ export * from "./About";
 export * from "./Projects";
 export * from "./Experience";
 export * from "./LinksContent";
+export * from "./useOnScreen";
+export * from "./DirectMessage";
