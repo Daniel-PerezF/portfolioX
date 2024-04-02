@@ -43,7 +43,6 @@ export const experiences: Experiences[] = [
       "Redesigned and rebuilt restaurant website using modern design principles and user experience techniques.",
       "Incorporated existing online ordering system for delivery and pickup, increasing customer convenience and sales.",
       "Collaborated with a team of developers to brainstorm ideas and implement creative solutions.",
-      "Worked with the restaurant owners to gather feedback, incorporate changes, and ensure the website met their expectations.",
     ],
 
     retweets: 3,
@@ -69,8 +68,6 @@ export const projects: Project[] = [
     code: "https://github.com/Daniel-PerezF/portfolio",
     description: [
       "Developed and deployed a personal website using React, TypeScript, and Tailwind.",
-      "Implemented dynamic and interactive elements on the website using TS Particles enhancing the user experience.",
-      "Designed and integrated authorization mechanisms to control user access based on roles and permissions.",
       "Deployed on GitHub Pages with a custom domain, ensuring global accessibility for a professional online presence.",
       "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
     ],
