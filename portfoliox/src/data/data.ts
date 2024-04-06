@@ -10,8 +10,7 @@ import {
   SiUpwork,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
-  FaXTwitter,
-  FaStackOverflow,
+ 
 } from "../icons/icons";
 
 export const experiences: Experiences[] = [
