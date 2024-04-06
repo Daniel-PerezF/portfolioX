@@ -1,4 +1,4 @@
-import { Experiences, Links, LinksProps, Project, Tab } from ".";
+import { Experiences, LinksProps, Project, Tab } from ".";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";

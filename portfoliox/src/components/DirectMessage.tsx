@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { Message } from "../data";
 import emailjs from "@emailjs/browser";
-import { FaArrowLeft, FaPaperPlane, IoClose } from "../icons/icons";
+import {  FaPaperPlane, IoClose } from "../icons/icons";
 
 export function DirectMessage({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
