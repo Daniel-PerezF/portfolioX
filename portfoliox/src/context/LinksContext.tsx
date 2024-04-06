@@ -21,7 +21,7 @@ interface LinksProviderProps {
 
 export const LinksProvider: React.FC<LinksProviderProps> = ({ children }) => {
   const [showLinks, setShowLinks] = useState(false);
-  console.log("showLinks", showLinks);
+ 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };

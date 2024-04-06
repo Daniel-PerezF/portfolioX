@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { Message } from "../data";
 import emailjs from "@emailjs/browser";
-import { FaArrowLeft, FaPaperPlane } from "../icons/icons";
+import { FaArrowLeft, FaPaperPlane, IoClose } from "../icons/icons";
 
 export function DirectMessage({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
@@ -64,9 +64,9 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       }`}
     >
       <div className="flex justify-start w-full p-4 ">
-        <FaArrowLeft
+        <IoClose
           onClick={onClose}
-          className={`text-xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center ${
+          className={`text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center ${
             darkMode ? "text-white" : "text-dark"
           }`}
         />

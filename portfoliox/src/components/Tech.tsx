@@ -61,7 +61,7 @@ export function Tech() {
 
               <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
               <p className="font-normal text-gray-400 text-sm pt-1">
-                February 2024 - Present
+                August 19, 2023 
               </p>
             </div>
           </div>

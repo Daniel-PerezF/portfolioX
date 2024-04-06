@@ -98,16 +98,15 @@ export function ProfileAbout() {
           <ConfettiExplosion
             force={0.05}
             duration={2200}
-            particleCount={40}
+            particleCount={20}
             width={200}
             colors={[
               "#FB904D",
               "#c084fc",
-              "#ffff",
+             "#F5CF43",
+             "#50CBC8",
               "#60a5fa",
-              "#EA484E",
-              "#FFE347",
-              "#23F0C7",
+            "#ffff"
             ]}
             onComplete={() => setConfettiActive(false)}
             style={{
@@ -195,7 +194,7 @@ export function ProfileAbout() {
         </div>
       </div>
       <div className={`DirectMessage ${showDirectMessage ? "" : "closed"}`}>
-        <div ref={directMessageRef} className="w-full">
+        <div ref={directMessageRef} className="w-full h-full overflow-y-scroll">
           <DirectMessage
             onClose={() => setShowDirectMessage(!showDirectMessage)}
           />
@@ -206,7 +205,11 @@ export function ProfileAbout() {
           showLinks ? "" : "closed"
         }`}
       >
-        <div className="w-full h-full">
+        <div className={`w-full h-full overflow-y-scroll bg-gradient-to-b ${
+        darkMode
+          ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
+          : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
+      }`}>
           <LinksContent onClose={() => toggleLinks()} />
         </div>
       </div>
