@@ -16,7 +16,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
 
     navigator.clipboard.writeText(url).then(
       function () {
-        console.log("URL copied to clipboard", url);
+        
         setCopiedIds((prevIds) => [...prevIds, id]);
         setTimeout(
           () =>
@@ -34,20 +34,20 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className={`flex flex-col items-center gap-3 h-full bg-gradient-to-b  ${
+      className={`flex flex-col items-center gap-3 h-full bg-gradient-to-b overflow-y-scroll ${
         darkMode
           ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
           : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
       } px-4 pb-8`}
     >
-      <div className="pt-10 pb-4 flex flex-col justify-center items-center">
+      <div className="pt-10 pb-0 sm:pb-3 flex flex-col justify-center items-center ">
         <LinkPfp />
         <h3 className={`text-2xl font-bold`}>Daniel Perez</h3>
         <p className={``}>I write code and stuff</p>
       </div>
       <div className="relative">
         <IoClose
-          className="text-white z-50 top-2 left-2 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+          className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
           onClick={onClose}
         />
       </div>

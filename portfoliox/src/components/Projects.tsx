@@ -195,7 +195,7 @@ export function Projects() {
                   >
                     <div className="relative">
                       <IoClose
-                        className="text-white z-50 top-2 left-2 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+                        className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
                         onClick={closeModal}
                       />
                       <div className="w-full flex justify-center">
@@ -213,24 +213,24 @@ export function Projects() {
                           }}
                         />
                         <button
-                          className="fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-10 hover:bg-opacity-35 rounded-full duration-150"
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
                           onClick={(e) => {
                             e.stopPropagation();
                             prevImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltLeft />
+                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out"/>
                         </button>
                         <button
-                          className="fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl bg-black bg-opacity-10 hover:bg-opacity-35 rounded-full duration-150"
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
                           onClick={(e) => {
                             e.stopPropagation();
                             nextImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltRight />
+                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out"/>
                         </button>
                       </div>
                     </div>

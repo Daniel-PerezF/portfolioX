@@ -21,7 +21,7 @@ export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({
     setDarkMode((prev) => {
       const newDarkMode = !prev;
       localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
-      console.log("Dark Mode State:", newDarkMode);
+      
       return newDarkMode;
     });
   };

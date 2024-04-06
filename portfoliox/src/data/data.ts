@@ -1,4 +1,4 @@
-import { Experiences, Links, LinksProps, Project, Tab } from ".";
+import { Experiences, LinksProps, Project, Tab } from ".";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
@@ -10,6 +10,7 @@ import {
   SiUpwork,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
+ 
 } from "../icons/icons";
 
 export const experiences: Experiences[] = [
@@ -55,7 +56,7 @@ export const projects: Project[] = [
     id: 1,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "February 2024",
+    date: "February 12, 2024",
     pfp: "/memoji.PNG",
     images: [
       "/portfolio-1.png",
@@ -78,7 +79,7 @@ export const projects: Project[] = [
     id: 2,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "November 2023",
+    date: "November 22, 2023",
     pfp: "/memoji.PNG",
     images: [
       "/spin-trade-1.png",
@@ -102,7 +103,7 @@ export const projects: Project[] = [
     id: 3,
     name: "Daniel Perez",
     username: "danielperez",
-    date: "January 2024",
+    date: "January 17, 2024",
     pfp: "/memoji.PNG",
     images: [
       "/ghibli-wiki-1.png",
@@ -129,27 +130,6 @@ export const tabs: Tab[] = [
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Tech", label: "Tech", component: Tech },
-];
-
-export const links: Links[] = [
-  { id: 1, title: "Website", url: "https://danielperez.io" },
-  { id: 2, title: "Email", url: "mailto:danielperezf98@gmail.com" },
-  {
-    id: 3,
-    title: "Resume",
-    url: "/daniel-perez-resume.pdf",
-  },
-  {
-    id: 4,
-    title: "Linkedin",
-    url: "https://www.linkedin.com/in/daniel-f-perez/",
-  },
-  { id: 5, title: "GitHub", url: "https://github.com/Daniel-PerezF" },
-  {
-    id: 6,
-    title: "Upwork",
-    url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
-  },
 ];
 
 export const linkData: LinksProps[] = [

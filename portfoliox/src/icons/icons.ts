@@ -19,6 +19,8 @@ import { IoIosMore } from "react-icons/io";
 import { FaRegCopy } from "react-icons/fa";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { SiUpwork } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaStackOverflow } from "react-icons/fa";
 
 export {
   RiVerifiedBadgeFill,
@@ -45,4 +47,6 @@ export {
   IoIosMore,
   IoMdCheckmarkCircleOutline,
   SiUpwork,
+  FaXTwitter,
+  FaStackOverflow
 };
