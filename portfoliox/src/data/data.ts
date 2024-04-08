@@ -10,7 +10,6 @@ import {
   SiUpwork,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
- 
 } from "../icons/icons";
 
 export const experiences: Experiences[] = [
@@ -79,6 +78,54 @@ export const projects: Project[] = [
     id: 2,
     name: "Daniel Perez",
     username: "danielperez",
+    date: "January 17, 2024",
+    pfp: "/memoji.PNG",
+    images: [
+      "/chatgptstyler-1.png",
+      "/chatgptstyler-3.png",
+      "/chatgptstyler-2.png",
+      "/chatgptstyler-4.png",
+    ],
+    title: "ChatGPT Styler Extension",
+    link: "https://chromewebstore.google.com/detail/chatgpt-styler/mmfefeellkogplnodhfnggcpkomlaapj",
+    code: "https://github.com/joseph-w-valdez/chatGPTStyler",
+    description: [
+      "This extension was built to enhance ChatGPT's functionality by allowing users to use a GUI to edit ChatGPT's UI in real time",
+      "Enhances usability with colored messages, customizable widths, bubble colors, text colors, corner rounding, padding, and a 'scroll-to-top' button",
+    ],
+
+    retweets: 5,
+    favorites: 9,
+  },
+
+  {
+    id: 3,
+    name: "Daniel Perez",
+    username: "danielperez",
+    date: "January 12, 2024",
+    pfp: "/memoji.PNG",
+    images: [
+      "/ghibli-wiki-1.png",
+      "/ghibli-wiki-2.png",
+      "/ghibli-wiki-3.png",
+      "/ghibli-wiki-4.png",
+    ],
+    title: "Studio Ghibli Wiki - Front End",
+    link: "https://daniel-perezf.github.io/ghibli-wiki/",
+    code: "https://github.com/Daniel-PerezF/ghibli-wiki",
+    description: [
+      "Utilized React, TypeScript, Tailwind and GH-Pages to build a responsive and intuitive front-end design.",
+      "Engineered a display of Studio Ghibli films from a public API and implemented Fetch to display results.",
+      "Designed sitemap using Figma's wireframing tools and utilized LocalStorage to store and retrieve data from previous sessions.",
+    ],
+
+    retweets: 2,
+    favorites: 8,
+  },
+  {
+    id: 4,
+    name: "Daniel Perez",
+    username: "danielperez",
     date: "November 22, 2023",
     pfp: "/memoji.PNG",
     images: [
@@ -98,30 +145,6 @@ export const projects: Project[] = [
 
     retweets: 4,
     favorites: 6,
-  },
-  {
-    id: 3,
-    name: "Daniel Perez",
-    username: "danielperez",
-    date: "January 17, 2024",
-    pfp: "/memoji.PNG",
-    images: [
-      "/ghibli-wiki-1.png",
-      "/ghibli-wiki-2.png",
-      "/ghibli-wiki-3.png",
-      "/ghibli-wiki-4.png",
-    ],
-    title: "Studio Ghibli Wiki - Front End",
-    link: "https://daniel-perezf.github.io/ghibli-wiki/",
-    code: "https://github.com/Daniel-PerezF/ghibli-wiki",
-    description: [
-      "Utilized React, TypeScript, Tailwind and GH-Pages to build a responsive and intuitive front-end design.",
-      "Engineered a display of Studio Ghibli films from a public API and implemented Fetch to display results.",
-      "Designed sitemap using Figma's wireframing tools and utilized LocalStorage to store and retrieve data from previous sessions.",
-    ],
-
-    retweets: 2,
-    favorites: 8,
   },
 ];
 
