@@ -108,9 +108,7 @@ export function Projects() {
                 <img
                   src={project.pfp}
                   alt={`${project.name} profile pic`}
-                  className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
-                    darkMode ? "ring-black" : "ring-white"
-                  }`}
+                  className={`rounded-full h-14 w-14  object-cover bg-white  m-4`}
                 />
               </div>
 

@@ -87,9 +87,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
             <img
               src="/memoji.PNG"
               alt="my memoji"
-              className={`rounded-full h-14 w-14 object-cover bg-white ring-1 my-4 ${
-                darkMode ? "ring-black" : "ring-white"
-              }`}
+              className={`rounded-full h-14 w-14 object-cover bg-white my-4 `}
             />
             <p>@danielperez</p>
             <p className="p">Joined March 2024</p>

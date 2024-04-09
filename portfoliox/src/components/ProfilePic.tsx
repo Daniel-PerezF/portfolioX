@@ -8,9 +8,7 @@ export function ProfilePic({ src, alt }: { src: string; alt: string }) {
       <img
         src={src}
         alt={alt}
-        className={`rounded-full h-28 w-28 object-cover bg-white ring-4 m-4  ${
-          darkMode ? "ring-black" : "ring-white"
-        } `}
+        className={`rounded-full h-28 w-28 object-cover bg-white m-4`}
       />
     </div>
   );

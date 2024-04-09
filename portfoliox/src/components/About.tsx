@@ -69,9 +69,7 @@ export function About() {
               <img
                 src="/memoji.PNG"
                 alt="my memoji"
-                className={`rounded-full h-14 w-14  object-cover bg-white  ring-1 m-4 ${
-                  darkMode ? "ring-black" : "ring-white"
-                }`}
+                className={`rounded-full h-14 w-14  object-cover bg-white  m-4 `}
               />
             </div>
 

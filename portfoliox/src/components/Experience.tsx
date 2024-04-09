@@ -78,9 +78,7 @@ export function Experience() {
                 <img
                   src={exp.pfp}
                   alt=""
-                  className={`rounded-full h-14 w-14 object-cover bg-white ring-1 m-4 ${
-                    darkMode ? "ring-black" : "ring-white"
-                  }`}
+                  className={`rounded-full h-14 w-14 object-cover bg-white  m-4 `}
                 />
               </div>
 
