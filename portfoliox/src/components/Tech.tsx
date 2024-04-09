@@ -74,10 +74,10 @@ export function Tech() {
               {" "}
               <p className="pt-4 pb-6">
                 Frontend - HTML, CSS, Tailwind, JavaScript, TypeScript, React,
-                Nextjs
+                Next
                 <br />
                 <br />
-                Backend - Nodejs, Express, PostgreSQL
+                Backend - Node, Express, PostgreSQL
                 <br />
                 <br />
                 Deployment - Vercel, Aws, Github

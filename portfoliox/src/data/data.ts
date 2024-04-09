@@ -20,7 +20,7 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "March 2024 - Present",
-    role: "Teaching Assistant, Learning Fuze",
+    role: "Teaching Assistant, LearningFuze",
     location: "Irvine, CA",
     description: [
       "Cultivated collaborative learning, ensuring students grasp coding concepts through personalized support.",
