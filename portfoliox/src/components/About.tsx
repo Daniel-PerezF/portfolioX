@@ -80,7 +80,7 @@ export function About() {
                 {" "}
                 <h3>Daniel Perez</h3>
                 <div className="text-gray-400 text-sm font-light">
-                  @danielperez
+                  @dxnieldev
                 </div>
               </div>
 
@@ -100,22 +100,22 @@ export function About() {
             >
               {" "}
               <p className="pt-4 pb-6">
-                Hey there! I'm Daniel, a software developer driven by a lifelong
-                fascination with technology. From childhood days tinkering with
+                Hey there! I'm Daniel, a web developer driven by a lifelong
+                fascination with technology. From my childhood days playing games on
                 our household computer to my recent curiosity in AI and coding,
                 technology has always captivated me.
                 <br />
                 <br />
-                After completing an intensive full-stack software development
-                course at LearningFuze coding bootcamp, I uncovered my true
+                After completing an intensive full stack web development
+                program at LearningFuze coding bootcamp, I uncovered my true
                 passion for coding and web design. I've always had a love for
                 creativity and expression, and I found a new outlet for it
                 through code.
                 <br />
                 <br />
-                Now, as a software developer, I'm eager to continue learning and
+                Now, as a web developer, I'm eager to continue learning and
                 growing in this dynamic field. I'm actively seeking new avenues
-                for collaboration and growth within the software development
+                for collaboration and growth within the software and web development
                 sphere. If you have any exciting projects or opportunities on
                 the horizon, I'd love to chat and see how we can potentially
                 work together!

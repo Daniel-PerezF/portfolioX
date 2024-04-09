@@ -85,7 +85,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
                 />
               </div>
             )}
-            {link.id === 6 && (
+            {link.id === 7 && (
               <div className="invisible">
                 <FaRegCopy />
               </div>

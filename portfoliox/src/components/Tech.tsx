@@ -55,7 +55,7 @@ export function Tech() {
                 {" "}
                 <h3>Daniel Perez</h3>
                 <div className="text-gray-400 text-sm font-light">
-                  @danielperez
+                  @dxnieldev
                 </div>
               </div>
 
