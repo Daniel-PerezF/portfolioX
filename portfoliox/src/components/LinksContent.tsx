@@ -40,7 +40,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
           : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
       } px-4 pb-8`}
     >
-      <div className="pt-10 pb-0 sm:pb-3 flex flex-col justify-center items-center ">
+      <div className="pt-8 pb-0 sm:pb-3 flex flex-col justify-center items-center ">
         <LinkPfp />
         <h3 className={`text-2xl font-bold`}>Daniel Perez</h3>
         <p className={``}>I write code and stuff</p>
