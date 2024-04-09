@@ -1,7 +1,6 @@
-import { useDarkMode } from "../context/useDarkMode";
 
 export function ProfilePic({ src, alt }: { src: string; alt: string }) {
-  const { darkMode } = useDarkMode();
+  
 
   return (
     <div className="w-full">
