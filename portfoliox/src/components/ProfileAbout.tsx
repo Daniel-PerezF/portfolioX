@@ -126,12 +126,12 @@ export function ProfileAbout() {
               darkMode ? "text-gray-400" : "text-gray-500"
             } font-light `}
           >
-            @danielperez
+            @dxnieldev
           </div>{" "}
           <div>
             {" "}
-            Full Stack Web Developer with a passion for creativity, design and
-            front-end development. <br /> For any questions or inquires reach
+            Full Stack web developer with a passion for creativity, design and
+            Front End development. <br /> For any questions or inquires reach
             out by dm, always up for a chat!
           </div>
           <div

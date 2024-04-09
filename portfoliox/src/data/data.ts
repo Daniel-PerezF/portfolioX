@@ -10,6 +10,7 @@ import {
   SiUpwork,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
+  FaXTwitter,
 } from "../icons/icons";
 
 export const experiences: Experiences[] = [
@@ -17,7 +18,7 @@ export const experiences: Experiences[] = [
     id: 1,
     pfp: "./memoji.PNG",
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "March 2024 - Present",
     role: "Teaching Assistant, Learning Fuze",
     location: "Irvine, CA",
@@ -34,7 +35,7 @@ export const experiences: Experiences[] = [
     id: 2,
     pfp: "./memoji.PNG",
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "February 2024 - Present",
     role: "Freelance Web Developer, Bullies BBQ",
     location: "Remote",
@@ -54,7 +55,7 @@ export const projects: Project[] = [
   {
     id: 1,
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "February 12, 2024",
     pfp: "/memoji.PNG",
     images: [
@@ -77,7 +78,7 @@ export const projects: Project[] = [
   {
     id: 2,
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "January 17, 2024",
     pfp: "/memoji.PNG",
     images: [
@@ -101,7 +102,7 @@ export const projects: Project[] = [
   {
     id: 3,
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "January 12, 2024",
     pfp: "/memoji.PNG",
     images: [
@@ -125,7 +126,7 @@ export const projects: Project[] = [
   {
     id: 4,
     name: "Daniel Perez",
-    username: "danielperez",
+    username: "dxnieldev",
     date: "November 22, 2023",
     pfp: "/memoji.PNG",
     images: [
@@ -179,20 +180,27 @@ export const linkData: LinksProps[] = [
   },
   {
     id: 4,
+    name: "Twitter / X",
+    url: "https://twitter.com/dxnieldev",
+    icon:  FaXTwitter,
+    copy: "https://twitter.com/dxnieldev",
+  },
+  {
+    id: 5,
     name: "Upwork",
     url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
     icon: SiUpwork,
     copy: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
   },
   {
-    id: 5,
+    id: 6,
     name: "Email",
     url: "mailto:danielperezf98@gmail.com",
     icon: MdOutlineMailOutline,
     copy: "danielperezf98@gmail.com",
   },
   {
-    id: 6,
+    id: 7,
     name: "Resume",
     url: "/daniel-perez-resume.pdf",
     icon: BsFillSuitcaseLgFill,
