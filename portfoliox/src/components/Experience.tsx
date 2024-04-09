@@ -102,14 +102,19 @@ export function Experience() {
               <div className="mr-2">{exp.role}</div>
               <div className="flex gap mr-12">
                 {exp.url && (
+                    <div className="tooltip">
+                      <span className="tooltiptext text-xs">
+                        View Live
+                      </span>
                   <a
                     href={exp.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex self-center"
                   >
-                    <FaLink className="text-md hover:text-blue-300 duration-150 ease-in-out" />
+                    <FaLink className={`text-md duration-150 ease-in-out text-gray-400 ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"} `} />
                   </a>
+                  </div>
                 )}
               </div>
             </div>

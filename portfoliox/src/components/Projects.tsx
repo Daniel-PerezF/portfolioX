@@ -134,20 +134,30 @@ export function Projects() {
                 <div className="flex gap-2 justify-between pr-4">
                   <p className=""> {project.title}</p>
                   <div className="flex justify-end gap-4 ">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLink className="self-center  mt-1 hover:text-blue-300 duration-150 ease-in-out" />
-                    </a>
+                    <div className="tooltip">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="tooltiptext text-xs">
+                          View Live
+                        </span>
+                        <FaLink className={`self-center  mt-1   duration-150 ease-in-out ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"}`} />
+                      </a>
+                    </div>
+                    <div className="tooltip">
                     <a
                       href={project.code}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaCode className="self-center mt-[0.15rem] text-lg hover:text-blue-300 duration-150 ease-in-out" />
+                      <span className="tooltiptext text-xs">
+                          View Code
+                        </span>
+                      <FaCode className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"}`} />
                     </a>
+                    </div>
                   </div>
                 </div>
 
@@ -211,24 +221,28 @@ export function Projects() {
                           }}
                         />
                         <button
-                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
                           onClick={(e) => {
                             e.stopPropagation();
                             prevImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out"/>
+                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out" />
                         </button>
                         <button
-                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
                           onClick={(e) => {
                             e.stopPropagation();
                             nextImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out"/>
+                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out" />
                         </button>
                       </div>
                     </div>
