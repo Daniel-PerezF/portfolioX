@@ -89,7 +89,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
               alt="my memoji"
               className={`rounded-full h-14 w-14 object-cover bg-white my-4 `}
             />
-            <p>@danielperez</p>
+            <p>@dxnieldev</p>
             <p className="p">Joined March 2024</p>
           </div>
 

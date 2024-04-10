@@ -23,7 +23,7 @@ export const experiences: Experiences[] = [
     role: "Teaching Assistant, LearningFuze",
     location: "Irvine, CA",
     description: [
-      "Assisted students with debugging and troubleshooting coding problems",
+      "Assisted students with debugging and troubleshooting coding problems.",
       "Maintained a detailed record of student interactions and how I assisted them.",
       "Provided one-on-one guidance to students with varying levels of coding experience, helping them progress through the bootcamp curriculum.",
     ],
