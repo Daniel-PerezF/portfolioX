@@ -182,7 +182,7 @@ export const linkData: LinksProps[] = [
     id: 4,
     name: "Twitter / X",
     url: "https://twitter.com/dxnieldev",
-    icon:  FaXTwitter,
+    icon: FaXTwitter,
     copy: "https://twitter.com/dxnieldev",
   },
   {
@@ -202,7 +202,7 @@ export const linkData: LinksProps[] = [
   {
     id: 7,
     name: "Resume",
-    url: "/daniel-perez-resume.pdf",
+    url: "/resume.pdf",
     icon: BsFillSuitcaseLgFill,
     copy: "",
   },
