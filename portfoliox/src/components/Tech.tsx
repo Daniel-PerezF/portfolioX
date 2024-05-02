@@ -59,7 +59,7 @@ export function Tech() {
 
               <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
               <p className="font-normal text-gray-400 text-sm pt-1">
-                August 19, 2023 
+                August 19, 2023
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export function Tech() {
                 Next
                 <br />
                 <br />
-                Backend - Node, Express, PostgreSQL
+                Backend - Node, Express, PostgreSQL, MongoDB
                 <br />
                 <br />
                 Deployment - Vercel, Aws, Github
