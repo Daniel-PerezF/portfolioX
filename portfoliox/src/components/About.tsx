@@ -67,7 +67,7 @@ export function About() {
           <div className="flex justify start gap-1">
             <div className="">
               <img
-                src="/memoji.PNG"
+                src="/memoji4.PNG"
                 alt="my memoji"
                 className={`rounded-full h-14 w-14  object-cover bg-white  m-4 `}
               />
@@ -99,24 +99,23 @@ export function About() {
               {" "}
               <p className="pt-4 pb-6">
                 Hey there! I'm Daniel, a web developer driven by a lifelong
-                fascination with technology. From my childhood days playing games on
-                our household computer to my recent curiosity in AI and coding,
-                technology has always captivated me.
+                fascination with technology. From my childhood days playing
+                games on our household computer to my recent curiosity in AI and
+                coding, technology has always captivated me.
                 <br />
                 <br />
-                After completing an intensive full stack web development
-                program at LearningFuze coding bootcamp, I uncovered my true
-                passion for coding and web design. I've always had a love for
-                creativity and expression, and I found a new outlet for it
-                through code.
+                After completing an intensive full stack web development program
+                at LearningFuze coding bootcamp, I uncovered my true passion for
+                coding and web design. I've always had a love for creativity and
+                expression, and I found a new outlet for it through code.
                 <br />
                 <br />
                 Now, as a web developer, I'm eager to continue learning and
                 growing in this dynamic field. I'm actively seeking new avenues
-                for collaboration and growth within the software and web development
-                sphere. If you have any exciting projects or opportunities on
-                the horizon, I'd love to chat and see how we can potentially
-                work together!
+                for collaboration and growth within the software and web
+                development sphere. If you have any exciting projects or
+                opportunities on the horizon, I'd love to chat and see how we
+                can potentially work together!
               </p>
               <div
                 className={`flex overflow-hidden rounded-2xl  ${
@@ -163,24 +162,28 @@ export function About() {
                           }}
                         />
                         <button
-                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
                           onClick={(e) => {
                             e.stopPropagation();
                             prevImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out"/>
+                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out" />
                         </button>
                         <button
-                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${darkMode ? "bg-[#858585]":"bg-white"} bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
                           onClick={(e) => {
                             e.stopPropagation();
                             nextImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out"/>
+                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out" />
                         </button>
                       </div>
                     </div>

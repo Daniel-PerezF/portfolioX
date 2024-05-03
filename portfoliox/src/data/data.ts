@@ -16,7 +16,7 @@ import {
 export const experiences: Experiences[] = [
   {
     id: 1,
-    pfp: "./memoji.PNG",
+    pfp: "./memoji4.PNG",
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "March 2024 - Present",
@@ -33,7 +33,7 @@ export const experiences: Experiences[] = [
   },
   {
     id: 2,
-    pfp: "./memoji.PNG",
+    pfp: "./memoji4.PNG",
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "February 2024 - Present",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "February 12, 2024",
-    pfp: "/memoji.PNG",
+    pfp: "/memoji4.PNG",
     images: [
       "/portfolio-1.png",
       "/portfolio-2.png",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "January 17, 2024",
-    pfp: "/memoji.PNG",
+    pfp: "/memoji4.PNG",
     images: [
       "/chatgptstyler-1.png",
       "/chatgptstyler-3.png",
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "January 12, 2024",
-    pfp: "/memoji.PNG",
+    pfp: "/memoji4.PNG",
     images: [
       "/ghibli-wiki-1.png",
       "/ghibli-wiki-2.png",
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "November 22, 2023",
-    pfp: "/memoji.PNG",
+    pfp: "/memoji4.PNG",
     images: [
       "/spin-trade-1.png",
       "/spin-trade-2.png",
