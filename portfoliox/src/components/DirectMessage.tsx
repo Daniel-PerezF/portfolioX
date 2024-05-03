@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { Message } from "../data";
 import emailjs from "@emailjs/browser";
-import {  FaPaperPlane, IoClose } from "../icons/icons";
+import { FaPaperPlane, IoClose } from "../icons/icons";
 
 export function DirectMessage({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
@@ -85,7 +85,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
             }`}
           >
             <img
-              src="/memoji.PNG"
+              src="/memoji4.png"
               alt="my memoji"
               className={`rounded-full h-14 w-14 object-cover bg-white my-4 `}
             />

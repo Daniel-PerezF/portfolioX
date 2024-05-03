@@ -67,7 +67,7 @@ export function About() {
           <div className="flex justify start gap-1">
             <div className="">
               <img
-                src="/memoji4.PNG"
+                src="/memoji4.png"
                 alt="my memoji"
                 className={`rounded-full h-14 w-14  object-cover bg-white  m-4 `}
               />
