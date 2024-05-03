@@ -219,7 +219,7 @@ export function About() {
             <div
               className={`flex gap-1 duration-150 ease-in-out group ${
                 favorites
-                  ? "text-gray-400 group-hover:text-red-500 "
+                  ? "text-gray-400 group-hover:text-red-500"
                   : "text-red-500"
               } cursor-pointer`}
               onClick={() => {
