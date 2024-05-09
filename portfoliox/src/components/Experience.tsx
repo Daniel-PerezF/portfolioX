@@ -102,18 +102,22 @@ export function Experience() {
               <div className="mr-2">{exp.role}</div>
               <div className="flex gap mr-12">
                 {exp.url && (
-                    <div className="tooltip">
-                      <span className="tooltiptext text-xs">
-                        View Live
-                      </span>
-                  <a
-                    href={exp.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex self-center"
-                  >
-                    <FaLink className={`text-md duration-150 ease-in-out text-gray-400 ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"} `} />
-                  </a>
+                  <div className="tooltip">
+                    <span className="tooltiptext text-xs">View Live</span>
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex self-center"
+                    >
+                      <FaLink
+                        className={`text-md duration-150 ease-in-out text-gray-400 ${
+                          darkMode
+                            ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                            : "text-[#7C9AB6] hover:text-[#6286A7]"
+                        } `}
+                      />
+                    </a>
                   </div>
                 )}
               </div>
@@ -124,7 +128,7 @@ export function Experience() {
               {exp.description.map((item, index) => (
                 <div key={index + item} className="mr-2">
                   <div className="ml-3 flex">
-                    <div className="pt-1">*</div>
+                    <div className="pt-1">•</div>
                     <div className="ml-2 ">{item}</div>
                   </div>
                 </div>

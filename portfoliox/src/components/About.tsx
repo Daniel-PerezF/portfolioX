@@ -31,7 +31,7 @@ export function About() {
     setFavorites((prevState: boolean) => !prevState);
     sessionStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
   };
-  const images = ["/ssme.jpg", "/c-0823.jpg"];
+  const images = ["/me.png", "/c-0823.jpg"];
 
   const openModal = (image: string) => {
     const index = images.indexOf(image);

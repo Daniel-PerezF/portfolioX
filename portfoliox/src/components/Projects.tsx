@@ -140,23 +140,31 @@ export function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span className="tooltiptext text-xs">
-                          View Live
-                        </span>
-                        <FaLink className={`self-center  mt-1   duration-150 ease-in-out ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"}`} />
+                        <span className="tooltiptext text-xs">View Live</span>
+                        <FaLink
+                          className={`self-center  mt-1   duration-150 ease-in-out ${
+                            darkMode
+                              ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                              : "text-[#7C9AB6] hover:text-[#6286A7]"
+                          }`}
+                        />
                       </a>
                     </div>
                     <div className="tooltip">
-                    <a
-                      href={project.code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="tooltiptext text-xs">
-                          View Code
-                        </span>
-                      <FaCode className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${darkMode ? "text-[#97AEC4] hover:text-[#7C9AB6]":"text-[#7C9AB6] hover:text-[#6286A7]"}`} />
-                    </a>
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="tooltiptext text-xs">View Code</span>
+                        <FaCode
+                          className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${
+                            darkMode
+                              ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                              : "text-[#7C9AB6] hover:text-[#6286A7]"
+                          }`}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -165,7 +173,7 @@ export function Projects() {
                   {project.description.map((item, index) => (
                     <div key={index} className="mr-2">
                       <div className="ml-3 flex">
-                        <div className="pt-1">*</div>
+                        <div className="pt-1">•</div>
                         <div className="ml-2 ">{item}</div>
                       </div>
                     </div>
