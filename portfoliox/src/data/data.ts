@@ -174,7 +174,7 @@ export const services: Service[] = [
     date: "February 2024 - Present",
     role: "Basic Website Package",
     description: [
-      "A simple yet professional website with up to 5 pages.",
+      "A simple yet professional website with up to 3 pages.",
       "Responsive design to ensure compatibility with all devices.",
       "Basic SEO optimization to help improve search engine ranking.",
       "Integration of social media links.",
@@ -193,7 +193,7 @@ export const services: Service[] = [
     role: "Standard Website Package",
     description: [
       "Everything in the Basic Website Package.",
-      "Up to 10 pages.",
+      "Up to 6 pages.",
       "Advanced SEO optimization.",
       "Content management system (CMS) integration for easy content updates.",
       "Basic e-commerce functionality.",
