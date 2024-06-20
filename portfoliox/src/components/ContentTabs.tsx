@@ -14,11 +14,11 @@ export function ContentTabs() {
 
   return (
     <div>
-      <div className="flex flex-row justify-evenly mt-5 gap-4">
+      <div className="flex flex-row justify-evenly mt-5 gap-4 mx-2">
         {tabs.map((tab: Tab) => (
           <div
             key={tab.id}
-            className={`rounded-lg ${
+            className={`rounded-lg  ${
               darkMode ? "hover:bg-[#37363c]" : "hover:bg-lighter"
             } w-full flex justify-center cursor-pointer p-2 ${
               activeTab === tab.id
