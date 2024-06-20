@@ -46,14 +46,12 @@ export type Experiences = {
 
 export type Service = {
   id: number;
+  pfp: string;
   name: string;
   username: string;
-  date: string;
-  pfp: string;
-  url?: string;
-  code?: string;
   role: string;
-  location: string;
+  url?: string;
+  date: string;
   description: string[];
   retweets: number;
   favorites: number;

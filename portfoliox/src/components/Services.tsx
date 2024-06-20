@@ -13,20 +13,22 @@ export function Services() {
   const { darkMode } = useDarkMode();
 
   const [items, setItems] = useState<Item[]>(() => {
-    const itemsFromSession = sessionStorage.getItem("experiences");
-    return itemsFromSession
-      ? JSON.parse(itemsFromSession)
-      : services.map((serv) => ({
-          id: serv.id,
-          retweets: serv.retweets,
-          favorites: serv.favorites,
-          retweetsToggle: false,
-          favoritesToggle: false,
-        }));
+    const itemsFromSession = sessionStorage.getItem("services");
+    if (itemsFromSession) {
+      return JSON.parse(itemsFromSession);
+    } else {
+      return services.map((serv) => ({
+        id: serv.id,
+        retweets: serv.retweets,
+        favorites: serv.favorites,
+        retweetsToggle: false,
+        favoritesToggle: false,
+      }));
+    }
   });
 
   useEffect(() => {
-    sessionStorage.setItem("experiences", JSON.stringify(items));
+    sessionStorage.setItem("services", JSON.stringify(items));
   }, [items]);
 
   function handleRetweet(index: number) {
@@ -125,8 +127,8 @@ export function Services() {
           </div>
           <div className="w-full flex justify-center">
             <div className="flex w-11/12 flex-wrap">
-              {serv.description.map((item, index) => (
-                <div key={index + item} className="mr-2">
+              {serv.description.map((item, descIndex) => (
+                <div key={descIndex + item} className="mr-2">
                   <div className="ml-3 flex">
                     <div className="pt-1">•</div>
                     <div className="ml-2 ">{item}</div>
@@ -139,14 +141,14 @@ export function Services() {
             <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
-                  items[index].retweetsToggle
+                  items[index]?.retweetsToggle
                     ? "text-green-500 "
                     : "text-gray-400"
                 }`}
                 onClick={() => handleRetweet(index)}
               >
                 {items[index]?.retweetsToggle ? <FaRetweet /> : <FaRetweet />}
-                <p className="text-sm ">{items[index].retweets}</p>
+                <p className="text-sm ">{items[index]?.retweets}</p>
               </div>
 
               <div
@@ -162,7 +164,7 @@ export function Services() {
                 ) : (
                   <MdFavoriteBorder />
                 )}
-                <p className="text-sm ">{items[index].favorites}</p>
+                <p className="text-sm ">{items[index]?.favorites}</p>
               </div>
             </div>
           </div>
