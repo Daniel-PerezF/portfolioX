@@ -103,10 +103,10 @@ export function ProfileAbout() {
             colors={[
               "#FB904D",
               "#c084fc",
-             "#F5CF43",
-             "#50CBC8",
+              "#F5CF43",
+              "#50CBC8",
               "#60a5fa",
-            "#ffff"
+              "#ffff",
             ]}
             onComplete={() => setConfettiActive(false)}
             style={{
@@ -121,19 +121,18 @@ export function ProfileAbout() {
             <h3>Daniel Perez</h3>
             <RiVerifiedBadgeFill className="text-blue-400" />
           </div>
-          <div
+          <h1
             className={` pb-4 ${
               darkMode ? "text-gray-400" : "text-gray-500"
             } font-light `}
           >
             @dxnieldev
-          </div>{" "}
-          <div>
-            {" "}
+          </h1>
+          <h2>
             Full Stack web developer with a passion for creativity, design and
             Front End development. <br /> For any questions or inquires reach
             out by dm, always up for a chat!
-          </div>
+          </h2>
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
               darkMode ? "text-gray-400" : "text-gray-500"
@@ -205,11 +204,13 @@ export function ProfileAbout() {
           showLinks ? "" : "closed"
         }`}
       >
-        <div className={`w-full h-full overflow-y-scroll bg-gradient-to-b ${
-        darkMode
-          ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
-          : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
-      }`}>
+        <div
+          className={`w-full h-full overflow-y-scroll bg-gradient-to-b ${
+            darkMode
+              ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
+              : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
+          }`}
+        >
           <LinksContent onClose={() => toggleLinks()} />
         </div>
       </div>

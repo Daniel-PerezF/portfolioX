@@ -1,8 +1,9 @@
-import { Experiences, LinksProps, Project, Tab } from ".";
+import { Experiences, LinksProps, Project, Service, Tab } from ".";
+import { Services } from "../components/Services";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
-import { Tech } from "../components/Tech";
+
 import {
   MdComputer,
   FaLinkedin,
@@ -164,12 +165,46 @@ export const projects: Project[] = [
     favorites: 6,
   },
 ];
+export const services: Service[] = [
+  {
+    id: 1,
+    pfp: "./memoji4.png",
+    name: "Daniel Perez",
+    username: "dxnieldev",
+    date: "May 2024 - Present",
+    role: "Junior Front End Developer, The Daily Wire",
+    location: "Remote",
+    description: [
+      "Assisted in the development of responsive web applications using HTML, CSS, JavaScript/TypeScript and React under the guidance of senior developers.",
+      "Contributed to the implementation of UI designs and features, gaining hands-on experience in front-end development best practices.",
+      "Researched and recommended technologies and tools to meet project requirements based on design specifications and features.",
+    ],
+    retweets: 4,
+    favorites: 8,
+  },
+  {
+    id: 2,
+    pfp: "./memoji4.png",
+    name: "Daniel Perez",
+    username: "dxnieldev",
+    date: "March 2024 - May 2024",
+    role: "Teaching Assistant, LearningFuze",
+    location: "Irvine, CA",
+    description: [
+      "Supported students in comprehending application solutions, emphasizing key technologies such as HTML, CSS, JavaScript, TypeScript, React, and PostgreSQL.",
+      "Assisted students in troubleshooting coding errors, utilizing research, documentation, and code reviews to find solutions.",
+      "Collaborated with instructors to enhance curriculum and improve student performance.",
+    ],
 
+    retweets: 2,
+    favorites: 4,
+  },
+];
 export const tabs: Tab[] = [
   { id: "About", label: "About", component: About },
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
-  { id: "Tech", label: "Tech", component: Tech },
+  { id: "Services", label: "Services", component: Services },
 ];
 
 export const linkData: LinksProps[] = [

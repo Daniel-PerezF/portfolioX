@@ -73,6 +73,9 @@ export function Tech() {
             >
               {" "}
               <p className="pt-4 pb-6">
+                Here's some of the tech I use :
+                <br />
+                <br />
                 Frontend - HTML, CSS, Tailwind, JavaScript, TypeScript, React,
                 Next
                 <br />

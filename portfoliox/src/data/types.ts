@@ -44,6 +44,21 @@ export type Experiences = {
   favorites: number;
 };
 
+export type Service = {
+  id: number;
+  name: string;
+  username: string;
+  date: string;
+  pfp: string;
+  url?: string;
+  code?: string;
+  role: string;
+  location: string;
+  description: string[];
+  retweets: number;
+  favorites: number;
+};
+
 export type Links = {
   id: number;
   title: string;

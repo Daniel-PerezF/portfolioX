@@ -9,6 +9,7 @@ import {
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
+import { Tech } from "./Tech";
 
 export function About() {
   const { darkMode } = useDarkMode();
@@ -240,6 +241,7 @@ export function About() {
           </div>
         </div>
       </div>
+      <Tech />
     </div>
   );
 }
