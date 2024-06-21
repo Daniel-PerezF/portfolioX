@@ -1,34 +1,36 @@
 import React, { useState, useEffect } from "react";
 import {
-  FaLink,
   FaRetweet,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+  IoClose,
 } from "../icons/icons";
 import { useDarkMode } from "../context/useDarkMode";
 import { Item, services } from "../data";
 
 export function Services() {
   const { darkMode } = useDarkMode();
-
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedServiceIndex, setSelectedServiceIndex] = useState(-1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [items, setItems] = useState<Item[]>(() => {
-    const itemsFromSession = sessionStorage.getItem("services");
-    if (itemsFromSession) {
-      return JSON.parse(itemsFromSession);
-    } else {
-      return services.map((serv) => ({
-        id: serv.id,
-        retweets: serv.retweets,
-        favorites: serv.favorites,
-        retweetsToggle: false,
-        favoritesToggle: false,
-      }));
-    }
+    const itemsFromSession = sessionStorage.getItem("experiences");
+    return itemsFromSession
+      ? JSON.parse(itemsFromSession)
+      : services.map((serv) => ({
+          id: serv.id,
+          retweets: serv.retweets,
+          favorites: serv.favorites,
+          retweetsToggle: false,
+          favoritesToggle: false,
+        }));
   });
 
   useEffect(() => {
-    sessionStorage.setItem("services", JSON.stringify(items));
+    sessionStorage.setItem("experiences", JSON.stringify(items));
   }, [items]);
 
   function handleRetweet(index: number) {
@@ -62,6 +64,26 @@ export function Services() {
       )
     );
   }
+  const openModal = (serviceIndex: number, imageIndex: number) => {
+    setSelectedServiceIndex(serviceIndex);
+    setSelectedImageIndex(imageIndex);
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setSelectedImageIndex(
+      (selectedImageIndex + 1) % services[selectedServiceIndex].images.length
+    );
+  };
+  const prevImage = () => {
+    setSelectedImageIndex(
+      (selectedImageIndex - 1 + services[selectedServiceIndex].images.length) %
+        services[selectedServiceIndex].images.length
+    );
+  };
 
   return (
     <div className="h-full">
@@ -79,7 +101,7 @@ export function Services() {
               <div className="">
                 <img
                   src={serv.pfp}
-                  alt=""
+                  alt={`${serv.name} profile pic`}
                   className={`rounded-full h-14 w-14 object-cover bg-white  m-4 `}
                 />
               </div>
@@ -100,55 +122,116 @@ export function Services() {
             </div>
           </div>
           <div className="w-full flex justify-center pt-4">
-            <div className="flex w-11/12 justify-between">
-              <div className="mr-2">{serv.role}</div>
-              <div className="flex gap mr-12">
-                {serv.url && (
-                  <div className="tooltip">
-                    <span className="tooltiptext text-xs">View Live</span>
-                    <a
-                      href={serv.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex self-center"
-                    >
-                      <FaLink
-                        className={`text-md duration-150 ease-in-out text-gray-400 ${
-                          darkMode
-                            ? "text-[#97AEC4] hover:text-[#7C9AB6]"
-                            : "text-[#7C9AB6] hover:text-[#6286A7]"
-                        } `}
+            <div className="flex justify-center  w-11/12 flex-col">
+              <div className="pb-2">
+                <div className="flex gap-2 justify-between pr-4">
+                  <div className="mr-2">{serv.role}</div>
+                </div>
+              </div>
+              <div className="w-full flex justify-center">
+                <div className="flex w-11/12 flex-wrap">
+                  {serv.description.map((item, descIndex) => (
+                    <div key={descIndex + item} className="mr-2">
+                      <div className="ml-3 flex">
+                        <div className="pt-1">•</div>
+                        <div className="ml-2 ">{item}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div
+                className={` ${
+                  darkMode ? "" : ""
+                }  rounded-lg mb-4  gap-[3px] overflow-hidden `}
+              >
+                <div className="grid grid-cols-2 w-full gap-1 ">
+                  {serv.images.map((image, imageIndex) => (
+                    <div key={imageIndex} className="relative">
+                      <img
+                        src={image}
+                        className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
+                        alt={`${serv.role} project images`}
+                        onClick={() => openModal(index, imageIndex)}
                       />
-                    </a>
+                      {window.innerWidth > 640 && (
+                        <div
+                          className="absolute inset-0 bg-black opacity-0 hover:opacity-35 transition-opacity duration-300 cursor-pointer ease-in-out"
+                          onClick={() => openModal(index, imageIndex)}
+                        ></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {modalOpen && (
+                  <div
+                    onClick={closeModal}
+                    className=" fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-35"
+                  >
+                    <div className="relative">
+                      <IoClose
+                        className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+                        onClick={closeModal}
+                      />
+                      <div className="w-full flex justify-center">
+                        {" "}
+                        <img
+                          src={
+                            services[selectedServiceIndex].images[
+                              selectedImageIndex
+                            ]
+                          }
+                          className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
+                          alt={`${serv.role} images in modal`}
+                          onClick={() => {
+                            closeModal();
+                          }}
+                        />
+                        <button
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            prevImage();
+                          }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
+                        >
+                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out" />
+                        </button>
+                        <button
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${
+                            darkMode ? "bg-[#858585]" : "bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            nextImage();
+                          }}
+                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
+                        >
+                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
-            </div>
-          </div>
-          <div className="w-full flex justify-center">
-            <div className="grid w-11/12 grid-cols-1">
-              {serv.description.map((item, descIndex) => (
-                <div key={descIndex + item} className="mr-2">
-                  <div className="ml-3 flex">
-                    <div className="pt-1">•</div>
-                    <div className="ml-2 ">{item}</div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
           <div className="w-full flex justify-center pt-4">
             <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
-                  items[index]?.retweetsToggle
+                  items[index].retweetsToggle
                     ? "text-green-500 "
                     : "text-gray-400"
                 }`}
                 onClick={() => handleRetweet(index)}
               >
                 {items[index]?.retweetsToggle ? <FaRetweet /> : <FaRetweet />}
-                <p className="text-sm ">{items[index]?.retweets}</p>
+                <p className="text-sm ">{items[index].retweets}</p>
               </div>
 
               <div
@@ -164,7 +247,7 @@ export function Services() {
                 ) : (
                   <MdFavoriteBorder />
                 )}
-                <p className="text-sm ">{items[index]?.favorites}</p>
+                <p className="text-sm ">{items[index].favorites}</p>
               </div>
             </div>
           </div>
