@@ -7,6 +7,8 @@ import {
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
   IoClose,
+  FaLink,
+  FaCode,
 } from "../icons/icons";
 import { useDarkMode } from "../context/useDarkMode";
 import { Item, services } from "../data";
@@ -87,9 +89,9 @@ export function Services() {
 
   return (
     <div className="h-full">
-      {services.map((serv, index) => (
+      {services.map((service, index) => (
         <div
-          key={serv.id + index}
+          key={index}
           className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
             darkMode
               ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
@@ -97,26 +99,27 @@ export function Services() {
           }`}
         >
           <div>
-            <div className="flex justify-start gap-1">
+            <div className="flex justify start gap-1">
               <div className="">
                 <img
-                  src={serv.pfp}
-                  alt={`${serv.name} profile pic`}
-                  className={`rounded-full h-14 w-14 object-cover bg-white  m-4 `}
+                  src={service.pfp}
+                  alt={`${service.name} profile pic`}
+                  className={`rounded-full h-14 w-14  object-cover bg-white  m-4`}
                 />
               </div>
 
               <div className="text-lg font-bold flex pt-4 gap-2 ">
                 <div className="flex flex-col min-w-[108px]">
-                  <h3>{serv.name}</h3>
+                  {" "}
+                  <h3>{service.name}</h3>
                   <div className="text-gray-400 text-sm font-light">
-                    @{serv.username}
+                    @{service.username}
                   </div>
                 </div>
 
                 <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
                 <p className="font-normal text-gray-400 text-sm pt-1">
-                  {serv.date}
+                  {service.date}
                 </p>
               </div>
             </div>
@@ -125,13 +128,50 @@ export function Services() {
             <div className="flex justify-center  w-11/12 flex-col">
               <div className="pb-2">
                 <div className="flex gap-2 justify-between pr-4">
-                  <div className="mr-2">{serv.role}</div>
+                  <p className=""> {service.title}</p>
+                  <div className="flex justify-end gap-4 ">
+                    {service.link && (
+                      <div className="tooltip">
+                        <a
+                          href={service.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="tooltiptext text-xs">View Live</span>
+                          <FaLink
+                            className={`self-center  mt-1   duration-150 ease-in-out ${
+                              darkMode
+                                ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                                : "text-[#7C9AB6] hover:text-[#6286A7]"
+                            }`}
+                          />
+                        </a>
+                      </div>
+                    )}
+                    {service.code && (
+                      <div className="tooltip">
+                        <a
+                          href={service.code}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="tooltiptext text-xs">View Code</span>
+                          <FaCode
+                            className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${
+                              darkMode
+                                ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                                : "text-[#7C9AB6] hover:text-[#6286A7]"
+                            }`}
+                          />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div className="w-full flex justify-center">
-                <div className="flex w-11/12 flex-wrap">
-                  {serv.description.map((item, descIndex) => (
-                    <div key={descIndex + item} className="mr-2">
+
+                <div className="pb-4">
+                  {service.description.map((item, index) => (
+                    <div key={index} className="mr-2">
                       <div className="ml-3 flex">
                         <div className="pt-1">•</div>
                         <div className="ml-2 ">{item}</div>
@@ -140,19 +180,18 @@ export function Services() {
                   ))}
                 </div>
               </div>
-
               <div
                 className={` ${
                   darkMode ? "" : ""
                 }  rounded-lg mb-4  gap-[3px] overflow-hidden `}
               >
                 <div className="grid grid-cols-2 w-full gap-1 ">
-                  {serv.images.map((image, imageIndex) => (
+                  {service.images.map((image, imageIndex) => (
                     <div key={imageIndex} className="relative">
                       <img
                         src={image}
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
-                        alt={`${serv.role} project images`}
+                        alt={`${service.title} project images`}
                         onClick={() => openModal(index, imageIndex)}
                       />
                       {window.innerWidth > 640 && (
@@ -176,7 +215,6 @@ export function Services() {
                         onClick={closeModal}
                       />
                       <div className="w-full flex justify-center">
-                        {" "}
                         <img
                           src={
                             services[selectedServiceIndex].images[
@@ -184,7 +222,7 @@ export function Services() {
                             ]
                           }
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
-                          alt={`${serv.role} images in modal`}
+                          alt={`${service.title} images in modal`}
                           onClick={() => {
                             closeModal();
                           }}
@@ -225,24 +263,24 @@ export function Services() {
               <div
                 className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
                   items[index].retweetsToggle
-                    ? "text-green-500 "
+                    ? "text-green-500"
                     : "text-gray-400"
                 }`}
                 onClick={() => handleRetweet(index)}
               >
-                {items[index]?.retweetsToggle ? <FaRetweet /> : <FaRetweet />}
+                {items[index].retweetsToggle ? <FaRetweet /> : <FaRetweet />}
                 <p className="text-sm ">{items[index].retweets}</p>
               </div>
 
               <div
-                className={` cursor-pointer flex gap-1 group hover:text-red-500 ${
-                  items[index]?.favoritesToggle
+                className={` cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-red-500 ${
+                  items[index].favoritesToggle
                     ? "text-red-500"
                     : "text-gray-400"
                 }`}
                 onClick={() => handleFavorite(index)}
               >
-                {items[index]?.favoritesToggle ? (
+                {items[index].favoritesToggle ? (
                   <MdOutlineFavorite />
                 ) : (
                   <MdFavoriteBorder />

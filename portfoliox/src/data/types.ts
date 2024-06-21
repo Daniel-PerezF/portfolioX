@@ -29,19 +29,6 @@ export type Experiences = {
   favorites: number;
 };
 
-// export type Service = {
-//   id: number;
-//   pfp: string;
-//   name: string;
-//   username: string;
-//   role: string;
-//   url?: string;
-//   date: string;
-//   description: string[];
-//   retweets: number;
-//   favorites: number;
-//   images?: string[];
-// };
 export type Service = {
   id: number;
   name: string;
@@ -49,7 +36,9 @@ export type Service = {
   date: string;
   pfp: string;
   images: string[];
-  role: string;
+  title: string;
+  link?: string;
+  code?: string;
   description: string[];
   retweets: number;
   favorites: number;
