@@ -126,7 +126,7 @@ export function Services() {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="flex w-11/12 flex-wrap">
+            <div className="grid w-11/12 grid-cols-1">
               {serv.description.map((item, descIndex) => (
                 <div key={descIndex + item} className="mr-2">
                   <div className="ml-3 flex">
