@@ -94,6 +94,7 @@ export function ProfileAbout() {
             {following ? "Follow" : "Following"}
           </button>
         </div>
+
         {confettiActive && (
           <ConfettiExplosion
             force={0.05}
