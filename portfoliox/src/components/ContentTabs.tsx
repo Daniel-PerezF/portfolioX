@@ -56,7 +56,11 @@ export function ContentTabs() {
           onClick={handleExpand}
           className="px-4 py-2 cursor-pointer hover:scale-125 ease-in-out duration-300"
         >
-          {expanded ? <MdExpandLess /> : <MdExpandMore />}
+          {expanded ? (
+            <MdExpandLess className="size-6" />
+          ) : (
+            <MdExpandMore className="size-6" />
+          )}
         </button>
       </div>
       <div>

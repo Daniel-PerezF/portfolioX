@@ -30,7 +30,9 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className={`${darkMode ? "bg-dark" : "bg-light"} relative`}>
+      <div
+        className={`${darkMode ? "bg-dark" : "bg-light"} min-h-screen relative`}
+      >
         {/* Position the TsParticles absolutely and behind other content */}
         <div className="fixed ">
           <TsParticles />
@@ -50,8 +52,8 @@ export default function LandingPage() {
                 darkMode ? "bg-dark text-light" : "bg-light text-dark"
               }`}
             >
-              <div className="max-w-[820px] w-full relative aspect-[3/1]">
-                <div className="overflow-y-hidden aspect-[3/1] max-w-[820px]">
+              <div className="max-w-[950px] w-full relative aspect-[3/1]">
+                <div className="overflow-y-hidden aspect-[3/1] max-w-[950px]">
                   <Banner
                     darkModeImage="/dark-mode-banner.gif"
                     lightModeImage="/light-mode-banner.gif"
@@ -62,7 +64,7 @@ export default function LandingPage() {
                   <ProfilePic src="/memoji4.png" alt="my memoji" />
                 </div>
               </div>
-              <div className="max-w-[750px] w-full">
+              <div className="max-w-[890px] w-full">
                 <ProfileAbout />
                 <ContentTabs />
               </div>

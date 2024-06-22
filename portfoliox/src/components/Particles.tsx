@@ -32,7 +32,7 @@ export default function TsParticles() {
           value: "",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60,
       interactivity: {
         events: {
           onClick: {

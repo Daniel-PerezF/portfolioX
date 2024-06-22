@@ -1,5 +1,5 @@
 import { Experiences, LinksProps, Project, Service, Tab } from ".";
-import { Services } from "../components/Services";
+
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
@@ -8,7 +8,6 @@ import {
   MdComputer,
   FaLinkedin,
   FaGithub,
-  SiUpwork,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
   FaXTwitter,
@@ -17,6 +16,7 @@ import Plans from "../components/Plans";
 import Faq from "../components/Faq";
 import Booking from "../components/Booking";
 import Contact from "../components/Contact";
+import Services from "../components/Services";
 
 export const experiences: Experiences[] = [
   {
@@ -288,20 +288,13 @@ export const linkData: LinksProps[] = [
   },
   {
     id: 5,
-    name: "Upwork",
-    url: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
-    icon: SiUpwork,
-    copy: "https://www.upwork.com/freelancers/~0197e7841f4119af0c",
-  },
-  {
-    id: 6,
     name: "Email",
     url: "mailto:danielperezf98@gmail.com",
     icon: MdOutlineMailOutline,
     copy: "danielperezf98@gmail.com",
   },
   {
-    id: 7,
+    id: 6,
     name: "Resume",
     url: "/resume.pdf",
     icon: BsFillSuitcaseLgFill,

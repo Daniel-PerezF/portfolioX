@@ -10,7 +10,6 @@ import {
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
-
 import { DirectMessage, LinksContent, useOnScreen } from ".";
 import { useLinksContext } from "../context/LinksContext";
 
@@ -32,6 +31,11 @@ export function ProfileAbout() {
     return savedFollowers ? JSON.parse(savedFollowers) : "443";
   });
 
+  const [linksClicked, setLinksClicked] = useState(() => {
+    const savedLinksClicked = sessionStorage.getItem("linksClicked");
+    return savedLinksClicked ? JSON.parse(savedLinksClicked) : false;
+  });
+
   const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
     const newFollowers = following ? "444" : "443";
@@ -42,6 +46,13 @@ export function ProfileAbout() {
       setTimeout(() => setConfettiActive(true), 400);
     }
   };
+
+  const handleLinksClick = () => {
+    setLinksClicked(true);
+    sessionStorage.setItem("linksClicked", JSON.stringify(true));
+    toggleLinks();
+  };
+
   const getButtonPosition = () => {
     if (buttonRef.current) {
       const buttonRect = buttonRef.current.getBoundingClientRect();
@@ -66,6 +77,7 @@ export function ProfileAbout() {
       };
     }
   }, [showDirectMessage]);
+
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -81,20 +93,16 @@ export function ProfileAbout() {
               onClick={() => setShowDirectMessage(!showDirectMessage)}
             />
           </div>
-
           <button
             ref={buttonRef}
-            onClick={() => {
-              toggleFollow();
-            }}
-            className={` ${
+            onClick={toggleFollow}
+            className={`${
               following ? "bg-pop" : "bg-purple-400"
-            } px-4 py-[6px]  rounded-full text-white mr-4  hover:scale-105 duration-150 ease-in-out cursor-pointer`}
+            } px-4 py-[6px]  rounded-full text-white mr-4 hover:scale-105 duration-150 ease-in-out cursor-pointer`}
           >
             {following ? "Follow" : "Following"}
           </button>
         </div>
-
         {confettiActive && (
           <ConfettiExplosion
             force={0.05}
@@ -123,15 +131,15 @@ export function ProfileAbout() {
             <RiVerifiedBadgeFill className="text-blue-400" />
           </div>
           <h1
-            className={` pb-4 ${
+            className={`pb-4 ${
               darkMode ? "text-gray-400" : "text-gray-500"
-            } font-light `}
+            } font-light`}
           >
             @dxnieldev
           </h1>
           <h2>
             Full Stack web developer with a passion for creativity, design and
-            Front End development. <br /> For any questions or inquires reach
+            Front End development. <br /> For any questions or inquiries reach
             out by dm, always up for a chat!
           </h2>
           <div
@@ -140,32 +148,36 @@ export function ProfileAbout() {
             }`}
           >
             <div className="flex gap-1">
-              <BsFillSuitcaseLgFill className="self-center " />
+              <BsFillSuitcaseLgFill className="self-center" />
               Open to Work
             </div>
             <div className="flex gap-1">
-              <IoLocation className="self-center " />
+              <IoLocation className="self-center" />
               Orange County, CA
             </div>
             <div
               className="flex gap-1 cursor-pointer"
-              onClick={() => toggleLinks()}
+              onClick={handleLinksClick}
             >
               <FaLink className="self-center" />
               <p
                 className={`${
-                  darkMode ? "text-purple-400 " : "text-purple-500"
+                  linksClicked
+                    ? "text-purple-500"
+                    : darkMode
+                    ? "text-blue-400"
+                    : "text-blue-500"
                 } hover:underline duration-150 ease-in-out`}
               >
                 /links
               </p>
             </div>
             <div className="flex gap-1">
-              <HiMiniCake className="self-center " />
+              <HiMiniCake className="self-center" />
               October 21st
             </div>
             <div className="flex gap-1">
-              <IoCalendarOutline className="self-center " />
+              <IoCalendarOutline className="self-center" />
               Joined March 2024
             </div>
           </div>
@@ -181,7 +193,7 @@ export function ProfileAbout() {
               </h3>
             </div>
             <div className="flex justify-between w-[35%]">
-              <h3 className="mr-1 ">{followers}</h3>
+              <h3 className="mr-1">{followers}</h3>
               <h3
                 className={`text-md font-light ${
                   darkMode ? "text-gray-400" : "text-gray-500"
@@ -212,7 +224,7 @@ export function ProfileAbout() {
               : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
           }`}
         >
-          <LinksContent onClose={() => toggleLinks()} />
+          <LinksContent onClose={toggleLinks} />
         </div>
       </div>
     </>

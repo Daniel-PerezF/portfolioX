@@ -7,7 +7,7 @@ import { LinksProvider } from "./context/LinksContext";
 
 function App() {
   return (
-    <>
+    <div className="min-w-[340px]">
       <DarkModeProvider>
         <LinksProvider>
           <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Footer />
         </LinksProvider>
       </DarkModeProvider>
-    </>
+    </div>
   );
 }
 

@@ -16,7 +16,6 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
 
     navigator.clipboard.writeText(url).then(
       function () {
-        
         setCopiedIds((prevIds) => [...prevIds, id]);
         setTimeout(
           () =>
@@ -85,7 +84,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
                 />
               </div>
             )}
-            {link.id === 7 && (
+            {link.id === 6 && (
               <div className="invisible">
                 <FaRegCopy />
               </div>
@@ -104,7 +103,7 @@ export function LinkPfp() {
       <img
         src="/yusuke.jpeg"
         alt=""
-        className={`rounded-full h-32 w-32 object-cover bg-white  m-4  ${
+        className={`rounded-full h-32 w-32 object-cover bg-white m-4 ${
           darkMode ? "" : ""
         } `}
       />
