@@ -13,6 +13,10 @@ import {
   BsFillSuitcaseLgFill,
   FaXTwitter,
 } from "../icons/icons";
+import Plans from "../components/Plans";
+import Faq from "../components/Faq";
+import Booking from "../components/Booking";
+import Contact from "../components/Contact";
 
 export const experiences: Experiences[] = [
   {
@@ -247,6 +251,10 @@ export const tabs: Tab[] = [
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Services", label: "Services", component: Services },
+  { id: "Plans", label: "Plans", component: Plans },
+  { id: "FAQ", label: "FAQ", component: Faq },
+  { id: "Booking", label: "Booking", component: Booking },
+  { id: "Contact", label: "Contact", component: Contact },
 ];
 
 export const linkData: LinksProps[] = [
