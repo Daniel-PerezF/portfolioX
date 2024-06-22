@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { Footer } from "./components/Footer";
 import { LinksProvider } from "./context/LinksContext";
+import TsParticles from "./components/Particles";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
           </Routes>
+
           <Footer />
         </LinksProvider>
       </DarkModeProvider>
