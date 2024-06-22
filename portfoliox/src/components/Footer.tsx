@@ -5,7 +5,7 @@ export function Footer() {
   const { darkMode } = useDarkMode();
   return (
     <div
-      className={`w-full pt-20 flex-col gap-4 ${
+      className={`w-full pt-20 flex-col gap-4 select-none ${
         darkMode ? "bg-dark" : "bg-light"
       } flex items-center  h-[200px]`}
     >
