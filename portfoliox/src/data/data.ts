@@ -3,7 +3,7 @@ import { Experiences, LinksProps, Project, Service, Tab } from ".";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
-
+import { Tech } from "../components/Tech";
 import {
   MdComputer,
   FaLinkedin,
@@ -12,11 +12,6 @@ import {
   BsFillSuitcaseLgFill,
   FaXTwitter,
 } from "../icons/icons";
-import Plans from "../components/Plans";
-import Faq from "../components/Faq";
-import Booking from "../components/Booking";
-import Contact from "../components/Contact";
-import Services from "../components/Services";
 
 export const experiences: Experiences[] = [
   {
@@ -250,11 +245,7 @@ export const tabs: Tab[] = [
   { id: "About", label: "About", component: About },
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
-  { id: "Services", label: "Services", component: Services },
-  { id: "Plans", label: "Plans", component: Plans },
-  { id: "FAQ", label: "FAQ", component: Faq },
-  { id: "Booking", label: "Booking", component: Booking },
-  { id: "Contact", label: "Contact", component: Contact },
+  { id: "Tech", label: "Tech", component: Tech },
 ];
 
 export const linkData: LinksProps[] = [
