@@ -287,7 +287,7 @@ export const linkData: LinksProps[] = [
   {
     id: 6,
     name: "Resume",
-    url: "/resume.pdf",
+    url: "/resume-24.pdf",
     icon: BsFillSuitcaseLgFill,
     copy: "",
   },
