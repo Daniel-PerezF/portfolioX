@@ -20,7 +20,7 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "May 2024 - Present",
-    role: "Junior Front End Developer, The Daily Wire",
+    role: "Junior Front End Developer, Bentkey Ventures",
     location: "Remote",
     description: [
       "Assisted in the development of responsive web applications using HTML, CSS, JavaScript/TypeScript and React under the guidance of senior developers.",
@@ -72,6 +72,29 @@ export const projects: Project[] = [
     id: 1,
     name: "Daniel Perez",
     username: "dxnieldev",
+    date: "July 11, 2024",
+    pfp: "/memoji4.png",
+    images: [
+      "/onedev-1.png",
+      "/onedev-2.png",
+      "/onedev-3.png",
+      "/onedev-4.png",
+    ],
+    title: "ONEDEV Freelance Business - Front End",
+    link: "https://www.onewebdev.io/",
+
+    description: [
+      "Developed and deployed my freelance website using React, TypeScript, and Tailwind.",
+      "Deployed on Vercel with a custom domain, ensuring global accessibility for a professional online presence.",
+      "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
+    ],
+    retweets: 4,
+    favorites: 8,
+  },
+  {
+    id: 2,
+    name: "Daniel Perez",
+    username: "dxnieldev",
     date: "February 12, 2024",
     pfp: "/memoji4.png",
     images: [
@@ -92,7 +115,7 @@ export const projects: Project[] = [
     favorites: 8,
   },
   {
-    id: 2,
+    id: 3,
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "January 17, 2024",
@@ -103,7 +126,7 @@ export const projects: Project[] = [
       "/chatgptstyler-2.png",
       "/chatgptstyler-4.png",
     ],
-    title: "ChatGPT Styler Extension",
+    title: "ChatGPT Styler - Extension",
     link: "https://chromewebstore.google.com/detail/chatgpt-styler/mmfefeellkogplnodhfnggcpkomlaapj",
     code: "https://github.com/joseph-w-valdez/chatGPTStyler",
     description: [
@@ -116,7 +139,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: 3,
+    id: 4,
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "January 12, 2024",
@@ -140,7 +163,7 @@ export const projects: Project[] = [
     favorites: 8,
   },
   {
-    id: 4,
+    id: 5,
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "November 22, 2023",

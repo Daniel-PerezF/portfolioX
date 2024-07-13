@@ -150,22 +150,24 @@ export function Projects() {
                         />
                       </a>
                     </div>
-                    <div className="tooltip">
-                      <a
-                        href={project.code}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="tooltiptext text-xs">View Code</span>
-                        <FaCode
-                          className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${
-                            darkMode
-                              ? "text-[#97AEC4] hover:text-[#7C9AB6]"
-                              : "text-[#7C9AB6] hover:text-[#6286A7]"
-                          }`}
-                        />
-                      </a>
-                    </div>
+                    {project.code && (
+                      <div className="tooltip">
+                        <a
+                          href={project.code}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="tooltiptext text-xs">View Code</span>
+                          <FaCode
+                            className={`self-center mt-[0.15rem] text-lg duration-150 ease-in-out ${
+                              darkMode
+                                ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                                : "text-[#7C9AB6] hover:text-[#6286A7]"
+                            }`}
+                          />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
 

@@ -53,7 +53,7 @@ export type Project = {
   images: string[];
   title: string;
   link: string;
-  code: string;
+  code?: string;
   description: string[];
   retweets: number;
   favorites: number;
