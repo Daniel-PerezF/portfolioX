@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 interface LinksContextType {
   showLinks: boolean;
@@ -21,7 +21,7 @@ interface LinksProviderProps {
 
 export const LinksProvider: React.FC<LinksProviderProps> = ({ children }) => {
   const [showLinks, setShowLinks] = useState(false);
- 
+
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
