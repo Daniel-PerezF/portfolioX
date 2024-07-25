@@ -1,7 +1,4 @@
-
 export function ProfilePic({ src, alt }: { src: string; alt: string }) {
-  
-
   return (
     <div className="w-full">
       <img
