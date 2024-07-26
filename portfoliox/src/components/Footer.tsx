@@ -1,5 +1,5 @@
 import { useDarkMode } from "../context/useDarkMode";
-import { FaGithub, FaLinkedin, MdComputer } from "../icons/icons";
+import { FaGithub, FaLinkedin, SiMinutemailer } from "../icons/icons";
 
 export function Footer() {
   const { darkMode } = useDarkMode();
@@ -31,13 +31,12 @@ export function Footer() {
           <FaGithub />
         </a>
         <a
-          href="https://www.danielperez.io"
+          href="mailto:danielperezf98@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-110 duration-150 ease-in-out cursor-pointer"
         >
-          {" "}
-          <MdComputer />
+          <SiMinutemailer />
         </a>
       </div>
       <span
@@ -45,7 +44,7 @@ export function Footer() {
           darkMode ? "text-gray-400" : "text-gray-500"
         } font-light text-xs `}
       >
-        daniel © 2024
+        dxniel © 2024
       </span>
     </div>
   );

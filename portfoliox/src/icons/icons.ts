@@ -24,6 +24,8 @@ import { FaStackOverflow } from "react-icons/fa";
 import { LuConstruction } from "react-icons/lu";
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+import { SiMinutemailer } from "react-icons/si";
+
 export {
   RiVerifiedBadgeFill,
   FaRetweet,
@@ -54,4 +56,5 @@ export {
   LuConstruction,
   MdExpandMore,
   MdExpandLess,
+  SiMinutemailer,
 };
