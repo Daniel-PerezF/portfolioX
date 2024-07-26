@@ -108,6 +108,7 @@ export function ProfileAbout() {
             force={0.05}
             duration={2200}
             particleCount={20}
+            zIndex={10}
             width={200}
             colors={[
               "#FB904D",
