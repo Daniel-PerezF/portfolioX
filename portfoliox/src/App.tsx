@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./pages/LandingPage";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { Footer } from "./components/Footer";
 import { LinksProvider } from "./context/LinksContext";
+import Home from "./pages";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <DarkModeProvider>
         <LinksProvider>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Home />} />
           </Routes>
           <Footer />
         </LinksProvider>

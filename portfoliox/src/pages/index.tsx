@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { useLinksContext } from "../context/LinksContext";
 import TsParticles from "../components/Particles";
 
-export default function LandingPage() {
+export default function Home() {
   const { darkMode } = useDarkMode();
   const { showLinks } = useLinksContext();
 
