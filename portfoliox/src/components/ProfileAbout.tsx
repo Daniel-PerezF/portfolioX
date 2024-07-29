@@ -168,7 +168,7 @@ export function ProfileAbout() {
                     : darkMode
                     ? "text-blue-400"
                     : "text-blue-500"
-                } hover:underline duration-150 ease-in-out`}
+                } underline-center-outward`}
               >
                 /links
               </p>
