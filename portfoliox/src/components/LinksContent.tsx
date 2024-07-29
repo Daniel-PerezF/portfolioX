@@ -58,12 +58,12 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
             id="websiteLink"
             target="_blank"
             rel="noopener noreferrer"
-            className={`h-[55px] flex gap-3 text-center w-full max-w-[750px] justify-between border px-4 py-4 rounded-full relative hover:scale-101 hover:duration-150 ease-in-out ${
+            className={`h-[55px] flex gap-3 text-center w-full max-w-[750px] justify-between border px-4 py-4 rounded-full  ${
               darkMode ? "bg-white  text-dark" : "bg-white text-dark"
             }`}
           >
             <link.icon className="text-xl " />
-            <p>{link.name}</p>
+            <p className="underline-center-outward ">{link.name}</p>
 
             {isCopied(link.id) && (
               <div className="max-w-fit">
