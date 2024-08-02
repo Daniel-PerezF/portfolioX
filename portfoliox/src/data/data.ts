@@ -276,7 +276,7 @@ export const linkData: LinksProps[] = [
     name: "Freelance Website",
     url: "https://www.onewebdev.io/",
     icon: MdComputer,
-    copy: "https://www.danielperez.io",
+    copy: "https://www.onewebdev.io/",
   },
   {
     id: 2,
