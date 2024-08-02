@@ -273,8 +273,8 @@ export const tabs: Tab[] = [
 export const linkData: LinksProps[] = [
   {
     id: 1,
-    name: "Website",
-    url: "https://www.danielperez.io",
+    name: "Freelance Website",
+    url: "https://www.onewebdev.io/",
     icon: MdComputer,
     copy: "https://www.danielperez.io",
   },
