@@ -53,7 +53,7 @@ export default function Home() {
               }`}
             >
               <div className="max-w-[950px] w-full relative aspect-[3/1]">
-                <div className="overflow-y-hidden aspect-[3/1] max-w-[952px]">
+                <div className="overflow-y-hidden aspect-[3/1] max-w-[950px]">
                   <Banner
                     darkModeImage="/dark-mode-banner.gif"
                     lightModeImage="/light-mode-banner.gif"
