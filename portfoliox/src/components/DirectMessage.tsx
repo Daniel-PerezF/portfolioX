@@ -60,7 +60,9 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
     <div
       ref={containerRef}
       className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
-        darkMode ? "bg-dark text-light" : "bg-light text-dark"
+        darkMode
+          ? "bg-dark/85 backdrop-blur-md text-light"
+          : "bg-light/90 text-dark backdrop-blur-sm"
       }`}
     >
       <div className="flex justify-start w-full p-4 ">
