@@ -86,7 +86,7 @@ export function ProfileAbout() {
             className={`text-2xl self-center ring-1 rounded-full p-1 cursor-pointer duration-150 ease-in-out ${
               darkMode
                 ? "ring-light hover:bg-light hover:bg-opacity-25 hover:text-gray-200"
-                : "ring-dark hover:bg-dark hover:bg-opacity-1s5 hover:text-gray-600"
+                : "ring-dark hover:bg-dark hover:bg-opacity-10 hover:text-gray-700"
             } `}
           >
             <MdOutlineMailOutline
