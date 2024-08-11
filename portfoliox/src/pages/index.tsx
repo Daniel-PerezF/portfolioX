@@ -40,7 +40,6 @@ export default function Home() {
           <div className="sticky top-0 z-30">
             <Nav />
           </div>
-
           <div
             className={`flex justify-center w-full ${
               darkMode ? "bg-dark/0" : "bg-light/0"
