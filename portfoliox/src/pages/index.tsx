@@ -33,7 +33,6 @@ export default function Home() {
       <div
         className={`${darkMode ? "bg-dark" : "bg-light"} min-h-screen relative`}
       >
-        {/* Position the TsParticles absolutely and behind other content */}
         <div className="fixed ">
           <TsParticles />
         </div>
