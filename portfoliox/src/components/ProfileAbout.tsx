@@ -140,8 +140,8 @@ export function ProfileAbout() {
           </h1>
           <h2>
             Full Stack web developer with a passion for creativity, design and
-            Front End development. <br /> For any questions or inquiries reach
-            out by dm, always up for a chat!
+            Front End development. For any questions or inquiries reach out by
+            dm, always up for a chat!
           </h2>
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
