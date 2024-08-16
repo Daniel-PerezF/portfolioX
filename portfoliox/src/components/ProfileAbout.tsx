@@ -154,7 +154,7 @@ export function ProfileAbout() {
             </div>
             <div className="flex gap-1">
               <IoLocation className="self-center" />
-              Orange County, CA
+              Southern California, CA
             </div>
             <div
               className="flex gap-1 cursor-pointer"
