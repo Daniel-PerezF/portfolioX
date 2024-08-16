@@ -139,7 +139,7 @@ export function ProfileAbout() {
             @dxnieldev
           </h1>
           <h2>
-            Full Stack web developer with a passion for creativity, design and
+            Full stack web developer with a passion for creativity, design and
             Front End development. For any questions or inquiries reach out by
             dm, always up for a chat!
           </h2>
