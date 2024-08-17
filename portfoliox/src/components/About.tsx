@@ -70,7 +70,7 @@ export function About() {
               <img
                 src="/memoji4.png"
                 alt="my memoji"
-                className={`rounded-full h-14 w-14  object-cover bg-white  m-4 `}
+                className={`rounded-full h-14 w-14  object-cover bg-white m-4 `}
               />
             </div>
 
