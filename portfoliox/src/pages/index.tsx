@@ -30,7 +30,9 @@ export default function Home() {
 
   return (
     <>
-      <div className={`${darkMode ? "bg-dark" : "bg-light"} min-h-screen `}>
+      <div
+        className={`${darkMode ? "bg-dark" : "bg-light"} min-h-screen relative`}
+      >
         <div className="fixed ">
           <TsParticles />
         </div>
