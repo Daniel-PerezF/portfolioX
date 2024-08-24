@@ -127,7 +127,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
                   darkMode ? "text-[#a0a0a5]" : "text-[#909095]"
                 }`}
               >
-                "All messages will be sent by email to Daniel Perez, thank you."
+                "All messages will be sent by email to Daniel."
               </div>
             )}
             <div ref={messagesEndRef}></div>
