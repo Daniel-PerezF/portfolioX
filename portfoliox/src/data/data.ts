@@ -75,9 +75,9 @@ export const projects: Project[] = [
     pfp: "/memoji4.png",
     images: [
       "/onedev/onedev-1.png",
-      "/onedev-2.png",
-      "/onedev-3.png",
-      "/onedev-4.png",
+      "/onedev/onedev-2.png",
+      "/onedev/onedev-3.png",
+      "/onedev/onedev-4.png",
     ],
     title: "ONEDEV Freelance Business - Front End",
     link: "https://www.onewebdev.io/",
