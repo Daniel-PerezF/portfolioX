@@ -74,7 +74,7 @@ export const projects: Project[] = [
     date: "July 11, 2024",
     pfp: "/memoji4.png",
     images: [
-      "/onedev-1.png",
+      "/onedev/onedev-1.png",
       "/onedev-2.png",
       "/onedev-3.png",
       "/onedev-4.png",
@@ -144,10 +144,10 @@ export const projects: Project[] = [
     date: "January 12, 2024",
     pfp: "/memoji4.png",
     images: [
-      "/ghibli-wiki-1.png",
-      "/ghibli-wiki-2.png",
-      "/ghibli-wiki-3.png",
-      "/ghibli-wiki-4.png",
+      "/ghibli-wiki/ghibli-wiki-1.png",
+      "/ghibli-wiki/ghibli-wiki-2.png",
+      "/ghibli-wiki/ghibli-wiki-3.png",
+      "/ghibli-wiki/ghibli-wiki-4.png",
     ],
     title: "Studio Ghibli Wiki - Front End",
     link: "https://daniel-perezf.github.io/ghibli-wiki/",
