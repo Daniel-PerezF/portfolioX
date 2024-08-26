@@ -156,7 +156,7 @@ export function About() {
                 {modalOpen && (
                   <div
                     onClick={closeModal}
-                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black ${
+                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black backdrop-blur-[1px] ${
                       darkMode ? "bg-opacity-80" : "bg-opacity-90"
                     } `}
                   >
