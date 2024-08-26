@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import {
-  FaLongArrowAltLeft,
-  FaLongArrowAltRight,
   FaRetweet,
   IoClose,
+  IoMdArrowBack,
+  IoMdArrowForward,
   MdFavoriteBorder,
   MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
-// import { Tech } from "./Tech";
 
 export function About() {
   const { darkMode } = useDarkMode();
@@ -55,6 +54,18 @@ export function About() {
   };
   const retweetCount = retweets ? "3" : "4";
   const likeCount = favorites ? "8" : "9";
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [modalOpen]);
+
   return (
     <div className="h-full">
       <div
@@ -145,7 +156,9 @@ export function About() {
                 {modalOpen && (
                   <div
                     onClick={closeModal}
-                    className=" fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-65"
+                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black ${
+                      darkMode ? "bg-opacity-80" : "bg-opacity-90"
+                    } `}
                   >
                     <div className="relative">
                       <IoClose
@@ -156,35 +169,38 @@ export function About() {
                         {" "}
                         <img
                           src={images[selectedImageIndex]}
-                          className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
+                          className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px] max-h-[90vh]"
                           alt="images of me and my cohort from learningfuze"
                           onClick={() => {
                             closeModal();
                           }}
                         />
                         <button
-                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${
-                            darkMode ? "bg-[#858585]" : "bg-white"
-                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-300`}
                           onClick={(e) => {
                             e.stopPropagation();
                             prevImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out" />
+                          <IoMdArrowBack className="flex-shrink-0" size={30} />
                         </button>
                         <button
-                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${
-                            darkMode ? "bg-[#858585]" : "bg-white"
-                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150`}
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
+                          } bg-opacity-10 hover:bg-opacity-25 rounded-full`}
                           onClick={(e) => {
                             e.stopPropagation();
                             nextImage();
                           }}
                           style={{ transform: "translateY(-50%)", zIndex: 50 }}
                         >
-                          <FaLongArrowAltRight className="hover:scale-105 duration-150 ease-in-out" />
+                          <IoMdArrowForward
+                            className="flex-shrink-0"
+                            size={30}
+                          />
                         </button>
                       </div>
                     </div>
@@ -241,7 +257,6 @@ export function About() {
           </div>
         </div>
       </div>
-      {/* <Tech /> */}
     </div>
   );
 }

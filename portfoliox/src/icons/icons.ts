@@ -25,7 +25,8 @@ import { LuConstruction } from "react-icons/lu";
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
-
+import { IoMdArrowForward } from "react-icons/io";
+import { IoMdArrowBack } from "react-icons/io";
 export {
   RiVerifiedBadgeFill,
   FaRetweet,
@@ -57,4 +58,6 @@ export {
   MdExpandMore,
   MdExpandLess,
   SiMinutemailer,
+  IoMdArrowForward,
+  IoMdArrowBack,
 };
