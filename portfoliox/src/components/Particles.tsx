@@ -77,7 +77,7 @@ export default function TsParticles() {
           density: {
             enable: true,
           },
-          value: 50,
+          value: 40,
         },
         opacity: {
           value: 0.5,
@@ -91,7 +91,7 @@ export default function TsParticles() {
       },
       detectRetina: true,
     }),
-    [darkMode] // Update options when darkMode changes
+    [darkMode]
   );
 
   if (init) {
