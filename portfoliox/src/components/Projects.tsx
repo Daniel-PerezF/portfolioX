@@ -219,7 +219,9 @@ export function Projects() {
                 {modalOpen && (
                   <div
                     onClick={closeModal}
-                    className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-opacity-25 bg-black backdrop-blur-[0.5px]"
+                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center ${
+                      darkMode ? "bg-opacity-25" : "bg-opacity-35"
+                    } bg-black backdrop-blur-[0.5px]`}
                   >
                     <div className="relative">
                       <IoClose
