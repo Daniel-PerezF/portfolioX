@@ -236,7 +236,7 @@ export function Projects() {
                               selectedImageIndex
                             ]
                           }
-                          className=" max-w-[419px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
+                          className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
                           alt={`${project.title} images in modal`}
                           onClick={() => {
                             closeModal();
