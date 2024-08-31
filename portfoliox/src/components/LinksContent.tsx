@@ -68,9 +68,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
             {isCopied(link.id) && (
               <div className="max-w-fit">
                 <IoMdCheckmarkCircleOutline className="text-xl text-green-400 animate-slide-up " />
-                <span className="text-sm text-green-400 animate-slide-up absolute top-4 right-10">
-                  Copied
-                </span>
+                <span className="text-sm text-green-400 animate-slide-up absolute top-4 right-10" />
               </div>
             )}
             {!isCopied(link.id) && link.name !== "Resume" && (
