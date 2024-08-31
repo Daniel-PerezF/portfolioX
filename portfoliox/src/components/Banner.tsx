@@ -3,14 +3,23 @@ import { BannerProps } from "../data";
 
 export function Banner({ darkModeImage, lightModeImage }: BannerProps) {
   const { darkMode } = useDarkMode();
-  const imageUrl = darkMode ? darkModeImage : lightModeImage;
+
   return (
     <div className="w-full flex justify-center">
-      <div className="relative ">
+      <div className="relative aspect-[3/1] w-full">
         <img
-          src={imageUrl}
-          alt="twitter style banner"
-          className="relative aspect-[3/1] object-cover "
+          src={lightModeImage}
+          alt="light mode banner"
+          className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ${
+            darkMode ? "opacity-0" : "opacity-100"
+          }`}
+        />
+        <img
+          src={darkModeImage}
+          alt="dark mode banner"
+          className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ${
+            darkMode ? "opacity-100" : "opacity-0"
+          }`}
         />
       </div>
     </div>
