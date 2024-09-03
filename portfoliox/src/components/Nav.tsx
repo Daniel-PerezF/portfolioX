@@ -8,13 +8,13 @@ export function Nav() {
     <div
       className={`flex w-full justify-between items-center px-4 py-2 transition duration-300 
        backdrop-blur-sm
-     ${darkMode ? "bg-dark/85" : "bg-light/45"}`}
+     ${darkMode ? "bg-dark/85" : "bg-light/55"}`}
     >
       <div onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <img
           src="/orange-icon.png"
           alt="my logo"
-          className="w-1/5 hover:scale-105 duration-150 ease-in-out cursor-pointer"
+          className="w-1/5 hover:scale-105 duration-200 ease-in-out cursor-pointer"
         />
       </div>
 
