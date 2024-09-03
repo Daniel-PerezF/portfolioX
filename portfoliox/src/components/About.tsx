@@ -33,9 +33,6 @@ export function About() {
   const toggleFavorites = () => {
     setFavorites((prevState: boolean) => !prevState);
     sessionStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
   };
   const images = ["/me.png", "/c-0823.jpg"];
 
