@@ -26,9 +26,6 @@ export function About() {
   const toggleRetweets = () => {
     setRetweets((prevState: boolean) => !prevState);
     sessionStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
   };
   const toggleFavorites = () => {
     setFavorites((prevState: boolean) => !prevState);
