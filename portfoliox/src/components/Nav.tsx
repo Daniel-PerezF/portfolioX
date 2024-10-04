@@ -7,8 +7,8 @@ export function Nav() {
   return (
     <div
       className={`flex w-full justify-between items-center px-4 py-2 transition duration-300 
-       backdrop-blur-sm
-     ${darkMode ? "bg-dark/85" : "bg-light/55"}`}
+       backdrop-blur-md
+     ${darkMode ? "bg-dark/75" : "bg-light/45"}`}
     >
       <div onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <img
