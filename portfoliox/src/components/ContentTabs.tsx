@@ -1,35 +1,35 @@
 import { useState, useEffect } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { tabs, Tab } from "../data";
-// import { motion } from "framer-motion";
-// import { tab } from "@testing-library/user-event/dist/tab";
-// import { MdExpandLess, MdExpandMore } from "../icons/icons";
+import { useSwipeable } from "react-swipeable"; // import the swipeable hook
 
 export function ContentTabs() {
   const [activeTab, setActiveTab] = useState(() => {
     return sessionStorage.getItem("activeTab") || "About";
   });
-  // const [expanded, setExpanded] = useState(false);
   const { darkMode } = useDarkMode();
 
   useEffect(() => {
     sessionStorage.setItem("activeTab", activeTab);
   }, [activeTab]);
 
-  // const handleExpand = () => {
-  //   setExpanded(!expanded);
-  // };
+  const handleSwipe = (direction: string) => {
+    const currentIndex = tabs.findIndex((tab) => tab.id === activeTab);
+    if (direction === "left" && currentIndex < tabs.length - 1) {
+      setActiveTab(tabs[currentIndex + 1].id);
+    } else if (direction === "right" && currentIndex > 0) {
+      setActiveTab(tabs[currentIndex - 1].id);
+    }
+  };
 
-  // const visibleTabs = expanded ? tabs : tabs.slice(0, 4);
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("left"),
+    onSwipedRight: () => handleSwipe("right"),
+    trackMouse: true, // keep this to allow mouse swipe events for testing on desktops
+  });
 
   return (
-    <div>
-      {/* <motion.div
-        initial={false}
-        animate={{ height: expanded ? "auto" : "70px" }}
-        transition={{ duration: 0.5 }}
-        className="overflow-hidden"
-      > */}
+    <div {...handlers}>
       <div className="grid grid-cols-4 mt-5 gap-4 mx-2">
         {tabs.map((tab: Tab) => (
           <div
@@ -45,23 +45,11 @@ export function ContentTabs() {
             }`}
             onClick={() => setActiveTab(tab.id)}
           >
-            <h3 className={`${activeTab === tab.id ? "" : ""}`}>{tab.label}</h3>
+            <h3>{tab.label}</h3>
           </div>
         ))}
       </div>
-      {/* </motion.div> */}
-      {/* <div className="flex justify-center ">
-        <button
-          onClick={handleExpand}
-          className="px-4 py-2 cursor-pointer hover:scale-125 ease-in-out duration-300"
-        >
-          {expanded ? (
-            <MdExpandLess className="size-6" />
-          ) : (
-            <MdExpandMore className="size-6" />
-          )}
-        </button>
-      </div> */}
+
       <div>
         <hr className="text-white my-2 mx-1 md:mx-0" />
       </div>
