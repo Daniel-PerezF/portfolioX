@@ -220,7 +220,7 @@ export function Projects() {
                   <div
                     onClick={closeModal}
                     className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center ${
-                      darkMode ? "bg-opacity-25" : "bg-opacity-35"
+                      darkMode ? "bg-opacity-20" : "bg-opacity-30"
                     } bg-black backdrop-blur-[0.5px]`}
                   >
                     <div className="relative">

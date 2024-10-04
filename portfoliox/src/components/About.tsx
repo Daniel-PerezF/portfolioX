@@ -157,12 +157,12 @@ export function About() {
                   <div
                     onClick={closeModal}
                     className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black backdrop-blur-[1px] ${
-                      darkMode ? "bg-opacity-80" : "bg-opacity-80"
+                      darkMode ? "bg-opacity-70" : "bg-opacity-70"
                     } `}
                   >
                     <div className="relative">
                       <IoClose
-                        className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+                        className="text-white hover:bg-white/10 rounded-full  z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
                         onClick={closeModal}
                       />
                       <div className="w-full flex justify-center">
