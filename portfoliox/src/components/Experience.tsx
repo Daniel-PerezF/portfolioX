@@ -109,6 +109,7 @@ export function Experience() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex self-center"
+                      aria-label="Opens link to experience item"
                     >
                       <FaLink
                         className={`text-md duration-150 ease-in-out text-gray-400 ${

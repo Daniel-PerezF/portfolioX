@@ -15,6 +15,7 @@ export function Footer() {
         } flex justify-center gap-4 text-2xl`}
       >
         <a
+          aria-label="Links to Daniel Perez linkedin"
           href="https://www.linkedin.com/in/daniel-f-perez/"
           target="_blank"
           rel="noopener noreferrer"
@@ -23,6 +24,7 @@ export function Footer() {
           <FaLinkedin />
         </a>
         <a
+          aria-label="Links to Daniel Perez's GitHub"
           href="https://github.com/Daniel-PerezF"
           target="_blank"
           rel="noopener noreferrer"
@@ -31,6 +33,7 @@ export function Footer() {
           <FaGithub />
         </a>
         <a
+          aria-label="Opens email to Daniel Perez's email at danielperezf98@gmail.com"
           href="mailto:danielperezf98@gmail.com"
           target="_blank"
           rel="noopener noreferrer"

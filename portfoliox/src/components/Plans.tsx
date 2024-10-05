@@ -136,6 +136,7 @@ export default function Plans() {
                           href={service.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Opens link to live site for item"
                         >
                           <span className="tooltiptext text-xs">View Live</span>
                           <FaLink
@@ -154,6 +155,7 @@ export default function Plans() {
                           href={service.code}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Opens Link to code for service"
                         >
                           <span className="tooltiptext text-xs">View Code</span>
                           <FaCode

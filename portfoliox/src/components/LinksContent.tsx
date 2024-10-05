@@ -53,6 +53,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
       <div className="flex flex-col gap-3 text-center w-full max-w-[750px] justify-center ">
         {linkData.map((link: LinksProps) => (
           <a
+            aria-label={`Opens link to ${link.name}`}
             key={link.id}
             href={link.url}
             id="websiteLink"

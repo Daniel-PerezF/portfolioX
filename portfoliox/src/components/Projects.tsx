@@ -150,6 +150,7 @@ export function Projects() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Opens live site for project ${project.name}`}
                       >
                         <span className="tooltiptext text-xs">View Live</span>
                         <FaLink
@@ -167,6 +168,7 @@ export function Projects() {
                           href={project.code}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Opens link to code for project ${project.name}`}
                         >
                           <span className="tooltiptext text-xs">View Code</span>
                           <FaCode
