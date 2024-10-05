@@ -237,7 +237,11 @@ function ContactForm({ onMessageSubmit }: any) {
           rows={4}
           onChange={handleChange}
         ></textarea>
-        <button className="absolute bottom-7 right-3 text-xl" type="submit">
+        <button
+          className="absolute bottom-7 right-3 text-xl"
+          type="submit"
+          aria-label="Send contact message"
+        >
           <FaPaperPlane
             className={` ${darkMode ? "text-white" : "text-gray-600"} `}
           />

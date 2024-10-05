@@ -179,6 +179,7 @@ export function About() {
                           }}
                         />
                         <button
+                          aria-label="Left toggle arrow for images modal"
                           className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
                             darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-300`}
@@ -191,6 +192,7 @@ export function About() {
                           <IoMdArrowBack className="flex-shrink-0" size={30} />
                         </button>
                         <button
+                          aria-label="Right toggle arrow for images modal"
                           className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
                             darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full`}

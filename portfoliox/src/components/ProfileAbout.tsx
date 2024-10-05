@@ -94,6 +94,7 @@ export function ProfileAbout() {
             />
           </div>
           <button
+            aria-label="Follow button"
             ref={buttonRef}
             onClick={toggleFollow}
             className={`${

@@ -228,6 +228,7 @@ export default function Plans() {
                           }}
                         />
                         <button
+                          aria-label="Left toggle arrow for images modal"
                           className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl ${
                             darkMode ? "bg-[#858585]" : "bg-white"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
@@ -240,6 +241,7 @@ export default function Plans() {
                           <FaLongArrowAltLeft className="hover:scale-105 duration-150 ease-in-out" />
                         </button>
                         <button
+                          aria-label="Right toggle arrow for images modal"
                           className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl ${
                             darkMode ? "bg-[#858585]" : "bg-white"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-150 ease-in-out`}
