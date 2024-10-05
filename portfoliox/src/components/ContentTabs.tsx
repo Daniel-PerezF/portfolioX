@@ -10,17 +10,14 @@ export function ContentTabs() {
       urlTab.charAt(0).toUpperCase() + urlTab.slice(1) ||
       sessionStorage.getItem("activeTab") ||
       "About"
-    ); // Capitalize first letter if it exists
+    );
   });
 
   const { darkMode } = useDarkMode();
 
-  // useEffect(() => {
-  //   sessionStorage.setItem("activeTab", activeTab);
-
-  //   // Update the URL to include the tab name in lowercase
-  //   window.history.pushState(null, "", `/${activeTab.toLowerCase()}`);
-  // }, [activeTab]);
+  useEffect(() => {
+    window.history.pushState(null, "", `/${activeTab.toLowerCase()}`);
+  }, [activeTab]);
 
   useEffect(() => {
     const handlePopState = () => {
