@@ -79,6 +79,7 @@ export function About() {
           <div className="flex justify start gap-1">
             <div className="">
               <img
+                loading="lazy"
                 src="/memoji4.png"
                 alt="my memoji"
                 className={`rounded-full h-14 w-14  object-cover bg-white m-4 `}
@@ -138,6 +139,7 @@ export function About() {
                   {images.map((image, index) => (
                     <div key={index} className="w-full relative">
                       <img
+                        loading="lazy"
                         src={image}
                         className="w-full aspect-[7/8] object-cover cursor-pointer rounded-lg"
                         alt="images of me and my cohort from learningfuze"
@@ -168,6 +170,7 @@ export function About() {
                       <div className="w-full flex justify-center">
                         {" "}
                         <img
+                          loading="lazy"
                           src={images[selectedImageIndex]}
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px] max-h-[90vh]"
                           alt="images of me and my cohort from learningfuze"

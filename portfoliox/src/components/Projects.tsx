@@ -116,6 +116,7 @@ export function Projects() {
             <div className="flex justify start gap-1">
               <div className="">
                 <img
+                  loading="lazy"
                   src={project.pfp}
                   alt={`${project.name} profile pic`}
                   className={`rounded-full h-14 w-14  object-cover bg-white  m-4`}
@@ -201,6 +202,7 @@ export function Projects() {
                   {project.images.map((image, imageIndex) => (
                     <div key={imageIndex} className="relative">
                       <img
+                        loading="lazy"
                         src={image}
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
                         alt={`${project.title} project images`}
@@ -231,6 +233,7 @@ export function Projects() {
                       <div className="w-full flex justify-center">
                         {" "}
                         <img
+                          loading="lazy"
                           src={
                             projects[selectedProjectIndex].images[
                               selectedImageIndex
