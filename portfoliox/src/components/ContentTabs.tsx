@@ -1,17 +1,39 @@
 import { useState, useEffect } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { tabs, Tab } from "../data";
-import { useSwipeable } from "react-swipeable"; // import the swipeable hook
+import { useSwipeable } from "react-swipeable";
 
 export function ContentTabs() {
   const [activeTab, setActiveTab] = useState(() => {
-    return sessionStorage.getItem("activeTab") || "About";
+    const urlTab = window.location.pathname.substring(1);
+    return (
+      urlTab.charAt(0).toUpperCase() + urlTab.slice(1) ||
+      sessionStorage.getItem("activeTab") ||
+      "About"
+    ); // Capitalize first letter if it exists
   });
+
   const { darkMode } = useDarkMode();
 
+  // useEffect(() => {
+  //   sessionStorage.setItem("activeTab", activeTab);
+
+  //   // Update the URL to include the tab name in lowercase
+  //   window.history.pushState(null, "", `/${activeTab.toLowerCase()}`);
+  // }, [activeTab]);
+
   useEffect(() => {
-    sessionStorage.setItem("activeTab", activeTab);
-  }, [activeTab]);
+    const handlePopState = () => {
+      const urlTab = window.location.pathname.substring(1);
+      setActiveTab(urlTab.charAt(0).toUpperCase() + urlTab.slice(1) || "About");
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   const handleSwipe = (direction: string) => {
     const currentIndex = tabs.findIndex((tab) => tab.id === activeTab);
@@ -25,7 +47,7 @@ export function ContentTabs() {
   const handlers = useSwipeable({
     onSwipedLeft: () => handleSwipe("left"),
     onSwipedRight: () => handleSwipe("right"),
-    trackMouse: true, // keep this to allow mouse swipe events for testing on desktops
+    trackMouse: true,
   });
 
   return (
