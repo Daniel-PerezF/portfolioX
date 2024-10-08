@@ -34,9 +34,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
   return (
     <div
       className={`flex flex-col items-center gap-3 h-full bg-gradient-to-b overflow-y-scroll ${
-        darkMode
-          ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
-          : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
+        darkMode ? "  bg-[#2C2C34]" : "bg-[#ECCB9E]"
       } px-4 pb-8`}
     >
       <div className="pt-8 pb-0 sm:pb-3 flex flex-col justify-center items-center ">

@@ -221,9 +221,7 @@ export function ProfileAbout() {
       >
         <div
           className={`w-full h-full overflow-y-scroll bg-gradient-to-b ${
-            darkMode
-              ? "from-[#465E5F] via-[#51658F] to-[#2C2C34]"
-              : "from-[#E0A271] via-[#ECCB9E] to-[#EED8AD]"
+            darkMode ? "" : ""
           }`}
         >
           <LinksContent onClose={toggleLinks} />
