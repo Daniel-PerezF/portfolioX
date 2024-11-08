@@ -22,9 +22,9 @@ export const experiences: Experiences[] = [
     role: "Junior Front End Developer, Bentkey Ventures",
     location: "Remote",
     description: [
-      "Assisted in the development of responsive web applications using HTML, CSS, JavaScript/TypeScript and React under the guidance of senior developers.",
-      "Contributed to the implementation of UI designs and features, gaining hands-on experience in front-end development best practices.",
-      "Researched and recommended technologies and tools to meet project requirements based on design specifications and features.",
+      "Developed a real-time election coverage site using React, TypeScript, and Tailwind CSS, collaborating with senior developers, analytics, product managers, and developers.",
+      "Contributed to building the user interface for a CMS using React, Tailwind, and Axios, and assisted with backend development in Golang by creating API endpoints.",
+      "Maintained and updated core website features, including event-specific homepages, to improve adaptability and engagement.",
     ],
     retweets: 4,
     favorites: 8,
