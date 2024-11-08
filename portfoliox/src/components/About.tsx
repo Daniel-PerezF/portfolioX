@@ -111,24 +111,21 @@ export function About() {
             >
               {" "}
               <p className="pt-4 pb-6">
-                Hey there! I'm Daniel, a web developer driven by a lifelong
-                fascination with technology. From my childhood days playing
-                games on our household computer to my recent curiosity in AI and
-                coding, technology has always captivated me.
+                Hi! I'm Daniel, a full stack developer driven by a lifelong
+                curiosity about technology and how things work. This early
+                fascination eventually led me to explore coding, where I found a
+                powerful outlet for creativity and problem solving.
                 <br />
                 <br />
-                After completing an intensive full stack web development program
-                at LearningFuze coding bootcamp, I uncovered my true passion for
-                coding and web design. I've always had a love for creativity and
-                expression, and I found a new outlet for it through code.
+                After completing an intensive full stack development program at
+                LearningFuze, I discovered a true passion for web development
+                and design. Now, as a developer, I'm constantly expanding my
+                skills and exploring new ways to innovate.
                 <br />
                 <br />
-                Now, as a web developer, I'm eager to continue learning and
-                growing in this dynamic field. I'm actively seeking new avenues
-                for collaboration and growth within the software and web
-                development sphere. If you have any exciting projects or
-                opportunities on the horizon, I'd love to chat and see how we
-                can potentially work together!
+                I'm always open to new collaborations and growth opportunities
+                in the tech industry. If you have exciting projects or potential
+                partnerships in mind, let's connect!
               </p>
               <div
                 className={`flex overflow-hidden rounded-2xl  ${
