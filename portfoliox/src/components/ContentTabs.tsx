@@ -45,6 +45,7 @@ export function ContentTabs() {
     onSwipedLeft: () => handleSwipe("left"),
     onSwipedRight: () => handleSwipe("right"),
     trackMouse: true,
+    delta: 150,
   });
 
   return (
