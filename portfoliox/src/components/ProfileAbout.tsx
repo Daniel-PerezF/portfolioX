@@ -141,8 +141,7 @@ export function ProfileAbout() {
           </h1>
           <h2>
             Full stack web developer with a passion for creativity, design and
-            tech. For any questions or inquiries reach out by dm, always up for
-            a chat!
+            tech. For any questions or inquiries reach out by DM.
           </h2>
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
@@ -167,8 +166,8 @@ export function ProfileAbout() {
                   linksClicked
                     ? "text-purple-500"
                     : darkMode
-                    ? "text-blue-400"
-                    : "text-blue-500"
+                      ? "text-blue-400"
+                      : "text-blue-500"
                 } underline-center-outward`}
               >
                 /links
