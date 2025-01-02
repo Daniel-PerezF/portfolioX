@@ -9,7 +9,7 @@ import {
   FaGithub,
   MdOutlineMailOutline,
   BsFillSuitcaseLgFill,
-  FaXTwitter,
+  // FaXTwitter,
 } from "../icons/icons";
 
 export const experiences: Experiences[] = [
