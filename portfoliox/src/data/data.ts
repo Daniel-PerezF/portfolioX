@@ -292,13 +292,13 @@ export const linkData: LinksProps[] = [
     icon: FaGithub,
     copy: "https://github.com/Daniel-PerezF",
   },
-  {
-    id: 4,
-    name: "Twitter / X",
-    url: "https://twitter.com/dxnieldev",
-    icon: FaXTwitter,
-    copy: "https://twitter.com/dxnieldev",
-  },
+  // {
+  //   id: 4,
+  //   name: "Twitter / X",
+  //   url: "https://twitter.com/dxnieldev",
+  //   icon: FaXTwitter,
+  //   copy: "https://twitter.com/dxnieldev",
+  // },
   {
     id: 5,
     name: "Email",
