@@ -32,7 +32,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 19, 2023",
-      message: "Frontend Tech I use:",
+      message: "Frontend:",
       tech: [
         {
           name: "HTML",
@@ -76,7 +76,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 5, 2023",
-      message: "Backend tech I use:",
+      message: "Backend:",
       tech: [
         {
           name: "NodeJS",
@@ -102,7 +102,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 3, 2023",
-      message: "Deployment services I use:",
+      message: "Deployment:",
       tech: [
         {
           name: "AWS",
@@ -124,7 +124,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 3, 2023",
-      message: "Design services I use:",
+      message: "Design:",
       tech: [
         {
           name: "Figma",
@@ -140,7 +140,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 3, 2023",
-      message: "Misc tools I use:",
+      message: "Misc:",
       tech: [
         {
           name: "VS Code",
