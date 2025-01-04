@@ -1,65 +1,66 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import {
   FaLink,
-  FaRetweet,
-  MdFavoriteBorder,
-  MdOutlineFavorite,
+  // FaRetweet,
+  // MdFavoriteBorder,
+  // MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
 import { useDarkMode } from "../context/useDarkMode";
-import { Item, experiences } from "../data";
+// import { Item } from "../data";
+import { experiences } from "../data";
 
 export function Experience() {
   const { darkMode } = useDarkMode();
 
-  const [items, setItems] = useState<Item[]>(() => {
-    const itemsFromSession = sessionStorage.getItem("experiences");
-    return itemsFromSession
-      ? JSON.parse(itemsFromSession)
-      : experiences.map((exp) => ({
-          id: exp.id,
-          retweets: exp.retweets,
-          favorites: exp.favorites,
-          retweetsToggle: false,
-          favoritesToggle: false,
-        }));
-  });
+  // const [items, setItems] = useState<Item[]>(() => {
+  //   const itemsFromSession = sessionStorage.getItem("experiences");
+  //   return itemsFromSession
+  //     ? JSON.parse(itemsFromSession)
+  //     : experiences.map((exp) => ({
+  //         id: exp.id,
+  //         retweets: exp.retweets,
+  //         favorites: exp.favorites,
+  //         retweetsToggle: false,
+  //         favoritesToggle: false,
+  //       }));
+  // });
 
-  useEffect(() => {
-    sessionStorage.setItem("experiences", JSON.stringify(items));
-  }, [items]);
+  // useEffect(() => {
+  //   sessionStorage.setItem("experiences", JSON.stringify(items));
+  // }, [items]);
 
-  function handleRetweet(index: number) {
-    setItems((prevItems) =>
-      prevItems.map((item, i) =>
-        i === index
-          ? {
-              ...item,
-              retweets: item.retweetsToggle
-                ? item.retweets - 1
-                : item.retweets + 1,
-              retweetsToggle: !item.retweetsToggle,
-            }
-          : item
-      )
-    );
-  }
+  // function handleRetweet(index: number) {
+  //   setItems((prevItems) =>
+  //     prevItems.map((item, i) =>
+  //       i === index
+  //         ? {
+  //             ...item,
+  //             retweets: item.retweetsToggle
+  //               ? item.retweets - 1
+  //               : item.retweets + 1,
+  //             retweetsToggle: !item.retweetsToggle,
+  //           }
+  //         : item
+  //     )
+  //   );
+  // }
 
-  function handleFavorite(index: number) {
-    setItems((prevItems) =>
-      prevItems.map((item, i) =>
-        i === index
-          ? {
-              ...item,
-              favorites: item.favoritesToggle
-                ? item.favorites - 1
-                : item.favorites + 1,
-              favoritesToggle: !item.favoritesToggle,
-            }
-          : item
-      )
-    );
-  }
+  // function handleFavorite(index: number) {
+  //   setItems((prevItems) =>
+  //     prevItems.map((item, i) =>
+  //       i === index
+  //         ? {
+  //             ...item,
+  //             favorites: item.favoritesToggle
+  //               ? item.favorites - 1
+  //               : item.favorites + 1,
+  //             favoritesToggle: !item.favoritesToggle,
+  //           }
+  //         : item
+  //     )
+  //   );
+  // }
 
   return (
     <div className="h-full">
@@ -124,7 +125,7 @@ export function Experience() {
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center pb-6">
             <div className="flex w-11/12 flex-wrap">
               {exp.description.map((item, index) => (
                 <div key={index + item} className="mr-2">
@@ -136,7 +137,7 @@ export function Experience() {
               ))}
             </div>
           </div>
-          <div className="w-full flex justify-center pt-4">
+          {/* <div className="w-full flex justify-center pt-4">
             <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
@@ -166,7 +167,7 @@ export function Experience() {
                 <p className="text-sm ">{items[index].favorites}</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

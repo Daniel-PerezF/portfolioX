@@ -13,7 +13,9 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.2s, transform 0.3s;
+  transition:
+    opacity 0.2s,
+    transform 0.3s;
 }
 
 .DirectMessage.closed {
@@ -27,12 +29,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(228, 22, 22);
+  /* background-color: rgb(228, 22, 22); */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.35s ease-in-out, transform 0.3s ease-in-out;
+  transition:
+    opacity 0.35s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .Links.closed {
@@ -49,7 +53,7 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 70px;
-  background-color: #ADADAD;
+  background-color: #adadad;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -70,23 +74,23 @@
 
 .underline-center-outward {
   position: relative;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .underline-center-outward::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 1px;
   bottom: 0;
   left: 50%;
   background-color: currentColor;
-  transition: width 0.3s ease, left 0.3s ease;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
 }
 
 .underline-center-outward:hover::after {
   width: 100%;
   left: 0;
 }
-
-

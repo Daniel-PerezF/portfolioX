@@ -33,7 +33,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className={`flex flex-col items-center gap-3 h-full bg-gradient-to-b overflow-y-scroll ${
+      className={`flex flex-col items-center gap-3 h-full overflow-y-scroll ${
         darkMode ? "  bg-[#2C2C34]" : "bg-[#ECCB9E]"
       } px-4 pb-8`}
     >

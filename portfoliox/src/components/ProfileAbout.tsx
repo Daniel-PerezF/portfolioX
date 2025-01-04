@@ -4,8 +4,8 @@ import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
   FaLink,
-  HiMiniCake,
-  IoCalendarOutline,
+  // HiMiniCake,
+  // IoCalendarOutline,
   IoLocation,
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
@@ -219,9 +219,7 @@ export function ProfileAbout() {
         }`}
       >
         <div
-          className={`w-full h-full overflow-y-scroll bg-gradient-to-b ${
-            darkMode ? "" : ""
-          }`}
+          className={`w-full h-full overflow-y-scroll  ${darkMode ? "" : ""}`}
         >
           <LinksContent onClose={toggleLinks} />
         </div>

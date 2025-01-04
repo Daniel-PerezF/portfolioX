@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { Item, projects } from "../data";
+import { projects } from "../data";
+// import { Item } from "../data";
+
 import { useDarkMode } from "../context/useDarkMode";
 import {
   FaCode,
   FaLink,
-  FaRetweet,
+  // FaRetweet,
   IoClose,
   IoMdArrowBack,
   IoMdArrowForward,
-  MdFavoriteBorder,
-  MdOutlineFavorite,
+  // MdFavoriteBorder,
+  // MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
 
@@ -19,54 +21,54 @@ export function Projects() {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(-1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const [items, setItems] = useState<Item[]>(() => {
-    const itemsFromSession = sessionStorage.getItem("projects");
-    return itemsFromSession
-      ? JSON.parse(itemsFromSession)
-      : projects.map((project) => ({
-          id: project.id,
-          retweets: project.retweets,
-          favorites: project.favorites,
-          retweetsToggle: false,
-          favoritesToggle: false,
-        }));
-  });
+  // const [items, setItems] = useState<Item[]>(() => {
+  //   const itemsFromSession = sessionStorage.getItem("projects");
+  //   return itemsFromSession
+  //     ? JSON.parse(itemsFromSession)
+  //     : projects.map((project) => ({
+  //         id: project.id,
+  //         retweets: project.retweets,
+  //         favorites: project.favorites,
+  //         retweetsToggle: false,
+  //         favoritesToggle: false,
+  //       }));
+  // });
 
-  useEffect(() => {
-    sessionStorage.setItem("projects", JSON.stringify(items));
-  }, [items]);
+  // useEffect(() => {
+  //   sessionStorage.setItem("projects", JSON.stringify(items));
+  // }, [items]);
 
-  function handleRetweet(index: number) {
-    setItems((prevItems) =>
-      prevItems.map((item, i) =>
-        i === index
-          ? {
-              ...item,
-              retweets: item.retweetsToggle
-                ? item.retweets - 1
-                : item.retweets + 1,
-              retweetsToggle: !item.retweetsToggle,
-            }
-          : item
-      )
-    );
-  }
+  // function handleRetweet(index: number) {
+  //   setItems((prevItems) =>
+  //     prevItems.map((item, i) =>
+  //       i === index
+  //         ? {
+  //             ...item,
+  //             retweets: item.retweetsToggle
+  //               ? item.retweets - 1
+  //               : item.retweets + 1,
+  //             retweetsToggle: !item.retweetsToggle,
+  //           }
+  //         : item
+  //     )
+  //   );
+  // }
 
-  function handleFavorite(index: number) {
-    setItems((prevItems) =>
-      prevItems.map((item, i) =>
-        i === index
-          ? {
-              ...item,
-              favorites: item.favoritesToggle
-                ? item.favorites - 1
-                : item.favorites + 1,
-              favoritesToggle: !item.favoritesToggle,
-            }
-          : item
-      )
-    );
-  }
+  // function handleFavorite(index: number) {
+  //   setItems((prevItems) =>
+  //     prevItems.map((item, i) =>
+  //       i === index
+  //         ? {
+  //             ...item,
+  //             favorites: item.favoritesToggle
+  //               ? item.favorites - 1
+  //               : item.favorites + 1,
+  //             favoritesToggle: !item.favoritesToggle,
+  //           }
+  //         : item
+  //     )
+  //   );
+  // }
 
   const openModal = (projectIndex: number, imageIndex: number) => {
     setSelectedProjectIndex(projectIndex);
@@ -200,7 +202,7 @@ export function Projects() {
                   darkMode ? "" : ""
                 }  rounded-lg mb-4  gap-[3px] overflow-hidden `}
               >
-                <div className="grid grid-cols-2 w-full gap-1 ">
+                <div className="grid grid-cols-2 w-full gap-1 pb-6 ">
                   {project.images.map((image, imageIndex) => (
                     <div key={imageIndex} className="relative">
                       <img
@@ -283,7 +285,7 @@ export function Projects() {
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center pt-4">
+          {/* <div className="w-full flex justify-center pt-4">
             <div className="flex justify-around text-xl w-11/12 text-gray-400">
               <div
                 className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
@@ -317,7 +319,7 @@ export function Projects() {
                 <p className="text-sm ">{items[projectIndex].favorites}</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

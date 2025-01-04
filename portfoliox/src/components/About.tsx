@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import {
-  FaRetweet,
+  // FaRetweet,
   IoClose,
   IoMdArrowBack,
   IoMdArrowForward,
-  MdFavoriteBorder,
-  MdOutlineFavorite,
+  // MdFavoriteBorder,
+  // MdOutlineFavorite,
   RiVerifiedBadgeFill,
 } from "../icons/icons";
 
@@ -14,23 +14,23 @@ export function About() {
   const { darkMode } = useDarkMode();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = sessionStorage.getItem("aboutFavorites");
-    return savedFavorites ? JSON.parse(savedFavorites) : {};
-  });
-  const [retweets, setRetweets] = useState(() => {
-    const savedRetweets = sessionStorage.getItem("aboutRetweets");
-    return savedRetweets ? JSON.parse(savedRetweets) : {};
-  });
+  // const [favorites, setFavorites] = useState(() => {
+  //   const savedFavorites = sessionStorage.getItem("aboutFavorites");
+  //   return savedFavorites ? JSON.parse(savedFavorites) : {};
+  // });
+  // const [retweets, setRetweets] = useState(() => {
+  //   const savedRetweets = sessionStorage.getItem("aboutRetweets");
+  //   return savedRetweets ? JSON.parse(savedRetweets) : {};
+  // });
 
-  const toggleRetweets = () => {
-    setRetweets((prevState: boolean) => !prevState);
-    sessionStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
-  };
-  const toggleFavorites = () => {
-    setFavorites((prevState: boolean) => !prevState);
-    sessionStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
-  };
+  // const toggleRetweets = () => {
+  //   setRetweets((prevState: boolean) => !prevState);
+  //   sessionStorage.setItem("aboutRetweets", JSON.stringify(!retweets));
+  // };
+  // const toggleFavorites = () => {
+  //   setFavorites((prevState: boolean) => !prevState);
+  //   sessionStorage.setItem("aboutFavorites", JSON.stringify(!favorites));
+  // };
   const images = ["/me.png", "/c-0823.jpg"];
 
   const openModal = (image: string) => {
@@ -52,8 +52,8 @@ export function About() {
       selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1
     );
   };
-  const retweetCount = retweets ? "3" : "4";
-  const likeCount = favorites ? "8" : "9";
+  // const retweetCount = retweets ? "3" : "4";
+  // const likeCount = favorites ? "8" : "9";
 
   useEffect(() => {
     if (modalOpen) {
@@ -69,7 +69,7 @@ export function About() {
   return (
     <div className="h-full">
       <div
-        className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
+        className={` md:p-4 mb-4 mx-2 md:mx-0 rounded-lg pb-6  ${
           darkMode
             ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
             : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
@@ -128,7 +128,7 @@ export function About() {
                 partnerships in mind, let's connect!
               </p>
               <div
-                className={`flex overflow-hidden rounded-2xl  ${
+                className={`flex overflow-hidden rounded-2xl pb-6  ${
                   darkMode ? " " : " "
                 }`}
               >
@@ -212,7 +212,7 @@ export function About() {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center pt-4">
+        {/* <div className="w-full flex justify-center pt-4">
           <div className="flex justify-around text-xl w-11/12 text-gray-400">
             <div
               className={`flex gap-1 cursor-pointer group duration-150 ease-in-out ${
@@ -257,7 +257,7 @@ export function About() {
               <p className="text-sm group-hover:text-red-500 ">{likeCount}</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

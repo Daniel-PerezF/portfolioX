@@ -6,14 +6,14 @@ import {
   FaNodeJs,
   FaAws,
   FaGithub,
-  FaFigma,
+  // FaFigma,
   FaDocker,
   FaNpm,
   FaSlack,
 } from "react-icons/fa";
 import { IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
 import {
-  SiCanva,
+  // SiCanva,
   SiExpress,
   SiMongodb,
   SiTailwindcss,
@@ -98,44 +98,44 @@ export function Tech() {
         },
       ],
     },
-    {
-      name: "Daniel Perez",
-      username: "@dxnieldev",
-      date: "August 3, 2023",
-      message: "Deployment:",
-      tech: [
-        {
-          name: "AWS",
-          icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
-        },
-        {
-          name: "Vercel",
-          icon: (
-            <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
-          ),
-        },
-        {
-          name: "Github",
-          icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
-        },
-      ],
-    },
-    {
-      name: "Daniel Perez",
-      username: "@dxnieldev",
-      date: "August 3, 2023",
-      message: "Design:",
-      tech: [
-        {
-          name: "Figma",
-          icon: <FaFigma className="text-[#F24E1E] text-6xl md:text-7xl" />,
-        },
-        {
-          name: "Canva",
-          icon: <SiCanva className="text-[#00C4CC] text-6xl md:text-7xl" />,
-        },
-      ],
-    },
+    // {
+    //   name: "Daniel Perez",
+    //   username: "@dxnieldev",
+    //   date: "August 3, 2023",
+    //   message: "Deployment:",
+    //   tech: [
+    //     {
+    //       name: "AWS",
+    //       icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
+    //     },
+    //     {
+    //       name: "Vercel",
+    //       icon: (
+    //         <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
+    //       ),
+    //     },
+    //     {
+    //       name: "Github",
+    //       icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   name: "Daniel Perez",
+    //   username: "@dxnieldev",
+    //   date: "August 3, 2023",
+    //   message: "Design:",
+    //   tech: [
+    //     {
+    //       name: "Figma",
+    //       icon: <FaFigma className="text-[#F24E1E] text-6xl md:text-7xl" />,
+    //     },
+    //     {
+    //       name: "Canva",
+    //       icon: <SiCanva className="text-[#00C4CC] text-6xl md:text-7xl" />,
+    //     },
+    //   ],
+    // },
     {
       name: "Daniel Perez",
       username: "@dxnieldev",
@@ -157,6 +157,20 @@ export function Tech() {
         {
           name: "NPM",
           icon: <FaNpm className="text-[#CB3837] text-6xl md:text-7xl" />,
+        },
+        {
+          name: "AWS",
+          icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
+        },
+        {
+          name: "Vercel",
+          icon: (
+            <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
+          ),
+        },
+        {
+          name: "Github",
+          icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
         },
         {
           name: "Docker",
@@ -204,8 +218,8 @@ export function Tech() {
           </div>
           <div className="w-full flex justify-center">
             <div className="flex justify-center w-11/12 flex-col">
-              <div className={`rounded-2xl mb-4`}>
-                <div className="pt-4 pb-6 w-full">
+              <div className={`rounded-2xl `}>
+                <div className="pt-4 w-full">
                   <div>{card.message}</div>
                   <br />
                   <div className="flex flex-wrap items-center gap-4">
