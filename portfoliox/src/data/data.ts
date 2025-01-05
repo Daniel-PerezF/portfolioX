@@ -19,7 +19,7 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "May 2024 - Present",
-    role: "Junior Front End Developer, Bentkey Ventures",
+    role: "Junior Front End Developer, The Daily Wire",
     location: "Remote",
     description: [
       "Developed a real-time election coverage site using React, TypeScript, and Tailwind CSS, collaborating with senior developers, analytics, product managers, and developers.",

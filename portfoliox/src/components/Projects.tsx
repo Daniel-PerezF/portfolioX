@@ -146,7 +146,7 @@ export function Projects() {
               <div className="pb-2">
                 <div className="flex gap-2 justify-between pr-4">
                   <p className=""> {project.title}</p>
-                  <div className="flex justify-end gap-4 ">
+                  <div className="flex justify-end gap-4">
                     <div className="tooltip">
                       <a
                         href={project.link}
