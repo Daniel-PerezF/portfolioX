@@ -12,7 +12,7 @@ import {
   IoMdArrowForward,
   // MdFavoriteBorder,
   // MdOutlineFavorite,
-  RiVerifiedBadgeFill,
+  // RiVerifiedBadgeFill,
 } from "../icons/icons";
 
 export function Projects() {
@@ -114,7 +114,7 @@ export function Projects() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          <div>
+          {/* <div>
             <div className="flex justify start gap-1">
               <div className="">
                 <img
@@ -140,12 +140,12 @@ export function Projects() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="w-full flex justify-center pt-4">
             <div className="flex justify-center  w-11/12 flex-col">
               <div className="pb-2">
                 <div className="flex gap-2 justify-between pr-4">
-                  <p className=""> {project.title}</p>
+                  <p className="font-bold mb-4 pl-3"> {project.title}</p>
                   <div className="flex justify-end gap-4">
                     <div className="tooltip">
                       <a

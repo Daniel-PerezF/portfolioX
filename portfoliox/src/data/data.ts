@@ -19,8 +19,9 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "May 2024 - Present",
-    role: "Junior Front End Developer, The Daily Wire",
+    role: "Jr Software Developer, Daily Wire",
     location: "Remote",
+    logo: "/dw-logo.jpg",
     description: [
       "Developed a real-time election coverage site using React, TypeScript, and Tailwind CSS, collaborating with senior developers, analytics, product managers, and developers.",
       "Contributed to building the user interface for a CMS using React, Tailwind, and Axios, and assisted with backend development in Golang by creating API endpoints.",
@@ -36,6 +37,7 @@ export const experiences: Experiences[] = [
     username: "dxnieldev",
     date: "March 2024 - May 2024",
     role: "Teaching Assistant, LearningFuze",
+    logo: "/lfz-logo.png",
     location: "Irvine, CA",
     description: [
       "Supported students in comprehending application solutions, emphasizing key technologies such as HTML, CSS, JavaScript, TypeScript, React, and PostgreSQL.",
@@ -52,13 +54,14 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "February 2024 - Present",
-    role: "Freelance Web Developer",
+    role: "Freelance Web Developer, Self",
+    logo: "/freelance-logo.jpg",
     location: "Remote",
     description: [
       "Designed and developed websites using modern design principles and user experience techniques, incorporating technologies like React/Next.js, MongoDB, Tailwind CSS, etc.",
       "Incorporated existing online ordering system for delivery and pickup, increasing customer convenience and sales.",
       "Collaborated with clients and teams to brainstorm ideas and deliver creative solutions.",
-      "Managed multiple projects simultaneously, ensuring timely delivery and client satisfaction.",
+      // "Managed multiple projects simultaneously, ensuring timely delivery and client satisfaction.",
     ],
 
     retweets: 3,
@@ -79,7 +82,7 @@ export const projects: Project[] = [
       "/onedev/onedev-3.png",
       "/onedev/onedev-4.png",
     ],
-    title: "ONEDEV Freelance Business - Front End",
+    title: "ONEDEV, Front End",
     link: "https://www.onewebdev.io/",
 
     description: [
@@ -102,7 +105,7 @@ export const projects: Project[] = [
       "/portfolio/portfolio-3.png",
       "/portfolio/portfolio-4.png",
     ],
-    title: "Personal Portfolio - Front End",
+    title: "Personal Portfolio, Front End",
     link: "https://www.danielperez.io/",
     code: "https://github.com/Daniel-PerezF/portfolio",
     description: [
@@ -125,7 +128,7 @@ export const projects: Project[] = [
       "/chatgptstyler/chatgptstyler-2.png",
       "/chatgptstyler/chatgptstyler-4.png",
     ],
-    title: "ChatGPT Styler - Extension",
+    title: "ChatGPT Styler, Extension",
     link: "https://chromewebstore.google.com/detail/chatgpt-styler/mmfefeellkogplnodhfnggcpkomlaapj",
     code: "https://github.com/joseph-w-valdez/chatGPTStyler",
     description: [
@@ -149,7 +152,7 @@ export const projects: Project[] = [
       "/ghibli-wiki/ghibli-wiki-3.png",
       "/ghibli-wiki/ghibli-wiki-4.png",
     ],
-    title: "Studio Ghibli Wiki - Front End",
+    title: "Studio Ghibli Wiki, Front End",
     link: "https://daniel-perezf.github.io/ghibli-wiki/",
     code: "https://github.com/Daniel-PerezF/ghibli-wiki",
     description: [
@@ -173,7 +176,7 @@ export const projects: Project[] = [
       "/spin-trade/spin-trade-3.png",
       "/spin-trade/spin-trade-4.png",
     ],
-    title: "Spin Trade Marketplace - Full Stack",
+    title: "Spin Trade Marketplace, Full Stack",
     link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
     code: "https://github.com/Daniel-PerezF/RecordMarketplace",
     description: [

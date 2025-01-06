@@ -7,7 +7,7 @@ import {
   IoMdArrowForward,
   // MdFavoriteBorder,
   // MdOutlineFavorite,
-  RiVerifiedBadgeFill,
+  // RiVerifiedBadgeFill,
 } from "../icons/icons";
 
 export function About() {
@@ -75,7 +75,7 @@ export function About() {
             : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
         }`}
       >
-        <div>
+        {/* <div>
           <div className="flex justify start gap-1">
             <div className="">
               <img
@@ -101,7 +101,7 @@ export function About() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="w-full flex justify-center">
           <div className="flex justify-center  w-11/12 flex-col">
             <div
@@ -110,6 +110,7 @@ export function About() {
               }  rounded-2xl  mb-4`}
             >
               {" "}
+              <p className="font-semibold">About Me</p>
               <p className="pt-4 pb-6">
                 Hi! I'm Daniel, a full stack developer driven by a lifelong
                 curiosity about technology and how things work. This early

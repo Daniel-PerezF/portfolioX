@@ -27,6 +27,7 @@ export type Experiences = {
   description: string[];
   retweets: number;
   favorites: number;
+  logo?: string;
 };
 
 export type Service = {

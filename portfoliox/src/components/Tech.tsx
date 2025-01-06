@@ -15,12 +15,13 @@ import { IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
 import {
   // SiCanva,
   SiExpress,
+  SiJira,
   SiMongodb,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-import { RiVerifiedBadgeFill } from "react-icons/ri";
+// import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { BiLogoPostgresql, BiLogoVisualStudio } from "react-icons/bi";
 import { IoMdGitMerge } from "react-icons/io";
 
@@ -32,7 +33,7 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 19, 2023",
-      message: "Frontend:",
+      message: "Frontend Technologies:",
       tech: [
         {
           name: "HTML",
@@ -76,10 +77,10 @@ export function Tech() {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 5, 2023",
-      message: "Backend:",
+      message: "Backend Technologies:",
       tech: [
         {
-          name: "NodeJS",
+          name: "Node.js",
           icon: <FaNodeJs className="text-[#8CC84B] text-6xl md:text-7xl" />,
         },
         {
@@ -98,49 +99,37 @@ export function Tech() {
         },
       ],
     },
-    // {
-    //   name: "Daniel Perez",
-    //   username: "@dxnieldev",
-    //   date: "August 3, 2023",
-    //   message: "Deployment:",
-    //   tech: [
-    //     {
-    //       name: "AWS",
-    //       icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
-    //     },
-    //     {
-    //       name: "Vercel",
-    //       icon: (
-    //         <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
-    //       ),
-    //     },
-    //     {
-    //       name: "Github",
-    //       icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: "Daniel Perez",
-    //   username: "@dxnieldev",
-    //   date: "August 3, 2023",
-    //   message: "Design:",
-    //   tech: [
-    //     {
-    //       name: "Figma",
-    //       icon: <FaFigma className="text-[#F24E1E] text-6xl md:text-7xl" />,
-    //     },
-    //     {
-    //       name: "Canva",
-    //       icon: <SiCanva className="text-[#00C4CC] text-6xl md:text-7xl" />,
-    //     },
-    //   ],
-    // },
     {
       name: "Daniel Perez",
       username: "@dxnieldev",
       date: "August 3, 2023",
-      message: "Misc:",
+      message: "Deployment and DevOps:",
+      tech: [
+        {
+          name: "AWS",
+          icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
+        },
+        {
+          name: "Vercel",
+          icon: (
+            <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
+          ),
+        },
+        {
+          name: "Docker",
+          icon: <FaDocker className="text-[#2496ED] text-6xl md:text-7xl" />,
+        },
+        {
+          name: "GitHub",
+          icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
+        },
+      ],
+    },
+    {
+      name: "Daniel Perez",
+      username: "@dxnieldev",
+      date: "August 3, 2023",
+      message: "Tools and Collaboration:",
       tech: [
         {
           name: "VS Code",
@@ -159,26 +148,12 @@ export function Tech() {
           icon: <FaNpm className="text-[#CB3837] text-6xl md:text-7xl" />,
         },
         {
-          name: "AWS",
-          icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
-        },
-        {
-          name: "Vercel",
-          icon: (
-            <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
-          ),
-        },
-        {
-          name: "Github",
-          icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
-        },
-        {
-          name: "Docker",
-          icon: <FaDocker className="text-[#2496ED] text-6xl md:text-7xl" />,
-        },
-        {
           name: "Slack",
           icon: <FaSlack className="text-[#4A154B] text-6xl md:text-7xl" />,
+        },
+        {
+          name: "Jira",
+          icon: <SiJira className="text-[#0052CC] text-6xl md:text-7xl" />,
         },
       ],
     },
@@ -195,7 +170,7 @@ export function Tech() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          <div className="flex justify-start gap-1">
+          {/* <div className="flex justify-start gap-1">
             <div>
               <img
                 src="/memoji4.png"
@@ -215,12 +190,12 @@ export function Tech() {
                 {card.date}
               </p>
             </div>
-          </div>
+          </div> */}
           <div className="w-full flex justify-center">
             <div className="flex justify-center w-11/12 flex-col">
               <div className={`rounded-2xl `}>
                 <div className="pt-4 w-full">
-                  <div>{card.message}</div>
+                  <div className="font-bold">{card.message}</div>
                   <br />
                   <div className="flex flex-wrap items-center gap-4">
                     {card.tech.map((techItem, idx) => (

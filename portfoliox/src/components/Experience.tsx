@@ -4,7 +4,7 @@ import {
   // FaRetweet,
   // MdFavoriteBorder,
   // MdOutlineFavorite,
-  RiVerifiedBadgeFill,
+  // RiVerifiedBadgeFill,
 } from "../icons/icons";
 import { useDarkMode } from "../context/useDarkMode";
 // import { Item } from "../data";
@@ -73,17 +73,17 @@ export function Experience() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          <div>
+          {/* <div>
             <div className="flex justify-start gap-1">
               <div className="">
                 <img
                   src={exp.pfp}
-                  alt=""
+                  alt={exp.role}
                   className={`rounded-full h-14 w-14 object-cover bg-white  m-4 `}
                 />
               </div>
 
-              <div className="text-lg font-bold flex pt-4 gap-2 ">
+              <div className="text-lg font-bold flex pt-4 gap-2 flex-wrap">
                 <div className="flex flex-col min-w-[108px]">
                   <h3>{exp.name}</h3>
                   <div className="text-gray-400 text-sm font-light">
@@ -97,10 +97,26 @@ export function Experience() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="w-full flex justify-center pt-4">
-            <div className="flex w-11/12 justify-between">
-              <div className="mr-2">{exp.role}</div>
+            <div className="flex w-full sm:w-11/12 justify-start gap-4 mb-4">
+              {exp.logo && (
+                <div className="pl-3">
+                  <img
+                    src={exp.logo}
+                    alt={exp.name}
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+              )}
+
+              <div>
+                <div className="font-bold">{exp.role}</div>
+                <div className="font-normal text-gray-300 text-sm mt-[1px]">
+                  {exp.date}
+                </div>
+              </div>
+
               <div className="flex gap mr-12">
                 {exp.url && (
                   <div className="tooltip">
