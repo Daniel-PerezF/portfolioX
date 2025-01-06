@@ -9,6 +9,7 @@ import {
   // MdOutlineFavorite,
   // RiVerifiedBadgeFill,
 } from "../icons/icons";
+import { useSwipeable } from "react-swipeable";
 
 export function About() {
   const { darkMode } = useDarkMode();
@@ -65,6 +66,11 @@ export function About() {
       document.body.style.overflow = "auto";
     };
   }, [modalOpen]);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextImage,
+    onSwipedRight: prevImage,
+  });
 
   return (
     <div className="h-full">
@@ -175,6 +181,7 @@ export function About() {
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px] max-h-[90vh]"
                           alt="images of me and my cohort from learningfuze"
                           onClick={(e) => e.stopPropagation()}
+                          {...swipeHandlers}
                         />
                         <button
                           aria-label="Left toggle arrow for images modal"

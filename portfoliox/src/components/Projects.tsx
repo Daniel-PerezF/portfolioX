@@ -14,6 +14,7 @@ import {
   // MdOutlineFavorite,
   // RiVerifiedBadgeFill,
 } from "../icons/icons";
+import { useSwipeable } from "react-swipeable";
 
 export function Projects() {
   const { darkMode } = useDarkMode();
@@ -103,6 +104,12 @@ export function Projects() {
       document.body.style.overflow = "auto";
     };
   }, [modalOpen]);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextImage,
+    onSwipedRight: prevImage,
+  });
+
   return (
     <div className="h-full">
       {projects.map((project, projectIndex) => (
@@ -248,6 +255,7 @@ export function Projects() {
                           onClick={() => {
                             closeModal();
                           }}
+                          {...swipeHandlers}
                         />
                         <button
                           aria-label="Left toggle arrow for images modal"
