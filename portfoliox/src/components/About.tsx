@@ -110,7 +110,6 @@ export function About() {
               }  rounded-2xl  mb-4`}
             >
               {" "}
-              <p className="font-semibold">About Me</p>
               <p className="pt-4 pb-6">
                 Hi! I'm Daniel, a full stack developer driven by a lifelong
                 curiosity about technology and how things work. This early
@@ -155,7 +154,10 @@ export function About() {
 
                 {modalOpen && (
                   <div
-                    onClick={closeModal}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      closeModal();
+                    }}
                     className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black backdrop-blur-[1px] ${
                       darkMode ? "bg-opacity-70" : "bg-opacity-70"
                     } `}
@@ -172,9 +174,7 @@ export function About() {
                           src={images[selectedImageIndex]}
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px] max-h-[90vh]"
                           alt="images of me and my cohort from learningfuze"
-                          onClick={() => {
-                            closeModal();
-                          }}
+                          onClick={(e) => e.stopPropagation()}
                         />
                         <button
                           aria-label="Left toggle arrow for images modal"
