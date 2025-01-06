@@ -141,7 +141,7 @@ export function ProfileAbout() {
           </h1>
           <h2>
             Full stack web developer.
-            <br /> For any questions or inquiries reach out by DM.
+            <br /> For any inquiries reach out by DM.
           </h2>
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${

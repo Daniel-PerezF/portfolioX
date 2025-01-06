@@ -105,14 +105,16 @@ export function Experience() {
                   <img
                     src={exp.logo}
                     alt={exp.name}
-                    className="w-12 h-12 object-contain"
+                    className="w-12 h-12 object-contain rounded-sm"
                   />
                 </div>
               )}
 
               <div>
                 <div className="font-bold">{exp.role}</div>
-                <div className="font-normal text-gray-300 text-sm mt-[1px]">
+                <div
+                  className={`font-normal text-sm mt-[1px] ${darkMode ? "text-gray-300" : "text-gray-500"}`}
+                >
                   {exp.date}
                 </div>
               </div>
