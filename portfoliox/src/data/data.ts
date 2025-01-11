@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "/portfolio/portfolio-4.png",
     ],
     title: "Personal Portfolio, Front End",
-    link: "https://www.danielperez.io/",
+    link: "https://daniel-perezf.github.io/portfolio/",
     code: "https://github.com/Daniel-PerezF/portfolio",
     description: [
       "Developed and deployed a personal website using React, TypeScript, and Tailwind.",
