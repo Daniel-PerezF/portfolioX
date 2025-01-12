@@ -153,8 +153,8 @@ export const projects: Project[] = [
       "/ghibli-wiki/ghibli-wiki-4.png",
     ],
     title: "Studio Ghibli Wiki, Front End",
-    link: "https://daniel-perezf.github.io/ghibli-wiki/",
-    code: "https://github.com/Daniel-PerezF/ghibli-wiki",
+    link: "https://dxnielperez.github.io/ghibli-wiki/",
+    code: "hhttps://dxnielperez.github.io/ghibli-wiki/",
     description: [
       "Utilized React, TypeScript, Tailwind and GH-Pages to build a responsive and intuitive front-end design.",
       "Engineered a display of Studio Ghibli films from a public API and implemented Fetch to display results.",
