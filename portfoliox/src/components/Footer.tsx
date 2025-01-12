@@ -25,7 +25,7 @@ export function Footer() {
         </a>
         <a
           aria-label="Links to Daniel Perez's GitHub"
-          href="https://github.com/Daniel-PerezF"
+          href="https://github.com/dxnielperez"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-110 duration-150 ease-in-out cursor-pointer"

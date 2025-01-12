@@ -291,9 +291,9 @@ export const linkData: LinksProps[] = [
   {
     id: 3,
     name: "Github",
-    url: "https://github.com/Daniel-PerezF",
+    url: "https://github.com/dxnielperez",
     icon: FaGithub,
-    copy: "https://github.com/Daniel-PerezF",
+    copy: "https://github.com/dxnielperez",
   },
   // {
   //   id: 4,
