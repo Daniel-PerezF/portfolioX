@@ -4,8 +4,8 @@ import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
   FaLink,
-  // HiMiniCake,
-  // IoCalendarOutline,
+  HiMiniCake,
+  IoCalendarOutline,
   IoLocation,
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
@@ -140,8 +140,8 @@ export function ProfileAbout() {
             @dxnieldev
           </h1>
           <h2>
-            Full stack web developer.
-            <br /> For any inquiries reach out by DM.
+            Full Stack Web Developer
+            <br /> For any inquiries reach out by DM
           </h2>
           <div
             className={`flex flex-wrap gap-x-4 gap-y-1 pt-2 font-light text-sm ${
@@ -150,7 +150,7 @@ export function ProfileAbout() {
           >
             <div className="flex gap-1">
               <BsFillSuitcaseLgFill className="self-center" />
-              Open to Work
+              Available
             </div>
             <div className="flex gap-1">
               <IoLocation className="self-center" />
@@ -173,14 +173,14 @@ export function ProfileAbout() {
                 /links
               </p>
             </div>
-            {/* <div className="flex gap-1">
+            <div className="flex gap-1">
               <HiMiniCake className="self-center" />
               October 21st
             </div>
             <div className="flex gap-1">
               <IoCalendarOutline className="self-center" />
               Joined March 2024
-            </div> */}
+            </div>
           </div>
           <div className="flex w-[200px] justify-between pt-2">
             <div className="flex justify-between w-[35%]">

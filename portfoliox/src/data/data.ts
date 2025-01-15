@@ -19,7 +19,7 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "May 2024 - Present",
-    role: "Jr Software Developer, Daily Wire",
+    role: "Associate Software Engineer, The Daily Wire",
     location: "Remote",
     logo: "/dw-logo.jpg",
     description: [
@@ -36,7 +36,7 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "March 2024 - May 2024",
-    role: "Teaching Assistant, LearningFuze",
+    role: "Teaching Assistant, LearningFuze Coding Bootcamp",
     logo: "/lfz-logo.png",
     location: "Irvine, CA",
     description: [
