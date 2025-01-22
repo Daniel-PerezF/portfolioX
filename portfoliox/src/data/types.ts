@@ -28,6 +28,7 @@ export type Experiences = {
   retweets: number;
   favorites: number;
   logo?: string;
+  company?: string;
 };
 
 export type Service = {

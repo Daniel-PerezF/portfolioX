@@ -99,23 +99,26 @@ export function Experience() {
             </div>
           </div> */}
           <div className="w-full flex justify-center pt-4">
-            <div className="flex w-full sm:w-11/12 justify-start gap-4 mb-4">
+            <div className="flex w-11/12 justify-start gap-4 mb-4">
               {exp.logo && (
                 <div className="pl-3">
                   <img
                     src={exp.logo}
                     alt={exp.name}
-                    className="w-12 h-12 object-contain rounded-sm"
+                    className="w-12 h-12 object-cover rounded-lg aspect-square"
                   />
                 </div>
               )}
 
-              <div>
-                <div className="font-bold">{exp.role}</div>
-                <div
-                  className={`font-normal text-sm mt-[1px] ${darkMode ? "text-gray-300" : "text-gray-500"}`}
-                >
-                  {exp.date}
+              <div className="flex">
+                <div className="">
+                  <div className="font-bold">{exp.role}</div>
+                  <div className="font-medium text-[14px]">{exp.company}</div>
+                  <div
+                    className={`font-light text-sm mt-[1px] ${darkMode ? "text-gray-300" : "text-gray-500"}`}
+                  >
+                    {exp.date}
+                  </div>
                 </div>
               </div>
 
@@ -143,7 +146,7 @@ export function Experience() {
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center pb-6">
+          <div className="w-full flex justify-center pb-6 ">
             <div className="flex w-11/12 flex-wrap">
               {exp.description.map((item, index) => (
                 <div key={index + item} className="mr-2">

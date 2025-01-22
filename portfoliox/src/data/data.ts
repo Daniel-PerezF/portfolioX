@@ -19,7 +19,8 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "May 2024 - Present",
-    role: "Associate Software Engineer, The Daily Wire",
+    role: "Associate Software Engineer",
+    company: "The Daily Wire - Full Time",
     location: "Remote",
     logo: "/dw-logo.jpg",
     description: [
@@ -36,7 +37,8 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "March 2024 - May 2024",
-    role: "Teaching Assistant, LearningFuze Coding Bootcamp",
+    role: "Coding Bootcamp TA",
+    company: "LearningFuze - Part Time",
     logo: "/lfz-logo.png",
     location: "Irvine, CA",
     description: [
@@ -54,8 +56,9 @@ export const experiences: Experiences[] = [
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "February 2024 - Present",
-    role: "Freelance Web Developer, Self",
-    logo: "/freelance-logo.jpg",
+    role: "Web Developer",
+    company: "Self - Freelance",
+    logo: "/laptop.jpg",
     location: "Remote",
     description: [
       "Designed and developed websites using modern design principles and user experience techniques, incorporating technologies like React/Next.js, MongoDB, Tailwind CSS, etc.",
@@ -271,6 +274,10 @@ export const tabs: Tab[] = [
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Tech", label: "Tech", component: Tech },
+  // { id: "About2", label: "About2", component: About },
+  // { id: "Experience2", label: "Experience2", component: Experience },
+  // { id: "Projects2", label: "Projects2", component: Projects },
+  // { id: "Tech2", label: "Tech2", component: Tech },
 ];
 
 export const linkData: LinksProps[] = [
