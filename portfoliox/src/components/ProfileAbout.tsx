@@ -173,14 +173,14 @@ export function ProfileAbout() {
                 /links
               </p>
             </div>
-            <div className="flex gap-1">
+            {/* <div className="flex gap-1">
               <HiMiniCake className="self-center" />
               October 21st
             </div>
             <div className="flex gap-1">
               <IoCalendarOutline className="self-center" />
               Joined March 2024
-            </div>
+            </div> */}
           </div>
           <div className="flex w-[200px] justify-between pt-2">
             <div className="flex justify-between w-[35%]">
