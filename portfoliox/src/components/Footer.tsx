@@ -7,7 +7,7 @@ export function Footer() {
     <div
       className={`w-full pt-20 flex-col gap-4 select-none ${
         darkMode ? "bg-dark" : "bg-light"
-      } flex items-center  h-[200px]`}
+      } flex items-center h-[200px]`}
     >
       <div
         className={`${
@@ -44,8 +44,8 @@ export function Footer() {
       </div>
       <span
         className={` ${
-          darkMode ? "text-gray-400" : "text-gray-500"
-        } font-light text-xs `}
+          darkMode ? "text-gray-300" : "text-gray-500"
+        } font-light text-xs bg-[#ADAAB1]/10 p-2 rounded-md backdrop-blur-md `}
       >
         dxniel © 2024
       </span>
