@@ -63,23 +63,25 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
         darkMode
           ? "bg-dark/85 backdrop-blur-md text-light"
           : "bg-light/90 text-dark backdrop-blur-sm"
-      }`}
+      } px-4`}
+      onClick={onClose}
     >
-      <div className="flex justify-start w-full p-4 ">
+      <div className="">
         <IoClose
           onClick={onClose}
-          className={`text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer self-center ${
+          className={`text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer z-50 top-3 left-3 fixed self-center ${
             darkMode ? "text-white" : "text-dark"
           }`}
         />
       </div>
-      <div className="max-w-[750px] flex-grow w-full">
+      <div className="max-w-[750px] flex-grow w-full justify-center items-center h-full">
         <div
-          className={`flex flex-col justify-between w-full h-[700px] md:h-[730px] max-h-[740px] md:rounded-lg mb-10 ${
+          className={`flex flex-col justify-between w-full h-[700px] md:h-[730px] m-auto max-h-[740px] rounded-md mb-10 mt-16 ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#e6e3e3] duration-150 ease-in-out"
           }`}
+          onClick={(e) => e.stopPropagation()}
         >
           <div
             className={`flex items-center flex-col font-light text-sm ${
@@ -114,8 +116,8 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
                         ? "bg-blue-400"
                         : "bg-gray-700"
                       : msg.isUserMessage
-                      ? "bg-blue-400"
-                      : "bg-gray-400"
+                        ? "bg-blue-400"
+                        : "bg-gray-400"
                   }`}
                 >
                   <span className="">{msg.message}</span>

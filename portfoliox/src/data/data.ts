@@ -4,7 +4,7 @@ import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
 import { Tech } from "../components/Tech";
 import {
-  MdComputer,
+  // MdComputer,
   FaLinkedin,
   FaGithub,
   MdOutlineMailOutline,
@@ -277,22 +277,22 @@ export const tabs: Tab[] = [
 ];
 
 export const linkData: LinksProps[] = [
+  // {
+  //   id: 1,
+  //   name: "Freelance Website",
+  //   url: "https://www.onewebdev.io/",
+  //   icon: MdComputer,
+  //   copy: "https://www.onewebdev.io/",
+  // },
   {
     id: 1,
-    name: "Freelance Website",
-    url: "https://www.onewebdev.io/",
-    icon: MdComputer,
-    copy: "https://www.onewebdev.io/",
-  },
-  {
-    id: 2,
     name: "Linkedin",
     url: "https://www.linkedin.com/in/daniel-f-perez/",
     icon: FaLinkedin,
     copy: "https://www.linkedin.com/in/daniel-f-perez/",
   },
   {
-    id: 3,
+    id: 2,
     name: "Github",
     url: "https://github.com/dxnielperez",
     icon: FaGithub,
@@ -306,14 +306,14 @@ export const linkData: LinksProps[] = [
   //   copy: "https://twitter.com/dxnieldev",
   // },
   {
-    id: 5,
+    id: 3,
     name: "Email",
     url: "mailto:danielperezf98@gmail.com",
     icon: MdOutlineMailOutline,
     copy: "danielperezf98@gmail.com",
   },
   {
-    id: 6,
+    id: 4,
     name: "Resume",
     url: "/daniel-perez-resume-24.pdf",
     icon: BsFillSuitcaseLgFill,
