@@ -29,12 +29,22 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
 
     sessionStorage.setItem("messages", JSON.stringify(updatedMessages));
 
+    const mockReplies = [
+      `Hey ${name}, thanks for reaching out! I'll get back to you by email shortly.`,
+      `Hi ${name}, I appreciate your message! You'll hear from me soon via email.`,
+      `${name}, thanks for your inquiry. I'll respond to you as soon as possible via email.`,
+      `Hello ${name}! I've received your message and will follow up soon.`,
+    ];
+
+    const randomReply =
+      mockReplies[Math.floor(Math.random() * mockReplies.length)];
+
     setTimeout(() => {
       setMessages((prevMessages) => {
         const fakeMessage = {
           id: Math.random().toString(36).substr(2, 9),
           name: "Daniel Perez",
-          message: `Hey ${name}, thanks for reaching out! I will get back to you by email as soon as possible!`,
+          message: randomReply,
           isUserMessage: false,
         };
         const updatedMessages = [...prevMessages, fakeMessage];
@@ -43,6 +53,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       });
     }, 1000);
   };
+
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -61,8 +72,8 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       ref={containerRef}
       className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
         darkMode
-          ? "bg-dark/85 backdrop-blur-md text-light"
-          : "bg-light/90 text-dark backdrop-blur-sm"
+          ? "bg-dark/50 backdrop-blur-md text-light"
+          : "bg-light/50 backdrop-blur-md text-dark"
       } px-4`}
       onClick={onClose}
     >
@@ -76,7 +87,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       </div>
       <div className="max-w-[750px] flex-grow w-full justify-center items-center h-full">
         <div
-          className={`flex flex-col justify-between w-full h-[700px] md:h-[730px] m-auto max-h-[740px] rounded-md mb-10 mt-16 ${
+          className={`flex flex-col justify-between max-h-[700px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#e6e3e3] duration-150 ease-in-out"
@@ -106,7 +117,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
               messages.map((msg: any) => (
                 <div
                   key={msg.id}
-                  className={`p-2 rounded-lg mb-2 max-w-fit pr-10 ${
+                  className={`p-2 rounded-lg mb-2 max-w-fit pr-10 pl-4 ${
                     msg.isUserMessage
                       ? "ml-auto animate-slide-right w-[75%] "
                       : "mr-auto animate-slide-left w-[75%] "
@@ -129,7 +140,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
                   darkMode ? "text-[#a0a0a5]" : "text-[#909095]"
                 }`}
               >
-                No messages
+                All messages will be sent by email. Thank you.
               </div>
             )}
             <div ref={messagesEndRef}></div>
