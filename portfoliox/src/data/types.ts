@@ -54,7 +54,7 @@ export type Project = {
   pfp: string;
   images: string[];
   title: string;
-  link: string;
+  link?: string;
   code?: string;
   description: string[];
   retweets: number;

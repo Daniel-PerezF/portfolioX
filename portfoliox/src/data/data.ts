@@ -180,7 +180,7 @@ export const projects: Project[] = [
       "/spin-trade/spin-trade-4.png",
     ],
     title: "Spin Trade Marketplace, Full Stack",
-    link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
+    // link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
     code: "https://github.com/Daniel-PerezF/RecordMarketplace",
     description: [
       "Utilized React, TypeScript, Tailwind, Node.js, Express, PostgreSQL and AWS to build a full stack web application.",
@@ -274,10 +274,6 @@ export const tabs: Tab[] = [
   { id: "Experience", label: "Experience", component: Experience },
   { id: "Projects", label: "Projects", component: Projects },
   { id: "Tech", label: "Tech", component: Tech },
-  // { id: "About2", label: "About2", component: About },
-  // { id: "Experience2", label: "Experience2", component: Experience },
-  // { id: "Projects2", label: "Projects2", component: Projects },
-  // { id: "Tech2", label: "Tech2", component: Tech },
 ];
 
 export const linkData: LinksProps[] = [

@@ -155,21 +155,23 @@ export function Projects() {
                   <p className="font-bold mb-4 pl-3"> {project.title}</p>
                   <div className="flex justify-end gap-4">
                     <div className="tooltip">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Opens live site for project ${project.name}`}
-                      >
-                        <span className="tooltiptext text-xs">View Live</span>
-                        <FaLink
-                          className={`self-center  mt-1   duration-150 ease-in-out ${
-                            darkMode
-                              ? "text-[#97AEC4] hover:text-[#7C9AB6]"
-                              : "text-[#7C9AB6] hover:text-[#6286A7]"
-                          }`}
-                        />
-                      </a>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Opens live site for project ${project.name}`}
+                        >
+                          <span className="tooltiptext text-xs">View Live</span>
+                          <FaLink
+                            className={`self-center  mt-1   duration-150 ease-in-out ${
+                              darkMode
+                                ? "text-[#97AEC4] hover:text-[#7C9AB6]"
+                                : "text-[#7C9AB6] hover:text-[#6286A7]"
+                            }`}
+                          />
+                        </a>
+                      )}
                     </div>
                     {project.code && (
                       <div className="tooltip">

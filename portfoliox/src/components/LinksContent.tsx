@@ -40,7 +40,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
       <div className="pt-8 pb-0 sm:pb-3 flex flex-col justify-center items-center ">
         <LinkPfp />
         <h3 className={`text-2xl font-bold`}>Daniel Perez</h3>
-        <p className={``}>I write code and stuff</p>
+        <p className={``}>I write code</p>
       </div>
       <div className="relative">
         <IoClose
