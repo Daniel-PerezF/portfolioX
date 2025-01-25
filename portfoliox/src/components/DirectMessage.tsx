@@ -87,7 +87,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       </div>
       <div className="max-w-[750px] flex-grow w-full justify-center items-center h-full">
         <div
-          className={`flex flex-col justify-between max-h-[700px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
+          className={`flex flex-col justify-between max-h-[668px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#e6e3e3] duration-150 ease-in-out"
@@ -200,7 +200,7 @@ function ContactForm({ onMessageSubmit }: any) {
   };
 
   return (
-    <div className={` rounded-lg  mx-auto w-full relative mb-8 `}>
+    <div className={` rounded-lg  mx-auto w-full relative `}>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-2">
           <label htmlFor="name" className="sr-only">
