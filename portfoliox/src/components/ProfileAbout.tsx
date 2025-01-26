@@ -31,10 +31,10 @@ export function ProfileAbout() {
     return savedFollowers ? JSON.parse(savedFollowers) : "443";
   });
 
-  const [linksClicked, setLinksClicked] = useState(() => {
-    const savedLinksClicked = sessionStorage.getItem("linksClicked");
-    return savedLinksClicked ? JSON.parse(savedLinksClicked) : false;
-  });
+  // const [linksClicked, setLinksClicked] = useState(() => {
+  //   const savedLinksClicked = sessionStorage.getItem("linksClicked");
+  //   return savedLinksClicked ? JSON.parse(savedLinksClicked) : false;
+  // });
 
   const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
@@ -48,8 +48,8 @@ export function ProfileAbout() {
   };
 
   const handleLinksClick = () => {
-    setLinksClicked(true);
-    sessionStorage.setItem("linksClicked", JSON.stringify(true));
+    // setLinksClicked(true);
+    // sessionStorage.setItem("linksClicked", JSON.stringify(true));
     toggleLinks();
   };
 
@@ -98,8 +98,8 @@ export function ProfileAbout() {
             ref={buttonRef}
             onClick={toggleFollow}
             className={`${
-              following ? "bg-pop" : "bg-purple-400"
-            } px-4 py-[6px]  rounded-full text-white mr-4 hover:scale-105 duration-150 ease-in-out cursor-pointer`}
+              following ? "bg-orange" : "bg-purple-400"
+            } px-4 py-[6px] rounded-full text-white mr-4 hover:scale-105 duration-150 ease-in-out cursor-pointer`}
           >
             {following ? "Follow" : "Following"}
           </button>
@@ -161,15 +161,7 @@ export function ProfileAbout() {
               onClick={handleLinksClick}
             >
               <FaLink className="self-center" />
-              <p
-                className={`${
-                  linksClicked
-                    ? "text-purple-500"
-                    : darkMode
-                      ? "text-blue-400"
-                      : "text-blue-500"
-                } underline-center-outward`}
-              >
+              <p className="text-orange underline-center-outward-bold font-medium">
                 /links
               </p>
             </div>

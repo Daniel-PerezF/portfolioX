@@ -59,7 +59,7 @@ export default function Home() {
                 </div>
 
                 <div className="absolute bottom-[-4rem] sm:left-0 left-0 md:left-[2rem] z-10">
-                  <ProfilePic src="/memoji4.png" alt="my memoji" />
+                  <ProfilePic src="/me-memoji.png" alt="my memoji" />
                 </div>
               </div>
               <div className="max-w-[890px] w-full">

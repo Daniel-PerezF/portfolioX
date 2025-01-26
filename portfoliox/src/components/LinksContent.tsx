@@ -113,9 +113,7 @@ export function LinkPfp() {
       <img
         src="/yusuke.jpeg"
         alt=""
-        className={`rounded-full h-32 w-32 object-cover bg-white m-4 ${
-          darkMode ? "" : ""
-        } `}
+        className={`rounded-full h-32 w-32 object-cover bg-white m-4  ring-2 ${darkMode ? "ring-light" : "ring-dark"}`}
       />
     </div>
   );

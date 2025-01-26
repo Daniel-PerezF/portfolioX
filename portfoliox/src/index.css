@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  background: #FB904D; 
+  color: white;        
+}
+
+::-moz-selection {
+  background: #FB904D; 
+  color: white;
+}
+
 .DirectMessage {
   position: fixed;
   top: 0;
@@ -91,6 +101,29 @@
 }
 
 .underline-center-outward:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.underline-center-outward-bold {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-center-outward-bold::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: -1.5px;
+  left: 50%;
+  background-color: currentColor;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.underline-center-outward-bold:hover::after {
   width: 100%;
   left: 0;
 }
