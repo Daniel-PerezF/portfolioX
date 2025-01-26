@@ -77,7 +77,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       } px-4`}
       onClick={onClose}
     >
-      <div className="">
+      <div>
         <IoClose
           onClick={onClose}
           className={`text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer z-50 top-3 left-3 fixed self-center ${
@@ -87,7 +87,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       </div>
       <div className="max-w-[750px] flex-grow w-full justify-center items-center h-full">
         <div
-          className={`flex flex-col justify-between max-h-[668px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
+          className={`flex flex-col justify-between max-h-[635px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
             darkMode
               ? " bg-[#303034] duration-150 ease-in-out"
               : " bg-[#e6e3e3] duration-150 ease-in-out"
