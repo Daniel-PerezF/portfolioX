@@ -12,6 +12,7 @@ import {
 } from "../icons/icons";
 import { DirectMessage, LinksContent, useOnScreen } from ".";
 import { useLinksContext } from "../context/LinksContext";
+import { useSearchParams } from "react-router-dom";
 
 export function ProfileAbout() {
   const { darkMode } = useDarkMode();
@@ -21,6 +22,26 @@ export function ProfileAbout() {
   const { showLinks, toggleLinks } = useLinksContext();
   const directMessageRef = useRef<HTMLDivElement>(null);
   const isDirectMessageVisible = useOnScreen(directMessageRef);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("message") === "true") {
+      setShowDirectMessage(true);
+    }
+  }, [searchParams]);
+
+  const toggleModal = () => {
+    const modalNextState = !showDirectMessage;
+
+    // Update the URL to reflect the modal's state
+    if (modalNextState) {
+      setSearchParams({ message: "true" }); // Open modal
+    } else {
+      setSearchParams({}); // Close modal (clear URL param)
+    }
+
+    setShowDirectMessage(modalNextState);
+  };
 
   const [following, setFollowing] = useState(() => {
     const savedFollowing = sessionStorage.getItem("following");
@@ -89,9 +110,7 @@ export function ProfileAbout() {
                 : "ring-dark hover:bg-dark hover:bg-opacity-10 hover:text-gray-700"
             } `}
           >
-            <MdOutlineMailOutline
-              onClick={() => setShowDirectMessage(!showDirectMessage)}
-            />
+            <MdOutlineMailOutline onClick={toggleModal} />
           </div>
           <button
             aria-label="Follow button"
