@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { tabs, Tab } from "../data";
-// import { useSwipeable } from "react-swipeable";
 
 export function ContentTabs() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -32,26 +31,8 @@ export function ContentTabs() {
     };
   }, []);
 
-  // const handleSwipe = (direction: string) => {
-  //   const currentIndex = tabs.findIndex((tab) => tab.id === activeTab);
-  //   if (direction === "left" && currentIndex < tabs.length - 1) {
-  //     setActiveTab(tabs[currentIndex + 1].id);
-  //   } else if (direction === "right" && currentIndex > 0) {
-  //     setActiveTab(tabs[currentIndex - 1].id);
-  //   }
-  // };
-
-  // const handlers = useSwipeable({
-  //   onSwipedLeft: () => handleSwipe("left"),
-  //   onSwipedRight: () => handleSwipe("right"),
-  //   trackMouse: true,
-  //   delta: 50,
-  // });
-
   return (
-    <div
-    //  {...handlers}
-    >
+    <div>
       <div className="grid grid-cols-4 mt-5 gap-4 mx-2">
         {tabs.map((tab: Tab) => (
           <div
