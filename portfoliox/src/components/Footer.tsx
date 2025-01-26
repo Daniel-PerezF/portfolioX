@@ -47,7 +47,7 @@ export function Footer() {
           darkMode ? "text-gray-300" : "text-gray-500"
         } font-light text-xs bg-[#ADAAB1]/10 p-2 rounded-md backdrop-blur-md `}
       >
-        dxniel © 2024
+        dxniel © 2025
       </span>
     </div>
   );
