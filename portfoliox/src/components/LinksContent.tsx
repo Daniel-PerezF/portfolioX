@@ -41,14 +41,14 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className={`max-w-[750px] w-full h-min pt-5 pb-20 flex flex-col items-center rounded-md mt-16  ${
+        className={`max-w-[550px] w-full h-min pt-5 pb-20 flex flex-col items-center rounded-md mt-16  ${
           darkMode ? "bg-[#303034]" : "bg-[#e6e3e3]"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="pt-8 pb-0 sm:pb-3 flex flex-col justify-center items-center ">
           <LinkPfp />
-          <p className={`py-4`}>Links</p>
+          <p className="py-4 font-medium">@dxnieldev</p>
         </div>
         <div className="relative">
           <IoClose
@@ -56,7 +56,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
             onClick={onClose}
           />
         </div>
-        <div className="flex flex-col gap-3 text-center w-full max-w-[350px] md:max-w-[450px] justify-center ">
+        <div className="flex flex-col gap-3 text-center w-full max-w-[280px] md:max-w-[380px] justify-center ">
           {linkData.map((link: LinksProps) => (
             <a
               aria-label={`Opens link to ${link.name}`}
@@ -65,7 +65,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
               id="websiteLink"
               target="_blank"
               rel="noopener noreferrer"
-              className={`h-[55px] flex gap-3 text-center w-full items-center justify-between px-4 py-4 rounded-full hover:scale-101 ease-in-out duration-300 transition-transform  ${
+              className={`h-[55px] flex gap-3 text-center w-full items-center justify-between px-4 py-4 rounded-xl  ease-in-out duration-200 transition border-transparent border-2 hover:border-orange ${
                 darkMode
                   ? "bg-[#585b66] text-light"
                   : "bg-gray-100 text-gray-700"
