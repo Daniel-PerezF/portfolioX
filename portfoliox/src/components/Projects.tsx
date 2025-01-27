@@ -209,9 +209,9 @@ export function Projects() {
               <div
                 className={` ${
                   darkMode ? "" : ""
-                }  rounded-lg mb-4  gap-[3px] overflow-hidden `}
+                }  rounded-lg mb-6 gap-[3px] overflow-hidden`}
               >
-                <div className="grid grid-cols-2 w-full gap-1 pb-6 ">
+                <div className="grid grid-cols-2 w-full gap-1">
                   {project.images.map((image, imageIndex) => (
                     <div key={imageIndex} className="relative">
                       <img
