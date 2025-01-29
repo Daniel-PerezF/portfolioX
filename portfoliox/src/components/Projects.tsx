@@ -158,8 +158,8 @@ export function Projects() {
                       {project.link && (
                         <a
                           href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={project.id === 2 ? "_self" : "_blank"}
+                          rel={project.id === 2 ? "" : "noopener noreferrer"}
                           aria-label={`Opens live site for project ${project.name}`}
                         >
                           <span className="tooltiptext text-xs">View Live</span>
@@ -254,9 +254,7 @@ export function Projects() {
                           }
                           className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
                           alt={`${project.title} images in modal`}
-                          onClick={() => {
-                            closeModal();
-                          }}
+                          onClick={(e) => e.stopPropagation()}
                           {...swipeHandlers}
                         />
                         <button

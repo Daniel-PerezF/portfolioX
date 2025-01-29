@@ -87,7 +87,6 @@ export const projects: Project[] = [
     ],
     title: "ONEDEV, Front End",
     link: "https://www.onewebdev.io/",
-
     description: [
       "Developed and deployed my freelance website using React, TypeScript, and Tailwind.",
       "Deployed on Vercel with a custom domain, ensuring global accessibility for a professional online presence.",
@@ -103,48 +102,47 @@ export const projects: Project[] = [
     date: "February 12, 2024",
     pfp: "/memoji4.png",
     images: [
-      "/portfolio/portfolio-1.png",
-      "/portfolio/portfolio-2.png",
-      "/portfolio/portfolio-3.png",
-      "/portfolio/portfolio-4.png",
+      "/portfolio/portfolio-v2-1.png",
+      "/portfolio/portfolio-v2-2.png",
+      "/portfolio/portfolio-v2-3.png",
+      "/portfolio/portfolio-v2-4.png",
     ],
     title: "Personal Portfolio, Front End",
-    link: "https://daniel-perezf.github.io/portfolio/",
-    code: "https://github.com/Daniel-PerezF/portfolio",
+    link: "/",
+    code: "https://github.com/dxnielperez/portfolioX",
     description: [
       "Developed and deployed a personal website using React, TypeScript, and Tailwind.",
-      "Deployed on GitHub Pages with a custom domain, ensuring global accessibility for a professional online presence.",
+      "Deployed on Vercel with a custom domain, ensuring global accessibility for a professional online presence.",
       "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
     ],
     retweets: 4,
     favorites: 8,
   },
+  // {
+  //   id: 3,
+  //   name: "Daniel Perez",
+  //   username: "dxnieldev",
+  //   date: "January 17, 2024",
+  //   pfp: "/memoji4.png",
+  //   images: [
+  //     "/chatgptstyler/chatgptstyler-1.png",
+  //     "/chatgptstyler/chatgptstyler-3.png",
+  //     "/chatgptstyler/chatgptstyler-2.png",
+  //     "/chatgptstyler/chatgptstyler-4.png",
+  //   ],
+  //   title: "ChatGPT Styler, Extension",
+  //   link: "https://chromewebstore.google.com/detail/chatgpt-styler/mmfefeellkogplnodhfnggcpkomlaapj",
+  //   code: "https://github.com/joseph-w-valdez/chatGPTStyler",
+  //   description: [
+  //     "This extension was built to enhance ChatGPT's functionality by allowing users to use a GUI to edit ChatGPT's UI in real time",
+  //     "Enhances usability with colored messages, customizable widths, bubble colors, text colors, corner rounding, padding, and a 'scroll-to-top' button",
+  //   ],
+
+  //   retweets: 5,
+  //   favorites: 9,
+  // },
   {
     id: 3,
-    name: "Daniel Perez",
-    username: "dxnieldev",
-    date: "January 17, 2024",
-    pfp: "/memoji4.png",
-    images: [
-      "/chatgptstyler/chatgptstyler-1.png",
-      "/chatgptstyler/chatgptstyler-3.png",
-      "/chatgptstyler/chatgptstyler-2.png",
-      "/chatgptstyler/chatgptstyler-4.png",
-    ],
-    title: "ChatGPT Styler, Extension",
-    link: "https://chromewebstore.google.com/detail/chatgpt-styler/mmfefeellkogplnodhfnggcpkomlaapj",
-    code: "https://github.com/joseph-w-valdez/chatGPTStyler",
-    description: [
-      "This extension was built to enhance ChatGPT's functionality by allowing users to use a GUI to edit ChatGPT's UI in real time",
-      "Enhances usability with colored messages, customizable widths, bubble colors, text colors, corner rounding, padding, and a 'scroll-to-top' button",
-    ],
-
-    retweets: 5,
-    favorites: 9,
-  },
-
-  {
-    id: 4,
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "January 12, 2024",
@@ -168,7 +166,7 @@ export const projects: Project[] = [
     favorites: 8,
   },
   {
-    id: 5,
+    id: 4,
     name: "Daniel Perez",
     username: "dxnieldev",
     date: "November 22, 2023",
@@ -181,7 +179,7 @@ export const projects: Project[] = [
     ],
     title: "Spin Trade Marketplace, Full Stack",
     // link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
-    code: "https://github.com/Daniel-PerezF/RecordMarketplace",
+    code: "https://github.com/dxnielperez/RecordMarketplace",
     description: [
       "Utilized React, TypeScript, Tailwind, Node.js, Express, PostgreSQL and AWS to build a full stack web application.",
       "Engineered and implemented the application from concept to deployment on AWS Elastic Beanstalk.",
@@ -320,3 +318,134 @@ export const linkData: LinksProps[] = [
     copy: "",
   },
 ];
+
+// export const tech = [
+//   {
+//     name: "Daniel Perez",
+//     username: "@dxnieldev",
+//     date: "August 19, 2023",
+//     message: "Frontend Technologies:",
+//     tech: [
+//       {
+//         name: "HTML",
+//         icon: <FaHtml5 className="text-[#E44D26] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "CSS",
+//         icon: <FaCss3Alt className="text-[#1572B6] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Tailwind CSS",
+//         icon: (
+//           <SiTailwindcss className="text-[#38BDF8] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "JavaScript",
+//         icon: (
+//           <IoLogoJavascript className="text-[#F7DF1E] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "TypeScript",
+//         icon: (
+//           <SiTypescript className="text-[#3178C6] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "React",
+//         icon: <FaReact className="text-[#61DAFB] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Next.js",
+//         icon: (
+//           <TbBrandNextjs className="text-[#000000] text-6xl md:text-7xl" />
+//         ),
+//       },
+//     ],
+//   },
+//   {
+//     name: "Daniel Perez",
+//     username: "@dxnieldev",
+//     date: "August 5, 2023",
+//     message: "Backend Technologies:",
+//     tech: [
+//       {
+//         name: "Node.js",
+//         icon: <FaNodeJs className="text-[#8CC84B] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Express",
+//         icon: <SiExpress className="text-[#000000] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "PostgreSQL",
+//         icon: (
+//           <BiLogoPostgresql className="text-[#336791] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "MongoDB",
+//         icon: <SiMongodb className="text-[#47A248] text-6xl md:text-7xl" />,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Daniel Perez",
+//     username: "@dxnieldev",
+//     date: "August 3, 2023",
+//     message: "Deployment and DevOps:",
+//     tech: [
+//       {
+//         name: "AWS",
+//         icon: <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Vercel",
+//         icon: (
+//           <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "Docker",
+//         icon: <FaDocker className="text-[#2496ED] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "GitHub",
+//         icon: <FaGithub className="text-[#181717] text-6xl md:text-7xl" />,
+//       },
+//     ],
+//   },
+//   {
+//     name: "Daniel Perez",
+//     username: "@dxnieldev",
+//     date: "August 3, 2023",
+//     message: "Tools and Collaboration:",
+//     tech: [
+//       {
+//         name: "VS Code",
+//         icon: (
+//           <BiLogoVisualStudio className="text-[#007ACC] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "Git",
+//         icon: (
+//           <IoMdGitMerge className="text-[#F1502F] text-6xl md:text-7xl" />
+//         ),
+//       },
+//       {
+//         name: "NPM",
+//         icon: <FaNpm className="text-[#CB3837] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Slack",
+//         icon: <FaSlack className="text-[#4A154B] text-6xl md:text-7xl" />,
+//       },
+//       {
+//         name: "Jira",
+//         icon: <SiJira className="text-[#0052CC] text-6xl md:text-7xl" />,
+//       },
+//     ],
+//   },
+// ];

@@ -134,7 +134,7 @@ export function About() {
                 partnerships in mind, let's connect!
               </p>
               <div
-                className={`flex overflow-hidden rounded-2xl pb-6  ${
+                className={`flex overflow-hidden rounded-2xl mb-6  ${
                   darkMode ? " " : " "
                 }`}
               >
