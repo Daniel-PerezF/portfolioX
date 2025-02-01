@@ -214,7 +214,7 @@ function ContactForm({ onMessageSubmit }: any) {
             placeholder="Name"
             className={`w-full ${
               darkMode ? "bg-[#585b66] text-light" : "bg-gray-100 text-gray-700"
-            } rounded-lg py-2 pl-3 pr-8 focus:outline-none focus:ring focus:border-blue-300 mb-2`}
+            } rounded-lg py-2 pl-3 pr-8 focus:outline-none focus:ring focus:ring-orange mb-2`}
             value={formData.name}
             onChange={handleChange}
           />
@@ -229,7 +229,7 @@ function ContactForm({ onMessageSubmit }: any) {
             placeholder="Email"
             className={`w-full ${
               darkMode ? "bg-[#585b66] text-light" : "bg-gray-100 text-gray-700"
-            } rounded-lg py-2 pl-3 pr-8 focus:outline-none focus:ring focus:border-blue-300 mb-2`}
+            } rounded-lg py-2 pl-3 pr-8 focus:outline-none focus:ring focus:ring-orange mb-2`}
             value={formData.email}
             onChange={handleChange}
           />
@@ -245,7 +245,7 @@ function ContactForm({ onMessageSubmit }: any) {
           placeholder="Message"
           className={`w-full ${
             darkMode ? "bg-[#585b66] text-light" : "bg-gray-100 text-gray-700"
-          } rounded-lg py-2 pl-3 pr-8 text-gray-200 focus:outline-none focus:ring focus:border-blue-300 mb-2 resize-none`}
+          } rounded-lg py-2 pl-3 pr-8 text-gray-200 focus:outline-none focus:ring focus:ring-orange mb-2 resize-none`}
           value={formData.message}
           rows={4}
           onChange={handleChange}
