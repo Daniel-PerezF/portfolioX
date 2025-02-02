@@ -4,8 +4,6 @@ import ConfettiExplosion from "react-confetti-explosion";
 import {
   BsFillSuitcaseLgFill,
   FaLink,
-  // HiMiniCake,
-  // IoCalendarOutline,
   IoLocation,
   MdOutlineMailOutline,
   RiVerifiedBadgeFill,
@@ -31,11 +29,6 @@ export function ProfileAbout() {
     return savedFollowers ? JSON.parse(savedFollowers) : "443";
   });
 
-  // const [linksClicked, setLinksClicked] = useState(() => {
-  //   const savedLinksClicked = sessionStorage.getItem("linksClicked");
-  //   return savedLinksClicked ? JSON.parse(savedLinksClicked) : false;
-  // });
-
   const toggleFollow = () => {
     setFollowing((prevState: boolean) => !prevState);
     const newFollowers = following ? "444" : "443";
@@ -48,8 +41,6 @@ export function ProfileAbout() {
   };
 
   const handleLinksClick = () => {
-    // setLinksClicked(true);
-    // sessionStorage.setItem("linksClicked", JSON.stringify(true));
     toggleLinks();
   };
 

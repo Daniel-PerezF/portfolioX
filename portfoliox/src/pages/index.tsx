@@ -1,4 +1,3 @@
-import { useDarkMode } from "../context/useDarkMode";
 import {
   Banner,
   ContentTabs,
@@ -7,9 +6,9 @@ import {
   ProfilePic,
 } from "../components/index";
 import { useEffect, useState } from "react";
-import { useLinksContext } from "../context/LinksContext";
 import TsParticles from "../components/Particles";
-import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdKeyboardArrowUp } from "../icons/icons";
+import { useDarkMode, useLinksContext } from "../context";
 
 export default function Home() {
   const { darkMode } = useDarkMode();

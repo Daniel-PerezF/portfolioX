@@ -29,6 +29,7 @@ import {
   MdOutlineMailOutline,
   MdExpandMore,
   MdExpandLess,
+  MdKeyboardArrowUp,
 } from "react-icons/md";
 
 import { RiVerifiedBadgeFill } from "react-icons/ri";
@@ -122,4 +123,5 @@ export {
   BiLogoVisualStudio,
   BsFillSuitcaseLgFill,
   LuConstruction,
+  MdKeyboardArrowUp,
 };

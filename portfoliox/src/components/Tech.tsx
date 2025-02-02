@@ -13,7 +13,6 @@ import {
 } from "react-icons/fa";
 import { IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
 import {
-  // SiCanva,
   SiExpress,
   SiJira,
   SiMongodb,
@@ -21,7 +20,6 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
-// import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { BiLogoPostgresql, BiLogoVisualStudio } from "react-icons/bi";
 import { IoMdGitMerge } from "react-icons/io";
 
@@ -170,27 +168,6 @@ export function Tech() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          {/* <div className="flex justify-start gap-1">
-            <div>
-              <img
-                src="/memoji4.png"
-                alt="my memoji"
-                className="rounded-full h-14 w-14 object-cover bg-white m-4"
-              />
-            </div>
-            <div className="text-lg font-bold flex pt-4 gap-2">
-              <div className="flex flex-col min-w-[108px]">
-                <h3>{card.name}</h3>
-                <div className="text-gray-400 text-sm font-light">
-                  {card.username}
-                </div>
-              </div>
-              <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
-              <p className="font-normal text-gray-400 text-sm pt-1">
-                {card.date}
-              </p>
-            </div>
-          </div> */}
           <div className="w-full flex justify-center">
             <div className="flex justify-center w-11/12 flex-col">
               <div className={`rounded-2xl `}>
@@ -217,78 +194,3 @@ export function Tech() {
     </div>
   );
 }
-
-// <br />
-//                 <div className="flex flex-wrap items-center gap-2">
-//                   <p className="w-24">Backend</p>
-//                   <div className="flex flex-col">
-//                     <FaNodeJs className="text-[#8CC84B] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                   <div className="flex flex-col">
-//                     <SiExpress className="text-[#000000] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                   <div className="flex flex-col">
-//                     <BiLogoPostgresql className="text-[#336791] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                   <div className="flex flex-col">
-//                     <SiMongodb className="text-[#47A248] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                 </div>{" "}
-//                 <br />
-
-//                 <div className="flex flex-wrap items-center gap-2">
-//                   <p className="w-24">Deployment</p>
-//                   <div className="flex flex-col">
-//                     <IoLogoVercel className="text-[#000000] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                   <div className="flex flex-col">
-//                     <FaAws className="text-[#FF9900] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                   <div className="flex flex-col">
-//                     <FaGithub className="text-[#181717] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                 </div>{" "}
-//                 <br />
-
-//                 <div className="flex flex-wrap items-center gap-2">
-//                   <p className="w-24">Design</p>
-//                   <div className="flex flex-col">
-//                     <FaFigma className="text-[#F24E1E] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                   <div className="flex flex-col">
-//                     <SiCanva className="text-[#00C4CC] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                 </div>
-//                 <br />
-//                 <div className="flex flex-wrap items-center gap-2">
-//                   <p className="w-24">Tools</p>
-//                   <div className="flex flex-col">
-//                     <BiLogoVisualStudio className="text-[#007ACC] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                   <div className="flex flex-col">
-//                     <IoMdGitMerge className="text-[#F1502F] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                   <div className="flex flex-col">
-//                     <FaNpm className="text-[#CB3837] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>
-//                   <div className="flex flex-col">
-//                     <FaDocker className="text-[#2496ED] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                   <div className="flex flex-col">
-//                     <FaSlack className="text-[#4A154B] text-6xl md:text-7xl" />
-//                     {/* <p>TypeScripts</p> */}
-//                   </div>{" "}
-//                 </div>

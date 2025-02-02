@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import { projects } from "../data";
-// import { Item } from "../data";
 
 import { useDarkMode } from "../context/useDarkMode";
 import {
   FaCode,
   FaLink,
-  // FaRetweet,
   IoClose,
   IoMdArrowBack,
   IoMdArrowForward,
-  // MdFavoriteBorder,
-  // MdOutlineFavorite,
-  // RiVerifiedBadgeFill,
 } from "../icons/icons";
 import { useSwipeable } from "react-swipeable";
 
@@ -21,55 +16,6 @@ export function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(-1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-  // const [items, setItems] = useState<Item[]>(() => {
-  //   const itemsFromSession = sessionStorage.getItem("projects");
-  //   return itemsFromSession
-  //     ? JSON.parse(itemsFromSession)
-  //     : projects.map((project) => ({
-  //         id: project.id,
-  //         retweets: project.retweets,
-  //         favorites: project.favorites,
-  //         retweetsToggle: false,
-  //         favoritesToggle: false,
-  //       }));
-  // });
-
-  // useEffect(() => {
-  //   sessionStorage.setItem("projects", JSON.stringify(items));
-  // }, [items]);
-
-  // function handleRetweet(index: number) {
-  //   setItems((prevItems) =>
-  //     prevItems.map((item, i) =>
-  //       i === index
-  //         ? {
-  //             ...item,
-  //             retweets: item.retweetsToggle
-  //               ? item.retweets - 1
-  //               : item.retweets + 1,
-  //             retweetsToggle: !item.retweetsToggle,
-  //           }
-  //         : item
-  //     )
-  //   );
-  // }
-
-  // function handleFavorite(index: number) {
-  //   setItems((prevItems) =>
-  //     prevItems.map((item, i) =>
-  //       i === index
-  //         ? {
-  //             ...item,
-  //             favorites: item.favoritesToggle
-  //               ? item.favorites - 1
-  //               : item.favorites + 1,
-  //             favoritesToggle: !item.favoritesToggle,
-  //           }
-  //         : item
-  //     )
-  //   );
-  // }
 
   const openModal = (projectIndex: number, imageIndex: number) => {
     setSelectedProjectIndex(projectIndex);
@@ -121,33 +67,6 @@ export function Projects() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          {/* <div>
-            <div className="flex justify start gap-1">
-              <div className="">
-                <img
-                  loading="lazy"
-                  src={project.pfp}
-                  alt={`${project.name} profile pic`}
-                  className={`rounded-full h-14 w-14  object-cover bg-white  m-4`}
-                />
-              </div>
-
-              <div className="text-lg font-bold flex pt-4 gap-2 ">
-                <div className="flex flex-col min-w-[108px]">
-                  {" "}
-                  <h3>{project.name}</h3>
-                  <div className="text-gray-400 text-sm font-light">
-                    @{project.username}
-                  </div>
-                </div>
-
-                <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
-                <p className="font-normal text-gray-400 text-sm pt-1">
-                  {project.date}
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="w-full flex justify-center pt-4">
             <div className="flex justify-center  w-11/12 flex-col">
               <div className="pb-2">
@@ -293,41 +212,6 @@ export function Projects() {
               </div>
             </div>
           </div>
-          {/* <div className="w-full flex justify-center pt-4">
-            <div className="flex justify-around text-xl w-11/12 text-gray-400">
-              <div
-                className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
-                  items[projectIndex].retweetsToggle
-                    ? "text-green-500"
-                    : "text-gray-400"
-                }`}
-                onClick={() => handleRetweet(projectIndex)}
-              >
-                {items[projectIndex].retweetsToggle ? (
-                  <FaRetweet />
-                ) : (
-                  <FaRetweet />
-                )}
-                <p className="text-sm ">{items[projectIndex].retweets}</p>
-              </div>
-
-              <div
-                className={` cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-red-500 ${
-                  items[projectIndex].favoritesToggle
-                    ? "text-red-500"
-                    : "text-gray-400"
-                }`}
-                onClick={() => handleFavorite(projectIndex)}
-              >
-                {items[projectIndex].favoritesToggle ? (
-                  <MdOutlineFavorite />
-                ) : (
-                  <MdFavoriteBorder />
-                )}
-                <p className="text-sm ">{items[projectIndex].favorites}</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       ))}
     </div>
