@@ -211,8 +211,8 @@ export const education: Education[] = [
     program: "Full Immersion Web Development Program (Full Stack)",
     date: "August 2023 - January 2024",
     description: [
-      "Programmed 10-12 hours a day for 18 weeks (800+ hours) in a simulated Agile work environment.",
-      "Collaborated in hackathons to develop applications and enhance pair programming skills.",
+      "Programmed 10-12 hours/day for 18 weeks (800+ hours) in an Agile environment",
+      "Participated in hackathons to build apps and improve pair programming skills.",
       "Assisted classmates with troubleshooting and debugging personal projects.",
     ],
   },
