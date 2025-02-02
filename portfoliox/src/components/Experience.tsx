@@ -1,66 +1,9 @@
-// import { useState, useEffect } from "react";
-import {
-  FaLink,
-  // FaRetweet,
-  // MdFavoriteBorder,
-  // MdOutlineFavorite,
-  // RiVerifiedBadgeFill,
-} from "../icons/icons";
+import { FaLink } from "../icons/icons";
 import { useDarkMode } from "../context/useDarkMode";
-// import { Item } from "../data";
 import { experiences } from "../data";
 
 export function Experience() {
   const { darkMode } = useDarkMode();
-
-  // const [items, setItems] = useState<Item[]>(() => {
-  //   const itemsFromSession = sessionStorage.getItem("experiences");
-  //   return itemsFromSession
-  //     ? JSON.parse(itemsFromSession)
-  //     : experiences.map((exp) => ({
-  //         id: exp.id,
-  //         retweets: exp.retweets,
-  //         favorites: exp.favorites,
-  //         retweetsToggle: false,
-  //         favoritesToggle: false,
-  //       }));
-  // });
-
-  // useEffect(() => {
-  //   sessionStorage.setItem("experiences", JSON.stringify(items));
-  // }, [items]);
-
-  // function handleRetweet(index: number) {
-  //   setItems((prevItems) =>
-  //     prevItems.map((item, i) =>
-  //       i === index
-  //         ? {
-  //             ...item,
-  //             retweets: item.retweetsToggle
-  //               ? item.retweets - 1
-  //               : item.retweets + 1,
-  //             retweetsToggle: !item.retweetsToggle,
-  //           }
-  //         : item
-  //     )
-  //   );
-  // }
-
-  // function handleFavorite(index: number) {
-  //   setItems((prevItems) =>
-  //     prevItems.map((item, i) =>
-  //       i === index
-  //         ? {
-  //             ...item,
-  //             favorites: item.favoritesToggle
-  //               ? item.favorites - 1
-  //               : item.favorites + 1,
-  //             favoritesToggle: !item.favoritesToggle,
-  //           }
-  //         : item
-  //     )
-  //   );
-  // }
 
   return (
     <div className="h-full">
@@ -73,31 +16,6 @@ export function Experience() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          {/* <div>
-            <div className="flex justify-start gap-1">
-              <div className="">
-                <img
-                  src={exp.pfp}
-                  alt={exp.role}
-                  className={`rounded-full h-14 w-14 object-cover bg-white  m-4 `}
-                />
-              </div>
-
-              <div className="text-lg font-bold flex pt-4 gap-2 flex-wrap">
-                <div className="flex flex-col min-w-[108px]">
-                  <h3>{exp.name}</h3>
-                  <div className="text-gray-400 text-sm font-light">
-                    @{exp.username}
-                  </div>
-                </div>
-
-                <RiVerifiedBadgeFill className="text-blue-400 mt-[0.35rem]" />
-                <p className="font-normal text-gray-400 text-sm pt-1">
-                  {exp.date}
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="w-full flex justify-center pt-4">
             <div className="flex w-11/12 justify-start gap-4 mb-4">
               {exp.logo && (
@@ -158,37 +76,6 @@ export function Experience() {
               ))}
             </div>
           </div>
-          {/* <div className="w-full flex justify-center pt-4">
-            <div className="flex justify-around text-xl w-11/12 text-gray-400">
-              <div
-                className={`cursor-pointer flex gap-1 duration-150 ease-in-out group hover:text-green-500 ${
-                  items[index].retweetsToggle
-                    ? "text-green-500 "
-                    : "text-gray-400"
-                }`}
-                onClick={() => handleRetweet(index)}
-              >
-                {items[index]?.retweetsToggle ? <FaRetweet /> : <FaRetweet />}
-                <p className="text-sm ">{items[index].retweets}</p>
-              </div>
-
-              <div
-                className={` cursor-pointer flex gap-1 group hover:text-red-500 ${
-                  items[index]?.favoritesToggle
-                    ? "text-red-500"
-                    : "text-gray-400"
-                }`}
-                onClick={() => handleFavorite(index)}
-              >
-                {items[index]?.favoritesToggle ? (
-                  <MdOutlineFavorite />
-                ) : (
-                  <MdFavoriteBorder />
-                )}
-                <p className="text-sm ">{items[index].favorites}</p>
-              </div>
-            </div>
-          </div> */}
         </div>
       ))}
     </div>
