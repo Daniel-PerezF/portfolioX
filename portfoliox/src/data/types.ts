@@ -31,21 +31,6 @@ export type Experiences = {
   company?: string;
 };
 
-export type Service = {
-  id: number;
-  name: string;
-  username: string;
-  date: string;
-  pfp: string;
-  images: string[];
-  title: string;
-  link?: string;
-  code?: string;
-  description: string[];
-  retweets: number;
-  favorites: number;
-};
-
 export type Project = {
   id: number;
   name: string;
@@ -73,10 +58,20 @@ export type Item = {
   retweetsToggle: boolean;
   favoritesToggle: boolean;
 };
+
 export type Links = {
   id: number;
   name: string;
   url: string;
   copy: string;
   icon: React.ComponentType<any>;
+};
+
+export type Education = {
+  id: number;
+  name: string;
+  logo: string;
+  program: string;
+  date: string;
+  description: string[];
 };

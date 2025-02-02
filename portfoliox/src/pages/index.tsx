@@ -6,13 +6,15 @@ import {
   ProfileAbout,
   ProfilePic,
 } from "../components/index";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLinksContext } from "../context/LinksContext";
 import TsParticles from "../components/Particles";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 export default function Home() {
   const { darkMode } = useDarkMode();
   const { showLinks } = useLinksContext();
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,6 +29,29 @@ export default function Home() {
       };
     }
   }, [showLinks]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -70,6 +95,14 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {showScrollTop && (
+        <div
+          className={`fixed bottom-4 p-1 right-4 z-[999] ring-0 rounded-full backdrop-blur-md cursor-pointer transition-colors duration-200 ease-in-out ${darkMode ? "text-light bg-slate-500/30 hover:bg-slate-500/45" : "text-dark bg-slate-500/20 hover:bg-slate-500/35"}`}
+          onClick={scrollToTop}
+        >
+          <MdKeyboardArrowUp size={30} />
+        </div>
+      )}
     </>
   );
 }
