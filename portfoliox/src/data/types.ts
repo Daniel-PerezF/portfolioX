@@ -61,12 +61,6 @@ export type Project = {
   favorites: number;
 };
 
-export type Links = {
-  id: number;
-  title: string;
-  url: string;
-};
-
 export type BannerProps = {
   darkModeImage: string;
   lightModeImage: string;
@@ -79,7 +73,7 @@ export type Item = {
   retweetsToggle: boolean;
   favoritesToggle: boolean;
 };
-export type LinksProps = {
+export type Links = {
   id: number;
   name: string;
   url: string;

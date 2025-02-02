@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import { LinksProps, linkData } from "../data";
+import { links, Links } from "../data";
 import { FaRegCopy, IoClose, IoMdCheckmarkCircleOutline } from "../icons/icons";
 
 export function LinksContent({ onClose }: { onClose: () => void }) {
@@ -57,7 +57,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
           />
         </div>
         <div className="flex flex-col gap-3 text-center w-full max-w-[280px] md:max-w-[380px] justify-center ">
-          {linkData.map((link: LinksProps) => (
+          {links.map((link: Links) => (
             <a
               aria-label={`Opens link to ${link.name}`}
               key={link.id}

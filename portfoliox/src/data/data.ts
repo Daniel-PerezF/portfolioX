@@ -1,4 +1,4 @@
-import { Experiences, LinksProps, Project, Service, Tab } from ".";
+import { Experiences, Links, Project, Service, Tab } from ".";
 import { About } from "../components/About";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     ],
     title: "Spin Trade Marketplace, Full Stack",
     // link: "http://recordmarketplace-dev.us-west-1.elasticbeanstalk.com/",
-    code: "https://github.com/dxnielperez/RecordMarketplace",
+    code: "https://github.com/dxnielperez/record-marketplace",
     description: [
       "Utilized React, TypeScript, Tailwind, Node.js, Express, PostgreSQL and AWS to build a full stack web application.",
       "Engineered and implemented the application from concept to deployment on AWS Elastic Beanstalk.",
@@ -274,7 +274,7 @@ export const tabs: Tab[] = [
   { id: "Tech", label: "Tech", component: Tech },
 ];
 
-export const linkData: LinksProps[] = [
+export const links: Links[] = [
   // {
   //   id: 1,
   //   name: "Freelance Website",
