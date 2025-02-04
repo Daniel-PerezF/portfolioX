@@ -96,7 +96,7 @@ export default function Home() {
       </div>
       {showScrollTop && (
         <div
-          className={`fixed bottom-4 p-1 right-4 z-[999] ring-0 rounded-full backdrop-blur-md cursor-pointer transition-colors duration-200 ease-in-out ${darkMode ? "text-light bg-slate-500/30 hover:bg-slate-500/45" : "text-dark bg-slate-500/20 hover:bg-slate-500/35"}`}
+          className={`fixed bottom-4 p-1 right-4 z-[999] ring-0 rounded-full backdrop-blur-md cursor-pointer transition-colors duration-300 ease-in-out ${darkMode ? "text-light bg-slate-500/30 hover:bg-slate-500/45" : "text-dark bg-slate-500/20 hover:bg-slate-500/35"}`}
           onClick={scrollToTop}
         >
           <MdKeyboardArrowUp size={30} />

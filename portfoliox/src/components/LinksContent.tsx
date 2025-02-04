@@ -56,7 +56,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
         </div>
         <div className="relative">
           <IoMdClose
-            className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+            className={`${darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"} p-1 rounded-full z-50 top-3 left-3 fixed duration-300 transition-all ease-in-out bg-opacity-10 hover:bg-opacity-25  cursor-pointer`}
             size={38}
             onClick={onClose}
           />
@@ -70,7 +70,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
               id="websiteLink"
               target="_blank"
               rel="noopener noreferrer"
-              className={`h-[55px] flex gap-3 text-center w-full items-center justify-between px-4 py-4 rounded-xl  ease-in-out duration-200 transition border-transparent border-2 hover:border-orange ${
+              className={`h-[55px] flex gap-3 text-center w-full items-center justify-between px-4 py-4 rounded-xl  ease-in-out duration-300 transition border-transparent border-2 hover:border-orange ${
                 darkMode
                   ? "bg-[#585b66] text-light"
                   : "bg-gray-100 text-gray-700"

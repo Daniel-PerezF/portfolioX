@@ -13,8 +13,8 @@ export function Experience() {
             key={exp.id + index}
             className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
               darkMode
-                ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
-                : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+                ? "hover:bg-[#37363c] bg-[#303034] duration-300 ease-in-out"
+                : "hover:bg-[#e5e5e5] bg-[#eeeeee] duration-300 ease-in-out"
             }`}
           >
             <div className="w-full flex justify-center pt-4">
@@ -53,7 +53,7 @@ export function Experience() {
                         aria-label="Opens link to experience item"
                       >
                         <FaLink
-                          className={`text-md duration-150 ease-in-out text-gray-400 ${
+                          className={`text-md duration-300 ease-in-out text-gray-400 ${
                             darkMode
                               ? "text-[#97AEC4] hover:text-[#7C9AB6]"
                               : "text-[#7C9AB6] hover:text-[#6286A7]"
@@ -91,8 +91,8 @@ export function Experience() {
             key={edu.id + index}
             className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
               darkMode
-                ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
-                : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+                ? "hover:bg-[#37363c] bg-[#303034] duration-300 ease-in-out"
+                : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-300 ease-in-out"
             }`}
           >
             <div className="w-full flex justify-center pt-4">

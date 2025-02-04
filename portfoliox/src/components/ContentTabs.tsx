@@ -39,7 +39,7 @@ export function ContentTabs() {
             key={tab.id}
             className={`rounded-lg ${
               darkMode ? "hover:bg-[#37363c]" : "hover:bg-lighter"
-            } w-full flex justify-center cursor-pointer p-2 duration-200 ease-in-out transition-all ${
+            } w-full flex justify-center cursor-pointer p-2 duration-300 ease-in-out transition-all ${
               activeTab === tab.id
                 ? darkMode
                   ? "bg-[#37363c]"

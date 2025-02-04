@@ -80,7 +80,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       <div>
         <IoMdClose
           onClick={onClose}
-          className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+          className={`${darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"} p-1 rounded-full z-50 top-3 left-3 fixed duration-300 transition-all ease-in-out bg-opacity-10 hover:bg-opacity-25  cursor-pointer`}
           size={38}
         />
       </div>
@@ -88,8 +88,8 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
         <div
           className={`flex flex-col justify-between max-h-[635px] md:max-h-[700px] h-full w-full m-auto rounded-md mb-10 mt-16 ${
             darkMode
-              ? " bg-[#303034] duration-150 ease-in-out"
-              : " bg-[#e6e3e3] duration-150 ease-in-out"
+              ? " bg-[#303034] duration-300 ease-in-out"
+              : " bg-[#e6e3e3] duration-300 ease-in-out"
           }`}
           onClick={(e) => e.stopPropagation()}
         >

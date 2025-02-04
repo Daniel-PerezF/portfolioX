@@ -14,7 +14,7 @@ export function Nav() {
         <img
           src="/orange-icon.png"
           alt="my logo"
-          className="w-1/5 hover:scale-105 duration-200 ease-in-out cursor-pointer"
+          className="w-1/5 hover:scale-105 duration-300 ease-in-out cursor-pointer"
         />
       </div>
 

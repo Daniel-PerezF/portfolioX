@@ -65,8 +65,8 @@ export function Projects() {
           key={projectIndex}
           className={`pb-2 md:p-4 mb-4 mx-2 md:mx-0 rounded-lg ${
             darkMode
-              ? "hover:bg-[#37363c] bg-[#303034] duration-150 ease-in-out"
-              : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
+              ? "hover:bg-[#37363c] bg-[#303034] duration-300 ease-in-out"
+              : "hover:bg-[#e5e5e5] bg-[#eeeeee] duration-300 ease-in-out"
           }`}
         >
           <div className="w-full flex justify-center">
@@ -171,7 +171,7 @@ export function Projects() {
           <div className="relative">
             <div>
               <IoMdClose
-                className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+                className={`${darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"} p-1 rounded-full z-50 top-3 left-3 fixed duration-300 transition-all ease-in-out bg-opacity-10 hover:bg-opacity-25  cursor-pointer`}
                 size={38}
                 onClick={closeModal}
               />

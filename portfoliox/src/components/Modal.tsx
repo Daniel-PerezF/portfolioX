@@ -12,7 +12,7 @@ const Modal = ({ isOpen, closeModal, darkMode, children }: any) => {
     >
       <div className="relative">
         <IoClose
-          className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+          className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-300 ease-in-out cursor-pointer"
           onClick={closeModal}
         />
         {children}

@@ -74,7 +74,7 @@ export function ProfileAbout() {
       <div className="flex flex-col gap-4">
         <div className="flex justify-end pt-4 pb-3 gap-4 relative">
           <div
-            className={`text-2xl self-center ring-1 rounded-full p-1 cursor-pointer duration-150 ease-in-out ${
+            className={`text-2xl self-center ring-1 rounded-full p-1 cursor-pointer duration-300 ease-in-out ${
               darkMode
                 ? "ring-light hover:bg-light hover:bg-opacity-25 hover:text-gray-200"
                 : "ring-dark hover:bg-dark hover:bg-opacity-10 hover:text-gray-700"
@@ -90,7 +90,7 @@ export function ProfileAbout() {
             onClick={toggleFollow}
             className={`${
               following ? "bg-orange" : "bg-purple-400"
-            } px-4 py-[6px] rounded-full text-white mr-4 hover:scale-105 duration-150 ease-in-out cursor-pointer`}
+            } px-4 py-[6px] rounded-full text-white mr-4 hover:scale-105 duration-300 ease-in-out cursor-pointer`}
           >
             {following ? "Follow" : "Following"}
           </button>
