@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { projects } from "../data";
+import { Project, projects } from "../data";
 
 import { useDarkMode } from "../context/useDarkMode";
 import {
   FaCode,
   FaLink,
-  IoClose,
   IoMdArrowBack,
   IoMdArrowForward,
+  IoMdClose,
 } from "../icons/icons";
+
 import { useSwipeable } from "react-swipeable";
 
 export function Projects() {
@@ -16,8 +17,9 @@ export function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(-1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
+  const [selectedProject, setSelectedProject] = useState<Project>();
   const openModal = (projectIndex: number, imageIndex: number) => {
+    setSelectedProject(projects[projectIndex]);
     setSelectedProjectIndex(projectIndex);
     setSelectedImageIndex(imageIndex);
     setModalOpen(true);
@@ -67,7 +69,7 @@ export function Projects() {
               : "hover:bg-[#EBEBEB] bg-[#eeeeee] duration-150 ease-in-out"
           }`}
         >
-          <div className="w-full flex justify-center pt-4">
+          <div className="w-full flex justify-center">
             <div className="flex justify-center  w-11/12 flex-col">
               <div className="pb-2">
                 <div className="flex gap-2 justify-between pr-4">
@@ -149,71 +151,71 @@ export function Projects() {
                     </div>
                   ))}
                 </div>
-
-                {modalOpen && (
-                  <div
-                    onClick={closeModal}
-                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center ${
-                      darkMode ? "bg-opacity-20" : "bg-opacity-30"
-                    } bg-black backdrop-blur-[0.5px]`}
-                  >
-                    <div className="relative">
-                      <IoClose
-                        className="text-white z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
-                        onClick={closeModal}
-                      />
-                      <div className="w-full flex justify-center">
-                        {" "}
-                        <img
-                          loading="lazy"
-                          src={
-                            projects[selectedProjectIndex].images[
-                              selectedImageIndex
-                            ]
-                          }
-                          className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px]"
-                          alt={`${project.title} images in modal`}
-                          onClick={(e) => e.stopPropagation()}
-                          {...swipeHandlers}
-                        />
-                        <button
-                          aria-label="Left toggle arrow for images modal"
-                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
-                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
-                          } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-300`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            prevImage();
-                          }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
-                        >
-                          <IoMdArrowBack className="flex-shrink-0" size={30} />
-                        </button>
-                        <button
-                          aria-label="Right toggle arrow for images modal"
-                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
-                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
-                          } bg-opacity-10 hover:bg-opacity-25 rounded-full`}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            nextImage();
-                          }}
-                          style={{ transform: "translateY(-50%)", zIndex: 50 }}
-                        >
-                          <IoMdArrowForward
-                            className="flex-shrink-0"
-                            size={30}
-                          />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
         </div>
       ))}
+      {modalOpen && (
+        <div
+          onClick={(e) => {
+            e.preventDefault();
+            closeModal();
+          }}
+          className={`fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 overflow-y-scroll ${
+            darkMode
+              ? "bg-dark/50  backdrop-blur-md text-light"
+              : "bg-light/50 backdrop-blur-md text-dark"
+          } px-4`}
+        >
+          <div className="relative">
+            <div>
+              <IoMdClose
+                className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+                size={38}
+                onClick={closeModal}
+              />
+            </div>
+            <div className="w-full flex justify-center">
+              {" "}
+              <img
+                loading="lazy"
+                src={projects[selectedProjectIndex].images[selectedImageIndex]}
+                className=" max-w-[420px] sm:max-w-[520px] md:max-w-[620px] lg:max-w-[720px] max-h-[90vh]"
+                alt={`${selectedProject?.title} project images in modal`}
+                onClick={(e) => e.stopPropagation()}
+                {...swipeHandlers}
+              />
+              <button
+                aria-label="Left toggle arrow for images modal"
+                className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                  darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"
+                } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-300`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                style={{ transform: "translateY(-50%)", zIndex: 50 }}
+              >
+                <IoMdArrowBack className="flex-shrink-0" size={30} />
+              </button>
+              <button
+                aria-label="Right toggle arrow for images modal"
+                className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                  darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"
+                } bg-opacity-10 hover:bg-opacity-25 rounded-full`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                style={{ transform: "translateY(-50%)", zIndex: 50 }}
+              >
+                <IoMdArrowForward className="flex-shrink-0" size={30} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

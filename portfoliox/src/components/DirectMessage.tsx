@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { Message } from "../data";
 import emailjs from "@emailjs/browser";
-import { FaPaperPlane, IoClose } from "../icons/icons";
+import { FaPaperPlane, IoMdClose } from "../icons/icons";
 
 export function DirectMessage({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
@@ -78,11 +78,10 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div>
-        <IoClose
+        <IoMdClose
           onClick={onClose}
-          className={`text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer z-50 top-3 left-3 fixed self-center ${
-            darkMode ? "text-white" : "text-dark"
-          }`}
+          className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+          size={38}
         />
       </div>
       <div className="max-w-[750px] flex-grow w-full justify-center items-center h-full">

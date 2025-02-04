@@ -42,7 +42,8 @@ import {
   IoLogoJavascript,
   IoLogoVercel,
 } from "react-icons/io5";
-import { IoIosMore } from "react-icons/io";
+import { IoIosMore, IoMdClose } from "react-icons/io";
+
 import {
   IoMdCheckmarkCircleOutline,
   IoMdArrowForward,
@@ -124,4 +125,5 @@ export {
   BsFillSuitcaseLgFill,
   LuConstruction,
   MdKeyboardArrowUp,
+  IoMdClose,
 };

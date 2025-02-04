@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
-import { IoClose, IoMdArrowBack, IoMdArrowForward } from "../icons/icons";
+import { IoMdArrowBack, IoMdArrowForward, IoMdClose } from "../icons/icons";
 import { useSwipeable } from "react-swipeable";
 
 export function About() {
@@ -111,13 +111,16 @@ export function About() {
                       e.preventDefault();
                       closeModal();
                     }}
-                    className={`fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black backdrop-blur-[1px] ${
-                      darkMode ? "bg-opacity-70" : "bg-opacity-70"
-                    } `}
+                    className={`fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 overflow-y-scroll   ${
+                      darkMode
+                        ? "bg-dark/50 backdrop-blur-md text-light"
+                        : "bg-light/50 backdrop-blur-md text-dark"
+                    } px-4`}
                   >
                     <div className="relative">
-                      <IoClose
-                        className="text-white hover:bg-white/10 rounded-full  z-50 top-3 left-3 fixed text-4xl hover:scale-105 duration-150 ease-in-out cursor-pointer"
+                      <IoMdClose
+                        className={`${darkMode ? "hover:bg-white/10" : "hover:bg-dark/10"} p-1 rounded-full z-50 top-3 left-3 fixed duration-150 ease-in-out cursor-pointer`}
+                        size={38}
                         onClick={closeModal}
                       />
                       <div className="w-full flex justify-center">
@@ -132,8 +135,8 @@ export function About() {
                         />
                         <button
                           aria-label="Left toggle arrow for images modal"
-                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
-                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
+                          className={`fixed top-1/2 left-4 py-1 px-3 z-50 text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                            darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full duration-300`}
                           onClick={(e) => {
                             e.stopPropagation();
@@ -145,8 +148,8 @@ export function About() {
                         </button>
                         <button
                           aria-label="Right toggle arrow for images modal"
-                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-white text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
-                            darkMode ? "hover:bg-[#858585]" : "hover:bg-white"
+                          className={`fixed top-1/2 right-4 py-1 px-3 z-50 text-4xl h-10 w-10 flex items-center justify-center transition-all ease-in-out duration-300 ${
+                            darkMode ? "hover:bg-[#858585]" : "hover:bg-dark"
                           } bg-opacity-10 hover:bg-opacity-25 rounded-full`}
                           onClick={(e) => {
                             e.stopPropagation();
