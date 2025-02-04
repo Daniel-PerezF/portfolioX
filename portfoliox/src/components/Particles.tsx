@@ -60,7 +60,7 @@ export default function TsParticles() {
           color: darkMode ? "#ffffff" : "#27262b",
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.55,
           width: 1,
         },
         move: {
@@ -86,7 +86,7 @@ export default function TsParticles() {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 4 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
