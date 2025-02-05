@@ -37,7 +37,7 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className={`flex flex-col items-center gap-3 h-full overflow-y-scroll ${
+      className={`flex flex-col items-center gap-3 h-full ${
         darkMode
           ? "bg-dark/50 backdrop-blur-md text-light"
           : "bg-light/50 backdrop-blur-md text-dark "

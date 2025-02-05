@@ -70,7 +70,7 @@ export function DirectMessage({ onClose }: { onClose: () => void }) {
   return (
     <div
       ref={containerRef}
-      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between overflow-y-scroll   ${
+      className={`fixed top-0 left-0 w-full h-full flex flex-col items-center justify-between ${
         darkMode
           ? "bg-dark/50 backdrop-blur-md text-light"
           : "bg-light/50 backdrop-blur-md text-dark"

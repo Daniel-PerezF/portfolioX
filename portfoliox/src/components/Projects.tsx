@@ -162,7 +162,7 @@ export function Projects() {
             e.preventDefault();
             closeModal();
           }}
-          className={`fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 overflow-y-scroll ${
+          className={`fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 ${
             darkMode
               ? "bg-dark/50  backdrop-blur-md text-light"
               : "bg-light/50 backdrop-blur-md text-dark"
