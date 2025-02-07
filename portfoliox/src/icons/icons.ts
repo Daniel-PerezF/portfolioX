@@ -30,6 +30,7 @@ import {
   MdExpandMore,
   MdExpandLess,
   MdKeyboardArrowUp,
+  MdOpenInNew,
 } from "react-icons/md";
 
 import { RiVerifiedBadgeFill } from "react-icons/ri";
@@ -126,4 +127,5 @@ export {
   LuConstruction,
   MdKeyboardArrowUp,
   IoMdClose,
+  MdOpenInNew,
 };

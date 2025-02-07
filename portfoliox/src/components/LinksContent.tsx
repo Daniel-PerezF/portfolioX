@@ -1,39 +1,9 @@
-import { useState } from "react";
 import { useDarkMode } from "../context/useDarkMode";
 import { links, Links } from "../data";
-import {
-  FaRegCopy,
-  IoMdCheckmarkCircleOutline,
-  IoMdClose,
-} from "../icons/icons";
+import { IoMdClose, MdOpenInNew } from "../icons/icons";
 
 export function LinksContent({ onClose }: { onClose: () => void }) {
   const { darkMode } = useDarkMode();
-  const [copiedIds, setCopiedIds] = useState<number[]>([]);
-
-  function isCopied(id: number): boolean {
-    return copiedIds.includes(id);
-  }
-
-  function copyToClipboard(event: React.MouseEvent, id: number, url: string) {
-    event.preventDefault();
-
-    navigator.clipboard.writeText(url).then(
-      function () {
-        setCopiedIds((prevIds) => [...prevIds, id]);
-        setTimeout(
-          () =>
-            setCopiedIds((prevIds) =>
-              prevIds.filter((prevId) => prevId !== id)
-            ),
-          5000
-        );
-      },
-      function (err) {
-        console.error("Failed to copy URL to clipboard: ", err);
-      }
-    );
-  }
 
   return (
     <div
@@ -76,33 +46,9 @@ export function LinksContent({ onClose }: { onClose: () => void }) {
                   : "bg-gray-100 text-gray-700"
               }`}
             >
-              <link.icon className="text-xl " />
+              <link.icon className="text-xl" />
               <p className=" ">{link.name}</p>
-
-              {isCopied(link.id) && (
-                <div className="max-w-fit">
-                  <IoMdCheckmarkCircleOutline className="text-xl text-green-400 animate-slide-up " />
-                  <span className="text-sm text-green-400 animate-slide-up absolute top-4 right-10" />
-                </div>
-              )}
-              {!isCopied(link.id) && link.name !== "Resume" && (
-                <div className="tooltip">
-                  <span className="tooltiptext text-sm text-green-400">
-                    Copy
-                  </span>
-                  <FaRegCopy
-                    className="text-xl animate-slide-down "
-                    onClick={(e) => {
-                      copyToClipboard(e, link.id, link.copy);
-                    }}
-                  />
-                </div>
-              )}
-              {link.name === "Resume" && (
-                <div className="invisible">
-                  <FaRegCopy />
-                </div>
-              )}
+              <MdOpenInNew className="text-xl" />
             </a>
           ))}
         </div>
