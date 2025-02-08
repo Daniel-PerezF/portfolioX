@@ -136,7 +136,6 @@ export function Projects() {
                   {project.images.map((image, imageIndex) => (
                     <div key={imageIndex} className="relative">
                       <img
-                        loading="lazy"
                         src={image}
                         className="object-cover cursor-pointer aspect-[2/1] overflow-hidden"
                         alt={`${project.title} project images`}
