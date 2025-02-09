@@ -62,12 +62,12 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 50px;
+  width: 80px;
   background-color: #adadad;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 1px 4px;
+  padding: 2px 4px;
   position: absolute;
   z-index: 1;
   bottom: 145%;
