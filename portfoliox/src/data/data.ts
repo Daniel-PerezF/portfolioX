@@ -71,28 +71,6 @@ export const experiences: Experiences[] = [
 ];
 
 export const projects: Project[] = [
-  // {
-  //   id: 1,
-  //   name: "Daniel Perez",
-  //   username: "dxnieldev",
-  //   date: "July 11, 2024",
-  //   pfp: "/memoji4.png",
-  //   images: [
-  //     "/onedev/onedev-1.png",
-  //     "/onedev/onedev-2.png",
-  //     "/onedev/onedev-3.png",
-  //     "/onedev/onedev-4.png",
-  //   ],
-  //   title: "ONEDEV, Front End",
-  //   link: "https://www.onewebdev.io/",
-  //   description: [
-  //     "Developed and deployed my freelance website using React, TypeScript, and Tailwind.",
-  //     "Deployed on Vercel with a custom domain, ensuring global accessibility for a professional online presence.",
-  //     "Applied responsive design principles, ensuring an intuitive and visually pleasing user interface across various devices.",
-  //   ],
-  //   retweets: 4,
-  //   favorites: 8,
-  // },
   {
     id: 2,
     name: "Daniel Perez",
