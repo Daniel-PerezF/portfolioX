@@ -6,7 +6,6 @@ import {
   ProfilePic,
 } from "../components/index";
 import { useEffect, useState } from "react";
-import TsParticles from "../components/Particles";
 import { MdKeyboardArrowUp } from "../icons/icons";
 import { useDarkMode, useLinksContext } from "../context";
 
