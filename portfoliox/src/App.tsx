@@ -3,6 +3,7 @@ import "./App.css";
 import { Footer } from "./components/Footer";
 import Home from "./pages";
 import { DarkModeProvider, LinksProvider } from "./context";
+import TsParticles from "./components/Particles";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+          <TsParticles />
           <Footer />
         </LinksProvider>
       </DarkModeProvider>

@@ -57,9 +57,6 @@ export default function Home() {
       <div
         className={`${darkMode ? "bg-dark" : "bg-light"} min-h-screen relative`}
       >
-        <div className="fixed ">
-          <TsParticles />
-        </div>
         <div className="relative z-10">
           <div className="sticky top-0 z-30">
             <Nav />
